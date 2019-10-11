@@ -51,7 +51,27 @@ class M_banner extends CI_Model {
         return $this->db->where('id', $id)->get('banner')->row();
     }
 
-    
+    //enquiry
+    public function enquiry($id)
+    {
+        if(!empty($id)){
+            $this->db->where('id', $id);
+            $this->changeEstatus($id);
+        }
+        return $this->db->order_by('id', 'desc')->get('enquiry')->result();
+    }
+
+    public function changeEstatus($id = null)
+    {
+        $this->db->where('id', $id)->update('enquiry', array('status' => '1' ));
+        
+    }
+
+    public function enquiryStatus()
+    {
+       $query = $this->db->where('status', '2')->get('enquiry');
+       return $query->num_rows();
+    }
 
 }
 

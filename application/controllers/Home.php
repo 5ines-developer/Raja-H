@@ -18,9 +18,72 @@ class Home extends CI_Controller {
 		
 	}
 
+<<<<<<< HEAD
 	public function detail($value='')
 	{
 		$this->load->view('property-detail');
+=======
+	public function contact()
+	{
+		
+		if($this->input->post()){
+			$data = array(
+				'name' 	=> $this->input->post('name', true), 
+				'email' => $this->input->post('email', true), 
+				'phone' => $this->input->post('phone', true), 
+				'subj' 	=> $this->input->post('sub', true), 
+				'msg' 	=> $this->input->post('msg', true), 
+			);
+			if($this->m_home->contact($data)){
+				$this->sendMail($data);
+				redirect('thank-you','refresh');
+			}else{
+				$this->session->set_flashdata('error', 'Server error occured. Please try agin or <br> contact this number <a href="tel:9590779922">9590 779 922</a>');
+				redirect('contact-us','refresh');
+			}
+		}else{
+			$data['title'] = 'Contact us | Raja Housing';
+			$this->load->view('pages/contact', $data);
+		}
+		
+	}
+
+	public function thank_you()
+	{
+		$data['title'] = 'Contact us | Raja Housing';
+		$this->load->view('pages/thank', $data);
+	}
+
+	function sendMail($data)
+    {
+        $this->load->config('email');
+        $this->load->library('email');
+        $from = $this->config->item('smtp_user');
+        $to = $this->config->item('to');
+        $data['data'] = $data;
+        $msg = $this->load->view('email/enquiry', $data, true);
+		$this->email->set_newline("\r\n");
+		$this->email->from($from , 'Rajahousing');
+        $this->email->to($to);
+        $this->email->subject('Property Enqiry'); 
+        $this->email->message($msg);
+     	if($this->email->send())  
+        {  
+         	return true;
+        } 
+        else
+        {
+            return false;
+        }
+	}
+	
+	// site map
+	public function sitemap()
+	{
+		$data['title'] = 'Contact us | Raja Housing';
+		$data['result'] = $this->m_home->sitemap();
+		$this->load->view('pages/sitemap', $data);
+>>>>>>> 5846f885b5a6e74f4a2bcf729cf22edbd0f0a314
 	}
 
 }
