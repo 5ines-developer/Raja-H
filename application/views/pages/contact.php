@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
 </head>
 <body>
- <?php include 'assets/include/header.php';?>
+<?php  $this->load->view('includes/header'); ?>
 
  <section class="main-about main-contact-img">
         <div class="main-contact-banner">
@@ -90,21 +90,24 @@
                     
                         <div class="row">
                             <div class="col-md-6 col-lg-6 col-sm-12 col-12 pad-r">
-                                <form action="">
+                                <form action="<?php echo base_url() ?>contact-us" method="post">
                                     <div class="form-group">
-                                        <input type="text" class="form-control custom-form-control" placeholder="Full Name">
+                                        <input type="text" name="name" class="form-control custom-form-control" placeholder="Full Name *">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control custom-form-control" placeholder="mail@sitename.com">
+                                        <input type="email" name="email" class="form-control custom-form-control" placeholder="Email id">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control custom-form-control" placeholder="Subject">
+                                        <input type="text" name="phone" class="form-control custom-form-control" placeholder="Phone Number *">
                                     </div>
                                     <div class="form-group">
-                                        <textarea type="text" rows="8" class="form-control custom-form-control" placeholder="Message"></textarea>
+                                        <input type="text" name="sub" class="form-control custom-form-control" placeholder="Subject">
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-send">SEND MESSAGE</button>
+                                        <textarea type="text" name="msg" rows="7" class="form-control custom-form-control" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-send" type="submit" name="submit">SEND MESSAGE</button>
                                     </div>
                                 </form>
                             </div>
@@ -119,7 +122,7 @@
         </div>
     </div>
  </section>
- <?php include 'assets/include/footer.php';?>
+ <?php  $this->load->view('includes/footer'); ?>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

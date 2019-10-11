@@ -8,6 +8,16 @@ class M_home extends CI_Model {
 		return $this->db->get('banner')->result();
 	}
 
+	// contact us
+	public function contact($data)
+	{
+		$this->db->insert('enquiry', $data);
+		if($this->db->affected_rows() > 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
 	
 
 }
