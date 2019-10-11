@@ -80,6 +80,7 @@ $db['default'] = array(
 	'password' => '',
 	'database' => 'rajahousing',
 
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
