@@ -8,7 +8,9 @@
         <?php if ($this->session->userdata('ra_type') == '1') { ?>
             <li class="<?php echo $this->uri->segment(1) == 'adminuser'?'active':'' ?>"><a href="<?php echo base_url('adminuser/manage') ?>"><i class="fas fa-user-plus li-icon"></i>Admin User</a></li>
         <?php } ?>
-        <li class="<?php echo $this->uri->segment(1) == 'category'?'active':'' ?>"><a href="<?php echo base_url('category/manage') ?>"><i class="fas fa-th-list li-icon"></i>Category</a></li>
+        <li class="<?php echo $this->uri->segment(1) == 'category'?'active':'' ?>"><a href="<?php echo base_url('category/manage') ?>"><i class="fas fa-th-list li-icon"></i>Project Category</a></li>
+
+        <li class="<?php echo $this->uri->segment(1) == 'project'?'active':'' ?>"><a href="<?php echo base_url('project/manage') ?>"><i class="fas fa-city li-icon"></i>Project Details</a></li>
         
 
         <!-- <li class="<?php echo $this->uri->segment(1) == 'cities'?'active':'' ?>"><a href="<?php echo base_url('cities/manage') ?>"><i class="fas fa-city li-icon"></i>Cities</a></li>

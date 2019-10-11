@@ -101,6 +101,10 @@ $route['category/super-view/(:any)/(:any)/(:any)']   = 'category/superview/$1/$2
 $route['category/sup-edit/(:any)']  	= 'category/editSup/$1';
 $route['category/sup-delete/(:any)/(:any)/(:any)/(:any)']  	= 'category/deleteSup/$1/$2/$3/$4';
 
+//project 
+$route['project/manage']   		= 'project/index'; 	
+
+
 
  
 
