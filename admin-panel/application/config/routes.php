@@ -73,6 +73,9 @@ $route['profile/update']   		= 'account/updateacnt';
 $route['banner/manage']   		= 'banner/index'; 	
 $route['banner/add']   			= 'banner/add'; 	
 $route['banner/insert']   		= 'banner/insert'; 
+$route['enquiry']               = 'banner/enquiry';
+$route['enquiry/(:any)']        = 'banner/enquiry/$1';
+
 
 //adminuser	
 $route['adminuser/manage']   		= 'Adminuser/index'; 	
