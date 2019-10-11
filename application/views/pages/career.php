@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
- <?php include 'assets/include/header.php';?>
+<?php  $this->load->view('includes/header'); ?>
  <section class="main-about main-project-img">
         <div class="main-contact-banner">
             <div class="container">
@@ -217,7 +217,7 @@
         </div>
     </div>
  </section>
- <?php include 'assets/include/footer.php';?>
+ <?php  $this->load->view('includes/footer'); ?>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

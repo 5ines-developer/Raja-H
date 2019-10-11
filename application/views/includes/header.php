@@ -8,23 +8,23 @@
                 </a>
                 <div class="collapse navbar-collapse" id="navbarsExample05">
                     <ul class="navbar-nav ml-auto navbar-left custom-nav">
-                            <li class="nav-item ">
-                                    <a class="nav-link active" href="index.php">HOME </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about-us.php">ABOUT US</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="project-list.php">PROJECTS</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">CAREER</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact-us.php">CONTACT US</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">REAL ESTATE UPDATES</a>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="index">HOME </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="project-list">PROJECTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="career">CAREER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact-us">CONTACT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">REAL ESTATE UPDATES</a>
                         </li>
                     </ul>
                 </div>   

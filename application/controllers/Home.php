@@ -80,6 +80,23 @@ class Home extends CI_Controller {
 		$this->load->view('pages/sitemap', $data);
 	}
 
+	// career
+	public function career()
+	{
+		if($this->input->post()){
+			$data = array(
+				'name' 	=> $this->input->post('name', true), 
+				'email' => $this->input->post('email', true), 
+				'phone' => $this->input->post('phone', true), 
+				'subj' 	=> $this->input->post('sub', true), 
+				'msg' 	=> $this->input->post('msg', true), 
+			);
+		}else{
+			$data['title'] = 'Contact us | Raja Housing';
+			$this->load->view('pages/career', $data);
+		}
+	}
+
 }
 
 /* End of file Home.php */
