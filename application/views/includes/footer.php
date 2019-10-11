@@ -7,7 +7,7 @@
                     <ul class="footer-list mb2">
                         <li><i class="fas fa-map-marker-alt"></i> <span>Los Angeles, London</span></li>
                         <li><i class="fas fa-phone-alt"></i> <span>(+518)-2324-2452-56</span></li>
-                        <li><i class="far fa-envelope"></i> <span><a href="#" class="mail">hello@test.com</a></span></li>
+                        <li><i class="far fa-envelope"></i> <span><a href="<?php echo base_url() ?>#" class="mail">hello@test.com</a></span></li>
                         <li><i class="fas fa-fax"></i> <span>FAX: 123 235465</span></li>
                     </ul>
                 </div>
@@ -16,11 +16,11 @@
                 <div class="footer-container">
                     <p class="footer-title">USEFUL LINKS</p>
                     <ul class="footer-list">
-                        <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">Bayone, New Jersi</a></li>
-                        <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">About Us </a></li>
-                        <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">Bayone, New Jersi</a></li>
-                        <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">Find Our Links</a></li>
-                        <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">Find Our Links</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">Bayone, New Jersi</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">About Us </a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">Bayone, New Jersi</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">Find Our Links</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">Find Our Links</a></li>
                     </ul>
                 </div>
             </div>
@@ -28,11 +28,11 @@
                     <div class="footer-container">
                         <p class="footer-title">USEFUL LINKS</p>
                         <ul class="footer-list">
-                                <li><i class="fas fa-chevron-right"></i> <a href="property-detail.php" class="link">Property Detail</a></li>
-                                <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">About Us </a></li>
-                                <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">Bayone, New Jersi</a></li>
-                                <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">Find Our Links</a></li>
-                                <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">Find Our Links</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>property-detail" class="link">Property Detail</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">About Us </a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">Bayone, New Jersi</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">Find Our Links</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">Find Our Links</a></li>
                         </ul>
                     </div>
             </div>
@@ -40,11 +40,11 @@
                     <div class="footer-container">
                         <p class="footer-title">USEFUL LINKS</p>
                         <ul class="footer-list">
-                                <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">Bayone, New Jersi</a></li>
-                                <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">About Us </a></li>
-                                <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">Bayone, New Jersi</a></li>
-                                <li><i class="fas fa-chevron-right"></i> <a href="sitemap.php" class="link">Sitemap</a></li>
-                                <li><i class="fas fa-chevron-right"></i> <a href="#" class="link">Find Our Links</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">Bayone, New Jersi</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">About Us </a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">Bayone, New Jersi</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>sitemap" class="link">Sitemap</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url() ?>#" class="link">Find Our Links</a></li>
                         </ul>
                     </div>
                 </div>
@@ -52,5 +52,5 @@
     </div>
  </section>
  <section class="copyright ">
-    <p>&copy; <?php echo date('Y') ?> All right reserved Raja Housing  - Developed by <a href="https://www.5ines.com/" target="_blank">5ine</a></p>
+    <p>&copy; <?php echo date('Y') ?> All right reserved Raja Housing  - Developed by <a href="<?php echo base_url() ?>https://www.5ines.com/" target="_blank">5ine</a></p>
  </section>

@@ -68,8 +68,8 @@ a:hover{
         .tree li:last-child:before {right: 50%;}
 
         .tree code, .tree span {
-           
-            border-radius: .2em;
+            width: 120px;
+            box-shadow: 0px 1px 4px -2px black;
             display: inline-block;
             margin: 0 .2em .5em;
             padding: .2em .5em;
@@ -195,20 +195,21 @@ margin-top: 5px;
   }
   
 .sitemap{
-    display: none;
     list-style-type: none;
+    display: none
 }
 
+.treefiger{overflow-x: auto; scrollbar-width: thin;margin-bottom: 0}
 
 
 @media (min-width:1200px){
     .tree code, .tree span {
-        padding: 10px 30px;
-    }
+        padding: 10px 5px;
+    } 
 }
 @media (min-width:992px) and (max-width:1200px){
     .tree code, .tree span {
-        padding: 10px 20px;
+        padding: 10px 5px;
     }
 }
 @media (min-width:768px) and (max-width:991px){

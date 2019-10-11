@@ -70,8 +70,15 @@ class Home extends CI_Controller {
         {
             return false;
         }
-        
-    }
+	}
+	
+	// site map
+	public function sitemap()
+	{
+		$data['title'] = 'Contact us | Raja Housing';
+		$data['result'] = $this->m_home->sitemap();
+		$this->load->view('pages/sitemap', $data);
+	}
 
 }
 
