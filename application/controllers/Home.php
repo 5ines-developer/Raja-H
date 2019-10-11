@@ -18,11 +18,6 @@ class Home extends CI_Controller {
 		
 	}
 
-<<<<<<< HEAD
-	public function detail($value='')
-	{
-		$this->load->view('property-detail');
-=======
 	public function contact()
 	{
 		
@@ -83,7 +78,6 @@ class Home extends CI_Controller {
 		$data['title'] = 'Contact us | Raja Housing';
 		$data['result'] = $this->m_home->sitemap();
 		$this->load->view('pages/sitemap', $data);
->>>>>>> 5846f885b5a6e74f4a2bcf729cf22edbd0f0a314
 	}
 
 }

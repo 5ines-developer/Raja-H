@@ -30,10 +30,14 @@ class Project extends CI_Controller {
     {
         $data['title']      = 'Project | Raja Housing';   
         $data['result']     = $this->m_project->projectGet($id,str_replace("-"," ",$type)); 
-        $data['floor']      = $this->m_project->floorimage($data['result']->id); 
-        $data['amenity']    = $this->m_project->amenityGet($data['result']->id); 
-        $data['gallery']    = $this->m_project->galleryGet($data['result']->id); 
-        $data['location']   = $this->m_project->locationGet($data['result']->id); 
+
+        if (!empty( $data['result'])) {
+            $data['floor']      = $this->m_project->floorimage($data['result']->id); 
+            $data['amenity']    = $this->m_project->amenityGet($data['result']->id); 
+            $data['gallery']    = $this->m_project->galleryGet($data['result']->id); 
+            $data['location']   = $this->m_project->locationGet($data['result']->id); 
+        }
+        
         $this->load->view('project/add', $data, FALSE);    
     }
 

@@ -75,15 +75,15 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	// 'hostname' => 'www.5ineprojects.com',
-	// 'username' => 'a5inepro_rajahou',
-	// 'password' => 'OlMyIu&!%p,K',
-	// 'database' => 'a5inepro_rajahouse',
+	'hostname' => 'www.5ineprojects.com',
+	'username' => 'a5inepro_rajahou',
+	'password' => 'OlMyIu&!%p,K',
+	'database' => 'a5inepro_rajahouse',
 
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'rajahousing',
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'rajahousing',
 
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

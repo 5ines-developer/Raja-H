@@ -404,7 +404,7 @@ border-radius: 4px;}
                                                 </div>
                                             </div><br><br>
                                         <div id="faq-form-box"></div> 
-                                        <input type="hidden" value="<?php echo $result->id ?>" name="pid">   
+                                        <input type="hidden" value="<?php echo (!empty($result->id))?$result->id:'' ?>" name="pid">   
                                         
                                     <input type="hidden" name="id" value="<?php echo $this->uri->segment(3) ?>">
                                     <input type="hidden" name="cattype" value="<?php echo $this->uri->segment(4) ?>">              
@@ -461,7 +461,7 @@ border-radius: 4px;}
                                     </div>
                                     <input type="hidden" name="id" value="<?php echo $this->uri->segment(3) ?>">
                                     <input type="hidden" name="cattype" value="<?php echo $this->uri->segment(4) ?>">
-                                    <input type="hidden" value="<?php echo $result->id ?>" name="pid">   
+                                    <input type="hidden" value="<?php echo (!empty($result->id))?$result->id:'' ?>" name="pid">   
 
                                     <div class="col s12 center mtb20">
                                         <button class="btn waves-effect waves-light green darken-4 hoverable btn-large"
@@ -504,7 +504,7 @@ border-radius: 4px;}
                                                 <p><span class="error"><?php echo form_error('category'); ?></span></p>
                                             </div>
                                             <div class="col l2">
-                                            <a id="brandplus" class="marqueeplus remov" value="<?php echo $location2->id; ?>"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                            <a id="brandplus" class="marqueeplus remov" value="<?php echo (!empty($location2->id)?$location2->id:'') ?>"><i class="fa fa-times" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
 
@@ -524,7 +524,7 @@ border-radius: 4px;}
                                                 </div>
                                             </div><br><br>
                                         <div id="faq-form-box"></div> 
-                                        <input type="hidden" value="<?php echo $result->id ?>" name="pid">   
+                                        <input type="hidden" value="<?php echo (!empty($result->id)?$result->id:'') ?>" name="pid">   
                                         
                                     <input type="hidden" name="id" value="<?php echo $this->uri->segment(3) ?>">
                                     <input type="hidden" name="cattype" value="<?php echo $this->uri->segment(4) ?>">              
