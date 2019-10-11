@@ -102,7 +102,8 @@ $route['category/sup-edit/(:any)']  	= 'category/editSup/$1';
 $route['category/sup-delete/(:any)/(:any)/(:any)/(:any)']  	= 'category/deleteSup/$1/$2/$3/$4';
 
 //project 
-$route['project/manage']   		= 'project/index'; 	
+$route['project/manage']   		        = 'project/index';
+$route['project/update/(:any)/(:any)']  = 'project/update/$1/$2'; 	
 
 
 

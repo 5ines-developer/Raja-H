@@ -1508,9 +1508,7 @@ table tr .td-a {
     border-radius: 50%;
 }
 
-.card-content form {
-    overflow: hidden;
-}
+
 
 @media (max-width: 600px) {
     .profile-card {
@@ -1764,5 +1762,11 @@ table tr .td-a {
 form::after {
     content: "";
     display: block;
+    clear: both;
+}
+
+.card-content form:after {
+    display: block;
+    content: "";
     clear: both;
 }

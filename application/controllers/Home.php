@@ -18,6 +18,11 @@ class Home extends CI_Controller {
 		
 	}
 
+	public function detail($value='')
+	{
+		$this->load->view('property-detail');
+	}
+
 }
 
 /* End of file Home.php */
