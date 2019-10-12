@@ -116,6 +116,15 @@ class Career extends CI_Controller {
         }
     }
 
+
+    // applications
+    public function applications()
+    {   
+        $data['title'] = 'applications';
+        $data['application'] = $this->m_career->applications();
+        $this->load->view('career/applications', $data);
+    }
+
 }
 
 /* End of file Career.php */
