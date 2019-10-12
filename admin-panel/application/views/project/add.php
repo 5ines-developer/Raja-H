@@ -202,17 +202,17 @@ padding: 3px 10px 3px 10px;
                                                     <label for="t_type">Transaction Type</label>
                                                 </div>
                                                 <div class="input-field col s12 l6">
-                                                  <input type="text" id="prtype" name="prtype" class="validate" required value="<?php echo (!empty($result->project_type))?$result->project_type:''; ?>">
+                                                  <input type="text" id="prtype" name="prtype" class="validate" value="<?php echo (!empty($result->project_type))?$result->project_type:''; ?>">
                                                   <label for="prtype">Project Type<span class="red-text">*</span></label>
                                                 </div>
                                         </div>
                                         <div class="row m0">
                                                 <div class="input-field col s12 l6">
-                                                  <input type="text" id="Pdate" name="Pdate" class="validate" required value="<?php echo (!empty($result->poses_date))?$result->poses_date:''; ?>">
+                                                  <input type="text" id="Pdate" name="Pdate" class="validate" value="<?php echo (!empty($result->poses_date))?$result->poses_date:''; ?>">
                                                   <label for="Pdate">Posession Date<span class="red-text">*</span></label>
                                                 </div>
                                                 <div class="input-field col s12 l6">
-                                                  <input type="text" id="cost" name="cost" class="validate" required value="<?php echo (!empty($result->cost))?$result->cost:''; ?>">
+                                                  <input type="text" id="cost" name="cost" class="validate" value="<?php echo (!empty($result->cost))?$result->cost:''; ?>">
                                                   <label for="cost">Cost<span class="red-text">*</span></label>
                                                 </div>
                                         </div>
