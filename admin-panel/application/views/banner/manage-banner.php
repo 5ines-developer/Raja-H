@@ -71,12 +71,7 @@
                                     </thead>
                                     <tbody>
 
-                                    <?php
-
-                                    if (!empty($result)) {
-                                        $count = 0;
-                                      foreach ($result as $key => $value) { $count = $count+1;
-                                      ?>
+                                    <?php if (!empty($result)) { $count = 0; foreach ($result as $key => $value) { $count = $count+1; ?>
                                       <tr>
                                       <td ><?php echo (!empty($result))?$count:'---'  ?></td>
 
@@ -129,6 +124,7 @@
       <script>
           $(document).ready( function () {
               $('table').DataTable({
+                 
                   dom: 'Bfrtip',
                   buttons: [
                       'copy', 'csv', 'excel', 'pdf'

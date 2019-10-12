@@ -8,9 +8,9 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="assets/css/lightbox.min.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/slick.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css" />
     <style>
     
     </style>
@@ -53,29 +53,29 @@
                     <div class="prop-detail-title">
                         <ul class="prop-list">
                         <li class="list-menu">
-                            <a href="" class="list-link active" id="list1">Property Detail</a>
+                            <a href="#propertyDetail" class="list-link js-scroll-trigger active" id="list1">Property Detail</a>
                         </li>
                         <li class="list-menu">
-                            <a href="#list1" class="list-link" >Area Statement</a>
+                            <a href="#areaStatement" class="list-link js-scroll-trigger" >Area Statement</a>
                         </li>
                         <li class="list-menu">
-                            <a href="" class="list-link" >Master Plan</a>
+                            <a href="#masterPlan" class="list-link js-scroll-trigger" >Master Plan</a>
                         </li>
                         <li class="list-menu">
-                            <a href="" class="list-link">Floor Plans</a>
+                            <a href="#floorPlan" class="list-link js-scroll-trigger">Floor Plans</a>
                         </li>
                         <li class="list-menu">
-                            <a href="" class="list-link">Amenities</a>
+                            <a href="#amenities" class="list-link js-scroll-trigger">Amenities</a>
                         </li>
                         <li class="list-menu">
-                            <a href="" class="list-link">Walk Through</a>
+                            <a href="#walkThrough" class="list-link js-scroll-trigger">Walk Through</a>
                         </li>
                         <li class="list-menu">
-                            <a href="" class="list-link">Construction Updates</a>
+                            <a href="#construction" class="list-link js-scroll-trigger">Construction Updates</a>
                         </li>
                         </ul>
                     </div>
-                    <div class="prop-st " id="list1">
+                    <div class="prop-st " id="propertyDetail">
                         <h4>PROPERTY DETAIL</h4>
                         <div class="row">
                         <div class="col-lg-6 col-md-6">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="prop-st box-shadow">
+                <div class="prop-st box-shadow" id="areaStatement">
                     <h4>AREA STATEMENT</h4>
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="prop-st box-shadow">
+                <div class="prop-st box-shadow" id="masterPlan">
                 <h4>MASTER PLAN</h4>
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 </div>
-                <div class="prop-st box-shadow">
+                <div class="prop-st box-shadow" id="floorPlan">
                 <h4>FLOOR PLAN</h4>
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
@@ -165,7 +165,7 @@
                     </div>
                 </div>
                 </div>
-                <div class="prop-st box-shadow">
+                <div class="prop-st box-shadow" id="amenities">
                 <h4>AMENITIES</h4>
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
@@ -237,7 +237,7 @@
             </div>
         </div>
 
-        <div class="prop-st box-shadow">
+        <div class="prop-st box-shadow" id="walkThrough">
             <h4>WALK THROUGH</h4>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -263,7 +263,7 @@
             </div>    
         </div>
 
-        <div class="prop-st box-shadow">
+        <div class="prop-st box-shadow" id="construction">
             <h4>CONTRUCTION UPDATES</h4>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -297,8 +297,31 @@
     <script src="assets/js/lightbox-plus-jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js'></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/slick.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/script.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/jquery.easing.min.js"></script>
+    <script>
+    //scrolling easing efect
+
+        (function ($)
+        { "use strict"; 
+        $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () 
+        { 
+            $('a.js-scroll-trigger').removeClass('active') 
+            $(this).addClass('active'); 
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) 
+            { 
+                var target = $(this.hash); 
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']'); 
+                if (target.length) 
+                { 
+                    $('html, body').animate({ scrollTop: (target.offset().top - 10) }, 1000, "easeInOutExpo"); 
+                    return false; 
+                } 
+            } 
+        }); 
+        })(jQuery); 
+    </script>
 
   </body>
 </html>
