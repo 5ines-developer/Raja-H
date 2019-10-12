@@ -94,7 +94,7 @@
                                                 <a href="<?php echo base_url('project/update/'.$value->cid.'/parent-category') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
                                               <!-- view user -->
                                               <!-- delete user -->
-                                                <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('banner/delete/'.$value->cid.'') ?> " class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
+                                                <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('project/delete/'.$value->cid.'/parent-category') ?>" class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
                                                 <!-- delete user -->
                                             </td>
 
@@ -119,7 +119,7 @@
                                                 <a href="<?php echo base_url('project/update/'.$value1->subid.'/sub-category') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
                                               <!-- view user -->
                                               <!-- delete user -->
-                                                <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('banner/delete/'.$value1->subid.'') ?> " class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
+                                                <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('project/delete/'.$value1->subid.'/sub-category') ?>" class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
                                                 <!-- delete user -->
                                             </td>
 
@@ -128,7 +128,6 @@
                                             <td ><?php echo (!empty($value1->cname))?$value1->cname:'---'  ?></td>
                                             <td ><?php echo (!empty($value1->admin))?$value1->admin:'---'  ?></td>
 
-                                            
                                             
                                           
                                         </tr>
@@ -144,11 +143,11 @@
                                                 <a href="<?php echo base_url('project/update/'.$value2->supid.'/super-category') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
                                                 <!-- view user -->
                                                 <!-- delete user -->
-                                                <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('banner/delete/'.$value2->supid.'') ?> " class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
+                                                <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('project/delete/'.$value2->supid.'/super-category') ?>" class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
                                                 <!-- delete user -->
                                              </td>
                                              <td ><?php echo (!empty($value2->supName))?$value2->supName:'---'  ?></td>
-                                             <td ><?php echo 'sub Category'  ?></td>
+                                             <td ><?php echo 'super Category'  ?></td>
                                              <td ><?php echo (!empty($value1->sname))?$value1->sname:'---'  ?></td>
                                              <td ><?php echo (!empty($value1->admin))?$value1->admin:'---'  ?></td>
                                           </tr>

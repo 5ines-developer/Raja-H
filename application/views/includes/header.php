@@ -15,7 +15,16 @@
                                     <a class="nav-link" href="about-us.php">ABOUT US</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="project-list.php">PROJECTS</a>
+                                    <div class="dropdown">
+                                        <a class="nav-link  dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            PROJECTS
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item nav-link"  href="project-list.php">PROJECTS</a>
+                                            <a class="dropdown-item nav-link" href="#">Another action</a>
+                                            <a class="dropdown-item nav-link" href="#">Something else here</a>
+                                        </div>
+                                    </div>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">CAREER</a>

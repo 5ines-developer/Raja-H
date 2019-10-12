@@ -137,6 +137,17 @@ border-radius: 4px;}
 
 background-color: #f4f4f4;
 border-radius: 4px;}
+.ebrochure{
+    position: relative;
+top: 25px;
+background: green;
+color: white;
+padding: 3px 10px 3px 10px;
+}
+.ebrochure:hover {
+    color: white;
+    background-color: #63a428;
+}
     </style>
 </head>
 
@@ -181,6 +192,87 @@ border-radius: 4px;}
                                         id="project-detail" enctype="multipart/form-data">
                                         <div class="row m0">
                                             <p class="bold  black-text  mb10 h6">Project Detail</p>
+                                        </div>
+                                        <div class="row m0">
+                                                <div class="input-field col s12 l6">
+                                                    <select name="t_type" id="t_type">
+                                                    <option value="Rent" <?php echo (!empty($result->transaction_type) && $result->transaction_type =='Rent')?'selected':''; ?>>Rent</option>
+                                                    <option value="Sale" <?php echo (!empty($result->transaction_type) && $result->transaction_type =='Sale')?'selected':''; ?>>Sale</option>
+                                                    </select>
+                                                    <label for="t_type">Transaction Type</label>
+                                                </div>
+                                                <div class="input-field col s12 l6">
+                                                  <input type="text" id="prtype" name="prtype" class="validate" required value="<?php echo (!empty($result->project_type))?$result->project_type:''; ?>">
+                                                  <label for="prtype">Project Type<span class="red-text">*</span></label>
+                                                </div>
+                                        </div>
+                                        <div class="row m0">
+                                                <div class="input-field col s12 l6">
+                                                  <input type="text" id="Pdate" name="Pdate" class="validate" required value="<?php echo (!empty($result->poses_date))?$result->poses_date:''; ?>">
+                                                  <label for="Pdate">Posession Date<span class="red-text">*</span></label>
+                                                </div>
+                                                <div class="input-field col s12 l6">
+                                                  <input type="text" id="cost" name="cost" class="validate" required value="<?php echo (!empty($result->cost))?$result->cost:''; ?>">
+                                                  <label for="cost">Cost<span class="red-text">*</span></label>
+                                                </div>
+                                        </div>
+                                        <div class="row m0">
+                                            <div class="file-field input-field col s12 l6">
+                                                <div class="btn btn-small black-text grey lighten-3">
+                                                    <i class="far fa-image left  "></i>
+                                                    <span class="">Add Brochure</span>
+                                                    <input type="file" name="brochure" accept=".pdf, .PDF,">
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                                <span class="helper-text"><b>Note</b>: Please select only PDF file
+                                                    <br> <span class="bold">Max file
+                                                        size:</span> 512kb <span class="red-text">*</span></span>
+                                            </div>
+
+                                            <?php
+                                                if (!empty($result->pdf)) { ?>
+                                            <div class="col s12 m6">
+                                                <div class="" id="edt-image">
+                                                    <div class="image view view-first">
+                                                    <a target="_blank" class="ebrochure" href="<?php echo $this->config->item('web_url').$result->pdf ?>">
+                                                        E BROCHURE
+                                                            </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php    }  ?>
+
+                                        </div>
+                                        <div class="row m0">
+                                            <div class="file-field input-field col s12 l6">
+                                                <div class="btn btn-small black-text grey lighten-3">
+                                                    <i class="far fa-image left  "></i>
+                                                    <span class="">Add Banner Image</span>
+                                                    <input type="file" name="bimage" accept=".jpg, .png,.gif,.PNG,.jpeg,JPG," >
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                                <span class="helper-text"><b>Note</b>: Please select only image file
+                                                    (eg: .jpg, .png, .jpeg etc.) <br> <span class="bold">Max file
+                                                        size:</span> 512kb <span class="red-text">*</span></span>
+                                            </div>
+
+                                            <?php
+                                                if (!empty($result->banner)) { ?>
+                                            <div class="col s12 m6">
+                                                <div class="" id="edt-image">
+                                                    <div class="image view view-first">
+                                                        <img class="city-edit-image i-img"
+                                                            src="<?php echo $this->config->item('web_url').$result->banner ?>"
+                                                            alt="image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php    }  ?>
+
                                         </div>
                                         <div class="row m0">
                                             <div class="col s12 l12">
@@ -320,8 +412,8 @@ border-radius: 4px;}
                                                     src="<?php echo $this->config->item('web_url').'/'.$floor2->fthumb ?>"
                                                     style="cursor: pointer;">
                                                 <div class="port-delete">
-                                                    <a
-                                                        href="<?php echo base_url('vendors/gallery_delete/').$floor2->fid.'/'.$floor2->fid ?>">
+                                                <a onclick="return confirm('Are you sure you want to delete this item?');"
+                                                        href="<?php echo base_url('project/floor_delete/').$floor2->fid.'/'.$this->uri->segment(3).'/'.$this->uri->segment(4); ?>">
                                                         <i class="fas fa-trash"></i></a>
                                                 </div>
 
@@ -406,8 +498,8 @@ border-radius: 4px;}
                                         <div id="faq-form-box"></div> 
                                         <input type="hidden" value="<?php echo (!empty($result->id))?$result->id:'' ?>" name="pid">   
                                         
-                                    <input type="hidden" name="id" value="<?php echo $this->uri->segment(3) ?>">
-                                    <input type="hidden" name="cattype" value="<?php echo $this->uri->segment(4) ?>">              
+                                    <input type="hidden" name="id" value="<?php echo $this->uri->segment(3) ?>" id="pid">
+                                    <input type="hidden" name="cattype" value="<?php echo $this->uri->segment(4) ?>" id="pcat">              
                                         <div class="col s12 input-field">
                                             <button class="btn waves-effect waves-light green darken-4 hoverable " type="submit">Submit
                                                 <i class="fas fa-paper-plane right"></i>
@@ -440,8 +532,8 @@ border-radius: 4px;}
                                                     src="<?php echo $this->config->item('web_url').'/'.$gallery2->thumb ?>"
                                                     style="cursor: pointer;">
                                                 <div class="port-delete">
-                                                    <a
-                                                        href="<?php echo base_url('vendors/gallery_delete/').$gallery2->id.'/'.$gallery2->id ?>">
+                                                    <a onclick="return confirm('Are you sure you want to delete this item?');"
+                                                        href="<?php echo base_url('project/gallery_delete/').$gallery2->id.'/'.$this->uri->segment(3).'/'.$this->uri->segment(4); ?>">
                                                         <i class="fas fa-trash"></i></a>
                                                 </div>
 
@@ -498,13 +590,13 @@ border-radius: 4px;}
 
                                         <div class="row m0 marqaddnext">
                                             <div class="input-field col s12 l6">                                                
-                                                <input type="text" id="i_title" name="i_title[]" class="validate"
+                                                <input type="text" id="i_title1" name="i_title1[]" class="validate"
                                                     value="<?php echo (!empty($location2->nearby)?$location2->nearby:'') ?>" >
-                                                <label for="i_title">Title <span class="red-text">*</span></label>
+                                                <label for="i_title1">Title <span class="red-text">*</span></label>
                                                 <p><span class="error"><?php echo form_error('category'); ?></span></p>
                                             </div>
                                             <div class="col l2">
-                                            <a id="brandplus" class="marqueeplus remov" value="<?php echo (!empty($location2->id)?$location2->id:'') ?>"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                            <a id="brandplus" class="marqueeplus1 remov" value="<?php echo (!empty($location2->id)?$location2->id:'') ?>"><i class="fa fa-times" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
 
@@ -515,7 +607,7 @@ border-radius: 4px;}
 
                                     <div class="row m0 marqaddnext" id="marqaddnext1">
                                                 <div class="input-field col s12 l6">
-                                                  <input type="text" id="i_title" name="i_title1[]" class="validate" required value="<?php echo (!empty($setting)?$setting['name']:'') ?>">
+                                                  <input type="text" id="i_title1" name="i_title1[]" class="validate" <?php echo (!empty($location2->nearby)?'':'Required') ?> >
                                                   <label for="i_title1">Title <span class="red-text">*</span></label>
                                                   <p><span class="error"><?php echo form_error('category'); ?></span></p>
                                                 </div>
@@ -623,6 +715,54 @@ border-radius: 4px;}
                 "Microsoft": null,
                 "Google": 'https://placehold.it/250x250'
             },
+        });
+
+        //amenities delete
+        $('.marqueeplus.remov').on('click', function(e) {
+        e.preventDefault();
+        var aid = $(this).attr('value');
+        if (!confirm("Are you sure you want to delete this item?")) {
+            return false;
+        } else {
+            $.ajax({
+                url: "<?php echo base_url();?>project/am_delete",
+                type: "get",
+                data: {
+                    "aid": aid
+                },
+                success: function(data) {
+                    if (!empty(data)) {
+                        alert('ok');
+                    } else {
+                        alert('not ok')
+                    }
+                }
+            });
+            }
+        });
+
+               //neartby delete
+        $('.marqueeplus1.remov').on('click', function(e) {
+        e.preventDefault();
+        var id = $(this).attr('value');
+        if (!confirm("Are you sure you want to delete this item?")) {
+            return false;
+        } else {
+            $.ajax({
+                url: "<?php echo base_url();?>project/near_delete",
+                type: "get",
+                data: {
+                    "id": id
+                },
+                success: function(data) {
+                    if (!empty(data)) {
+                        alert('ok');
+                    } else {
+                        alert('not ok')
+                    }
+                }
+            });
+            }
         });
 
     });

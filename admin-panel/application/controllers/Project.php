@@ -54,17 +54,92 @@ class Project extends CI_Controller {
             $this->session->set_flashdata('error', $error);            
             redirect('project/update/'.$id.'/'.$cattype,'refresh');            
         } else {
-            $detail = $this->input->post('detail');
+            $detail     = $this->input->post('detail');
+            $t_type     = $this->input->post('t_type');
+            $type       = $this->input->post('prtype');
+            $Pdate      = $this->input->post('Pdate');
+            $cost       = $this->input->post('cost');
+
+                    $this->load->library('upload');
+                    $this->load->library('image_lib');
+                    $files = $_FILES;
+                    $filesCount = count($_FILES['bimage']['name']);
+                    if (file_exists($_FILES['bimage']['tmp_name'])) {
+                        $config['upload_path'] = '../banner-image/';
+                        $config['allowed_types'] = 'jpg|png|jpeg|PNG|JPEG|JPG';
+                        $config['max_width'] = 0;
+                        $config['encrypt_name'] = true;
+                        $this->load->library('upload');
+                        $this->upload->initialize($config);
+                        if (!is_dir($config['upload_path'])) {
+                            mkdir($config['upload_path'], 0777, true);
+                        }
+
+                        if (!$this->upload->do_upload('bimage')) {
+                            $error = array('error' => $this->upload->display_errors());
+                            $this->session->set_flashdata('error', $this->upload->display_errors());
+                            redirect('project/update/'.$id.'/'.$cattype,'refresh');
+                        } else {
+                            $upload_data = $this->upload->data();
+                            $file_name  = $upload_data['file_name'];
+                            $banner    = 'banner-image/'.$file_name;
+
+                        }
+                    }
+
+
+                    $files = $_FILES;
+                    $filesCount = count($_FILES['brochure']['name']);
+                    if (file_exists($_FILES['brochure']['tmp_name'])) {
+                        $config['upload_path'] = '../brochure/';
+                        $config['allowed_types'] = 'PDF|pdf';
+                        $config['max_width'] = 0;
+                        $config['encrypt_name'] = true;
+                        $this->load->library('upload');
+                        $this->upload->initialize($config);
+                        if (!is_dir($config['upload_path'])) {
+                            mkdir($config['upload_path'], 0777, true);
+                        }
+
+                        if (!$this->upload->do_upload('brochure')) {
+                            $error = array('error' => $this->upload->display_errors());
+                            $this->session->set_flashdata('error', $this->upload->display_errors());
+                            redirect('project/update/'.$id.'/'.$cattype,'refresh');
+                        } else {
+                            $upload_data = $this->upload->data();
+                            $file_name  = $upload_data['file_name'];
+                            $pdf    = 'brochure/'.$file_name;
+
+                        }
+                    }
+
+
+
+
             $insert = array(
                 'detail' => $detail,
                 'cat_type' => str_replace("-"," ",$cattype),
                 'projectid' => $id,
-                'added_by'=>$this->session->userdata('ra_id')
+                'added_by'=>$this->session->userdata('ra_id'),
+                'transaction_type' => $t_type,
+                'project_type' => $type,
+                'poses_date' => $Pdate,
+                'cost' => $cost,
+
             );
+
+
+            if (!empty($banner)) {
+                $insert['banner'] = $banner;
+            }
+            if (!empty($pdf)) {
+                $insert['pdf'] = $pdf;
+            }
+
 
             $output = $this->m_project->insert_detail($insert);
             if (!empty($output)) {
-                $this->session->set_flashdata('Success', 'Project detail added successfully');            
+                $this->session->set_flashdata('success', 'Project detail added successfully');            
                 redirect('project/update/'.$id.'/'.$cattype,'refresh');       
             }else{
                 $this->session->set_flashdata('error', 'Something went wrong please try again later!');           
@@ -97,7 +172,7 @@ class Project extends CI_Controller {
     
                 $output = $this->m_project->insert_area($insert);
                 if (!empty($output)) {
-                    $this->session->set_flashdata('Success', 'Area Statement added successfully');            
+                    $this->session->set_flashdata('success', 'Area Statement added successfully');            
                     redirect('project/update/'.$id.'/'.$cattype,'refresh');       
                 }else{
                     $this->session->set_flashdata('error', 'Something went wrong please try again later!');           
@@ -140,16 +215,19 @@ class Project extends CI_Controller {
                     }
 
                         $insert = array(
-                            'masterimage'   => $imgpath,
                             'materplan'     => $materplan,
                             'cat_type'      => str_replace("-"," ",$cattype),
                             'projectid'     => $id,
                             'added_by'      => $this->session->userdata('ra_id')
                         );
 
+                        if (!empty($imgpath)) {
+                            $insert['masterimage'] = $imgpath;
+                        }
+
                         $output = $this->m_project->insert_master($insert);
                         if (!empty($output)) {
-                            $this->session->set_flashdata('Success', 'Master plan added successfully');            
+                            $this->session->set_flashdata('success', 'Master plan added successfully');            
                             redirect('project/update/'.$id.'/'.$cattype,'refresh');       
                         }else{
                             $this->session->set_flashdata('error', 'Something went wrong please try again later!');           
@@ -215,7 +293,7 @@ class Project extends CI_Controller {
             
             
             if (!empty($output) && !empty($output1)) {
-                $this->session->set_flashdata('Success', 'Floor plan added successfully');            
+                $this->session->set_flashdata('success', 'Floor plan added successfully');            
                 redirect('project/update/'.$id.'/'.$cattype,'refresh');       
             }else{
                 $this->session->set_flashdata('error', 'Something went wrong please try again later!');           
@@ -265,7 +343,7 @@ class Project extends CI_Controller {
            }
 
                if (!empty($output[0])) {
-                   $this->session->set_flashdata('Success', 'Amenities added successfully');            
+                   $this->session->set_flashdata('success', 'Amenities added successfully');            
                    redirect('project/update/'.$id.'/'.$cattype,'refresh');       
                }else{
                    $this->session->set_flashdata('error', 'Something went wrong please try again later!');           
@@ -324,7 +402,7 @@ class Project extends CI_Controller {
            }
            
            if (!empty($output[0])) {
-            $this->session->set_flashdata('Success', 'Gallery added successfully');            
+            $this->session->set_flashdata('success', 'Gallery added successfully');            
             redirect('project/update/'.$id.'/'.$cattype,'refresh');       
             }else{
                 $this->session->set_flashdata('error', 'Something went wrong please try again later!');           
@@ -349,18 +427,19 @@ class Project extends CI_Controller {
 
             $nearby = $this->input->post('i_title1');
             $pid     = $this->input->post('pid');
+
  
            $delete =  $this->m_project->delete_nearby($pid);
  
             for ($i=0; $i < count($nearby) ; $i++) { 
                  if (!empty($nearby[$i])) {
                      $insert = array('projectid' => $pid, 'nearby' => $nearby[$i]);
-                     $output[] = $this->m_project->insert_nearby($insert);
+                     $output = $this->m_project->insert_nearby($insert);
                  } 
             }
 
-            if (!empty($output[0])) {
-                $this->session->set_flashdata('Success', 'Gallery added successfully');            
+            if (!empty($output)) {
+                $this->session->set_flashdata('success', 'Gallery added successfully');            
                 redirect('project/update/'.$id.'/'.$cattype,'refresh');       
                 }else{
                     $this->session->set_flashdata('error', 'Something went wrong please try again later!');           
@@ -368,6 +447,61 @@ class Project extends CI_Controller {
                 }
 
 
+        }
+
+
+        public function gallery_delete($galId='',$id = '',$cattype='')
+        {
+
+            // send to model
+            if($this->m_project->gallery_delete($galId)){
+                $this->session->set_flashdata('success', 'Project Gallery Deleted Successfully');
+                redirect('project/update/'.$id.'/'.$cattype,'refresh');  // if you are redirect to list of the data add controller name here
+            }else{
+                $this->session->set_flashdata('error', 'Something went to wrong. Please try again later!');
+                redirect('project/update/'.$id.'/'.$cattype,'refresh');  // if you are redirect to list of the data add controller name here
+            }
+        }
+
+        public function floor_delete($fId='',$id = '',$cattype='')
+        {
+
+            // send to model
+            if($this->m_project->floor_delete($fId)){
+                $this->session->set_flashdata('success', 'Floor Plan Deleted Successfully');
+                redirect('project/update/'.$id.'/'.$cattype,'refresh');  // if you are redirect to list of the data add controller name here
+            }else{
+                $this->session->set_flashdata('error', 'Something went to wrong. Please try again later!');
+                redirect('project/update/'.$id.'/'.$cattype,'refresh');  // if you are redirect to list of the data add controller name here
+            }
+        }
+
+
+        public function am_delete($var = null)
+        { 
+           $aid = $this->input->get('aid');
+           $output = $this->m_project->am_delete($aid);
+           echo $output;           
+        }
+
+        public function near_delete($var = null)
+        { 
+           $id = $this->input->get('id');
+           $output = $this->m_project->near_delete($id);
+           echo $output;           
+        }
+
+
+
+        public function delete($id = " ",$cat=" ")
+        {
+            if($this->m_project->delete_project($id,str_replace("-"," ",$cat))){
+                $this->session->set_flashdata('success', 'Project Deleted Successfully');
+                redirect('project/manage','refresh');  // if you are redirect to list of the data add controller name here
+            }else{
+                $this->session->set_flashdata('error', 'Something went to wrong. Please try again later!');
+                redirect('project/manage','refresh');  // if you are redirect to list of the data add controller name here
+            }            
         }
     
 
