@@ -1,4 +1,5 @@
- <nav class="navbar paddind-navbar navbar-expand-lg  custom-navbar" id="navbar">
+<?php   $this->ci =& get_instance(); ?>
+<nav class="navbar paddind-navbar navbar-expand-lg  custom-navbar" id="navbar">
             <div class="container-fluid ">
                 <a class="navbar-brand navbar-brand-logo" href="#">
                     <img src="<?php echo base_url() ?>assets/img/logo.png" alt="logo"  > 
@@ -14,18 +15,42 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="about-us.php">ABOUT US</a>
                                 </li>
-                                <li class="nav-item">
-                                    <div class="dropdown">
-                                        <a class="nav-link  dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            PROJECTS
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item nav-link"  href="project-list.php">PROJECTS</a>
-                                            <a class="dropdown-item nav-link" href="#">Another action</a>
-                                            <a class="dropdown-item nav-link" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </li>
+
+                                <?php  
+                                $output = $this->ci->project->projects();
+                                
+                                  ?>
+                                <li class="nav-item dropdown">
+                                <a id="dLabel" role="button" data-toggle="dropdown" class="btn dropdown-toggle"
+                                   href="">
+                                   Projects
+                                </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                            <?php 		foreach ($output as $key => $value) {
+                                    if(!empty($value->child)){
+                                        echo ' <li class="dropdown-submenu"> <a class="dropdown-item con" tabindex="-1" href="#">'.$value->category.'</a>				
+                                        <ul class="dropdown-menu">';
+                                        foreach ($value->child as $ckey => $cvalue) {
+                                            if(!empty($cvalue->child)){
+                                                echo '<li class="dropdown-submenu"><a class="dropdown-item con" href="#">'.$cvalue->subcategory.'</a> 
+                                                <ul class="dropdown-menu">';
+                                                foreach ($cvalue->child as $cckey => $ccvalue) {
+                                                    echo ' <li><a class="dropdown-item" href="#">'.$ccvalue->supercategory.'</a></li>';
+                                                }
+                                                echo '</ul> </li>';						
+                                            }else{
+                                                echo ' <li><a class="dropdown-item" href="#">'.$cvalue->subcategory.'</a></li>';
+                                            }
+                                        }				
+                                        echo '</ul> </li>';
+                                    }else{
+                                        echo '<li><a class="dropdown-item" href="'.base_url('projects/').str_replace(" ","-",strtolower($value->category)).'?q='.$value->id.'&c=parent-category'.'">'.$value->category.'</a></li>';
+                                    }
+                                }?>
+                                    
+                                   
+                                </ul>
+                        </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">CAREER</a>
                                 </li>
@@ -34,24 +59,8 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">REAL ESTATE UPDATES</a>
-                        <li class="nav-item ">
-                            <a class="nav-link active" href="index">HOME </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about-us">ABOUT US</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="project-list">PROJECTS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="career">CAREER</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact-us">CONTACT US</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">REAL ESTATE UPDATES</a>
-                        </li>
+                                </li>
+                        
                     </ul>
                 </div>   
             </div>

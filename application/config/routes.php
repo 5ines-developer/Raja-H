@@ -10,3 +10,5 @@ $route['thank-you']  = 'home/thank_you';
 $route['sitemap']    = 'home/sitemap';
 $route['career']     = 'home/career';
 
+$route['projects/(:any)']     = 'projects/index/$1';
+

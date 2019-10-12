@@ -59,6 +59,7 @@ class Project extends CI_Controller {
             $type       = $this->input->post('prtype');
             $Pdate      = $this->input->post('Pdate');
             $cost       = $this->input->post('cost');
+            $c_type       = $this->input->post('c_type');
 
                     $this->load->library('upload');
                     $this->load->library('image_lib');
@@ -125,6 +126,7 @@ class Project extends CI_Controller {
                 'project_type' => $type,
                 'poses_date' => $Pdate,
                 'cost' => $cost,
+                'content_type'=>$c_type
 
             );
 
