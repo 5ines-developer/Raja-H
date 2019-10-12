@@ -8,4 +8,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['contact-us'] = 'home/contact';
 $route['thank-you']  = 'home/thank_you';
 $route['sitemap']    = 'home/sitemap';
+$route['career']     = 'home/career';
 

@@ -28,6 +28,13 @@ $(document).ready(function(){
       $("#dropdown4").css({'display':'block'});
     });
 
+    $('.droup-link .droup-link-item').click(function(){
+      $('.droupmenu').slideToggle();
+    });
+
+    if($('.droup-link').hasClass('active')){
+      $('.droupmenu').show();
+    }
   
 
 });

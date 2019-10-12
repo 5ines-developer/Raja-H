@@ -34,6 +34,23 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">REAL ESTATE UPDATES</a>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="index">HOME </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="project-list">PROJECTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="career">CAREER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact-us">CONTACT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">REAL ESTATE UPDATES</a>
                         </li>
                     </ul>
                 </div>   
