@@ -48,74 +48,50 @@
         <div class="job-detail">
             <h4 class="">Job Details</h4>
             <div class="row">
-                <div class="col-md-3 col-lg-3 col-sm-6 col-12 plr3">
-                    <div class="job-box">
-                        <h5>Associate product Manager</h4>
-                        <p><span>Exp -</span> 2.0 year</p>
-                        <p> <span>Location-</span> Banglore</p>
-                        <div class="">
-                        <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"> Know more</a>
-                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
+            
+                <?php  
+                    $option = '';
+                    foreach ($jobs as $key => $value) { 
+                    $option .= '<option value="'. $value->title.'" >'. $value->title.'</option>';
+                ?>
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-12 plr3">
+                        <div class="job-box">
+                            <h5><?php echo $value->title ?></h4>
+                            <p><span>Exp -</span> <?php echo $value->experience ?></p>
+                           <?php echo (!empty($value->location))? ' <p> <span>Location-</span> '.$value->location.'</p>' : ''  ?>
+                            <div class="">
+                            <a href="#" data-toggle="modal" data-target="#md<?php  echo $value->id ?>"> Know more</a>
+                                <div class="modal fade bd-example-modal-lg" tabindex="-1" id="md<?php  echo $value->id ?>" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <h4><?php  echo $value->title ?></h4>
+                                            <p><?php  echo $value->des ?></p>
+                                            
+                                            <div class="keytops">
+                                                <?php echo (!empty($value->experience))? '<p><b>Experience:</b> '.$value->experience.' </p>' : '' ?>
+                                                <?php echo (!empty($value->language))? '<p><b>Language:</b> '.$value->language.' </p>' : '' ?>
+                                                <?php echo (!empty($value->qualification))? '<p><b>Qualification:</b>  '.$value->qualification.' </p>' : '' ?>
+                                                <?php echo (!empty($value->skils))? '<p><b>Skils:</b> '.str_replace(',', ', ', $value->skils).' </p>' : '' ?>
+                                                <?php echo (!empty($value->location))? '<p><b>Location:</b>  '.$value->location.' </p>' : '' ?>
+                                            </div>
+
+                                            <div>
+                                                <?php echo (!empty($value->responsiblity))? '<h5>Responsiblity</h5> <p>'.$value->responsiblity.'</p>' : '' ?>
+                                                
+                                            </div>
+
+                                            <div>
+                                                <?php echo (!empty($value->responsiblity))? '<h5>Key Role</h5> <p>'.$value->key_role.'</p>' : '' ?>
+                                                
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-12 plr3">
-                    <div class="job-box">
-                        <h5>Associate product Manager</h4>
-                        <p><span>Exp -</span> 2.0 year</p>
-                        <p> <span>Location-</span> Banglore</p>
-                        <div class="">
-                        <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"> Know more</a>
-                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-12 plr3">
-                    <div class="job-box">
-                        <h5>Associate product Manager</h4>
-                        <p><span>Exp -</span> 2.0 year</p>
-                        <p> <span>Location-</span> Banglore</p>
-                        <div class="">
-                        <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"> Know more</a>
-                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-12 plr3">
-                    <div class="job-box">
-                        <h5>Associate product Manager</h4>
-                        <p><span>Exp -</span> 2.0 year</p>
-                        <p> <span>Location-</span> Banglore</p>
-                        <div class="">
-                        <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"> Know more</a>
-                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
         <div class="contact">
@@ -128,40 +104,41 @@
                 <div class="col-md-12 col-lg-12 col-sm-12 col-12">
                         <div class="row">
                             <div class="col-md-6 col-lg-7 col-sm-12 col-12 pad-r">
-                                <form action="">
+                                <form action="<?php echo base_url() ?>career" method="post" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                                <input type="text" class="form-control custom-form-control-career exp-m" placeholder="Name">
+                                                <input type="text" name="name" class="form-control custom-form-control-career exp-m" required placeholder="Name *">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                                <input type="text" class="form-control custom-form-control-career" placeholder="Email">
+                                                <input type="email" name="email" class="form-control custom-form-control-career" required placeholder="Email *">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <select  class="form-control custom-form-control-career" >
+                                        <select name="position"  class="form-control custom-form-control-career" required>
                                             <option value=""  selected="true" disabled="disabled" >Position Applied For</option>
-                                            <option value="" >Associate product Manager</option>
-                                            <option value="" >Associate product Manager</option>
+                                            <?php echo $option ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                                <input type="text" class="form-control custom-form-control-career exp-m" placeholder="Experience">
+                                                <input type="text" name="experience" class="form-control custom-form-control-career exp-m" placeholder="Experience *">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                                <input type="text" class="form-control custom-form-control-career" placeholder="Mobile No.">
+                                                <input type="text" name="phone" class="form-control custom-form-control-career" required placeholder="Mobile No *">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <!-- <input type="file" size="60" class="form-control custom-form-control-career" accept=".doc,.docx,.pdf" > -->
-                                        <label class="custom-file-input" for="Upload" /> <input id="Upload" type="file" multiple="multiple" name="_photos"accept=".doc,.docx,.pdf"  class="form-control custom-form-control-career" style="display:none">
+                                        <label  for="Upload" /> 
+                                            <input id="Upload" type="file" required name="file" accept=".doc,.docx,.pdf"  class="form-control custom-form-control-career">
+                                        </label>
                                     </div>
                                     <div class="form-group">
-                                        <textarea type="text" rows="4" class="form-control custom-form-control-career" placeholder="Message"></textarea>
+                                        <textarea type="text" name="msg" rows="4" class="form-control custom-form-control-career" placeholder="Message"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <button class="btn btn-send">Submit</button>

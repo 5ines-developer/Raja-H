@@ -36,7 +36,7 @@ class Career extends CI_Controller {
                 'responsiblity' => $this->input->post('responsiblity', true), 
                 'key_role' => $this->input->post('role', true), 
                 'des' => $this->input->post('desc', true), 
-                'creaderby' => $this->session->userdata('sha_id')
+                'creaderby' => $this->session->userdata('ra_id')
             );
             if($this->m_career->addJob($data)){
                 $this->session->set_flashdata('success', 'Successfully added');
