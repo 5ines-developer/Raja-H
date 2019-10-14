@@ -21,6 +21,9 @@ body {
 .full-price {
     color: #373131;
 }
+.mb12{
+    margin-bottom: 12px !important;
+}
 
 .project-title p {
     font-size: 14px;
@@ -346,7 +349,7 @@ background: #1aace1;
 
 .price {
     position: absolute;
-    bottom: 195px;
+   bottom: 145px;
     left: 20px;
     background: #000000a3;
     background-blend-mode: color;

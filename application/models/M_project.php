@@ -36,11 +36,32 @@ class M_project extends CI_Model {
         return $this->db->where('projectid', $id)->where('cat_type',$category)->get('projectdetail')->result();        
     }
 
+    public function floorGet($id='')
+    {
+        return $this->db->where('fprojectid', $id)->get('floorimage')->result();
+    }
+
+    public function galleryGet($id='')
+    {
+        return $this->db->where('projectid', $id)->get('gallery')->result();
+    }
+
+        public function amenityGet($id='')
+    {
+        return $this->db->where('projectid', $id)->get('amenity')->result();
+    }
+
+        public function nearbyGet($id='')
+    {
+        return $this->db->where('projectid', $id)->get('nearby')->result();
+    }
+
+
+
     public function categoryName($id = null,$cat='')
     {
         if ($cat == 'parent category') {
-            return $this->db->select('category as name')->where('id',$id)->get('category')->row('name');
-            
+            return $this->db->select('category as name')->where('id',$id)->get('category')->row('name');            
         }elseif($cat == 'sub category'){
             return $this->db->select('subcategory as name')->where('id',$id)->get('subcategory')->row('name');
         }elseif($cat == 'super category'){

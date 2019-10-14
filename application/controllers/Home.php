@@ -14,13 +14,19 @@ class Home extends CI_Controller {
 	{
 		$data['title'] = 'Home | Raja Housing';
 		$data['result'] = $this->m_home->bannerGet();
+		$data['feature'] = $this->m_home->featureGet();
 		$this->load->view('pages/index', $data);
 		
 	}
 
+	public function about($value='')
+	{
+		$data['title'] = 'About us | Raja Housing';
+		$this->load->view('pages/about-us', $data, FALSE);
+	}
+
 	public function contact()
 	{
-		
 		if($this->input->post()){
 			$data = array(
 				'name' 	=> $this->input->post('name', true), 
@@ -28,7 +34,7 @@ class Home extends CI_Controller {
 				'phone' => $this->input->post('phone', true), 
 				'subj' 	=> $this->input->post('sub', true), 
 				'msg' 	=> $this->input->post('msg', true), 
-			);
+			);			
 			if($this->m_home->contact($data)){
 				$this->sendMail($data);
 				redirect('thank-you','refresh');

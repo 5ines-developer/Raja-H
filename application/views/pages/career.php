@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
 </head>
 <body>
 <?php  $this->load->view('includes/header'); ?>
@@ -14,7 +14,7 @@
             <div class="container">
                 <div class=" text-center">
                     <h4>CAREER</h4>
-                    <P><a href="home.php" class="primary-page">Home </a><span class="seperator">/</span><span class="link-active"> career </span> </P>
+                    <P><a href="<?php echo base_url() ?>" class="primary-page">Home </a><span class="seperator">/</span><span class="link-active"> career </span> </P>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-12">
                     <div class="box-j text-center">
-                        <img src="assets/img/home-icon.png" alt="" class="img-fluid job-hicon">
+                        <img src="<?php echo base_url() ?>assets/img/home-icon.png" alt="" class="img-fluid job-hicon">
                         <p class="job-no">Jobs - 10</p>
                     </div>
                 </div>
@@ -39,8 +39,13 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                 <div class="project-title">
-                        <h4>EXPERIENCE</h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummyLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummyLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummyLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummyLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                        <h4>Career</h4>
+                        <p>Creating and providing opportunities is what we are all about. If you like to take on beyond the defined boundaries, are self-driven with the ability to learn and pick up the ropes fast there will always be an opportunity coming your way.</p>
+                        <p>At Raja Housing Ltd. we aim to deliver superior performance and market leadership through outstanding people. Our staff are initially selected for their talent and attitude, then trained and developed through taking responsibility to make a real impact on their projects and our overall performance.</p>
+                        <p>Working for Raja Housing Ltd., you will benefit from the flexibility such a large and broadly based company provides. You may start out on any one particular training program or with any one department; however opportunities will exist to move between offices, departments and market sectors throughout your career.</p>
+                        <p>We have constantly strived-:you joining hands with Raja Housing Ltd , you’ll be given every opportunity to explore your talents, strive for new challenges and succeed beyond what you perceived & you’ll be recognized and rewarded as you grow and win along with us. Our culture is open and inclusive; irrespective of your experience, but gauged on your talent you will immediately be welcomed into a team, and would always have a significant role to play.</p>
+                        <p>If you’re new to the workforce, our broad based footprint, wide reach, and broad exposure to the customer market provide a wide world of opportunity to launch your career in the right direction. We believe in the concept of “Grow with the organisation”.
+                        We foster supportive relationships that help develop skills, behaviour, and insights to enable you to attain your goals. Of global experience coupled with.</p>
                     </div>
                 </div>
             </div>

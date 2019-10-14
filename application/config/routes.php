@@ -9,6 +9,12 @@ $route['contact-us'] = 'home/contact';
 $route['thank-you']  = 'home/thank_you';
 $route['sitemap']    = 'home/sitemap';
 $route['career']     = 'home/career';
+$route['about-us']   = 'home/about';
 
-$route['projects/(:any)']     = 'projects/index/$1';
+$route['projects/(:any)']  = 'projects/index/$1';
+$route['project/(:any)']   = 'projects/projectList/$1';
+
+$route['project-enquiry']	= 'projects/contact';
+
+
 

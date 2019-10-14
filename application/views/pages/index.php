@@ -1,12 +1,17 @@
-<!DOCTYPE html>
+<?php $this->ci =& get_instance(); $this->load->model('m_project');
+ ?>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Raja Housing</title>
+  <title><?php echo $title ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/slick.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+  <style>{
+    .slick-slide img {width: 100%; min-height: 270px; } 
+  </style>
 </head>
 <body>
 <header>
@@ -50,7 +55,7 @@
             <div class="col-md-8 col-lg-5">
                 <div class="project-title pl15">
                     <h4>FEATURED PROJECT</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    <p>An ISO 9001:2015 Certified Company.</p>
                 </div>
             </div>
             <div class="col-md-7 col-lg-7"></div>
@@ -58,130 +63,37 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="three-time slider" data-sizes="">
-                    <div class="card">
-                        <a href="#">
+
+                <?php if (!empty($feature)) {
+                    foreach ($feature as $key => $value) { ?>
+
+                        <div class="card">
+                        <a target="_blank" href="<?php echo base_url('projects/').str_replace(" ","-",strtolower($this->ci->m_project->categoryName($value->projectid,$value->cat_type))).'?q='.$value->projectid.'&c='.$value->cat_type.'' ?>">
                         <div class="slide-card-container">
-                            <img src="<?php echo base_url() ?>assets/img/slider1.jpg" alt="" class="slimg">
-                            <div class="sale">
-                                    <ul class="f-sale">
-                                        <li > </li>
-                                        <li ><span class="sl">For sale</span> </li>
-                                    </ul>
-                                </div>
-                            <div class="price">
-                                <span class="total">$555.568</span><br>
-                                <span class="single">$5.348/sq.ft</span>
-                            </div>
-                            <div class="content">
-                                <p class="sl-title">LUXARY VILLA IN LEGO PARK</p>
-                                <p class="map-loc"><i class="fas fa-map-marker-alt"></i> <span>Drive Street,Loss Angeles, Us</span></p> 
-                                <p class="rooms">Bedroom : 3 Bathroom : 2 Sq Ft : 350</p>
-                                <p class="rooms">Single Family Home</p>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white">
-                            <div class="cd-icon">
-                                <i class="far fa-user"></i><span>Will Earnest</span>
-                            </div>
-                            <div class="cd-icon">
-                                <i class="far fa-calendar-alt"></i><span>9 month ago</span>
-                            </div>
-                        </div>
-                    </a>
-                    </div>        
-                    <div class="card">
-                        <a href="#">
-                        <div class="slide-card-container">
-                            <img src="<?php echo base_url() ?>assets/img/slider2.jpg" alt="" class="slimg">
+                            <img src="<?php echo (!empty($value->banner))?base_url().$value->banner:'https://via.placeholder.com/510x390' ?>" alt="" class="slimg">
                             <div class="sale">
                                 <ul class="f-sale">
-                                        <li ><span class="fl">Featured</span> </li>
-                                        <li ><span class="sl">For rent</span> </li>
+                                    <?php echo (!empty($value->featured_project))?'<li ><span class="fl">Featured</span> </li>':''; ?>
+                                    <li ><span class="sl"><?php echo (!empty($value->transaction_type))?$value->transaction_type:''; ?></span> </li>
                                 </ul>
                             </div>
-                            <div class="price">
-                                    <span class="total">$555.568</span><br>
-                                    <span class="single">$5.348/sq.ft</span>
-                                </div>
+                                    <?php echo (!empty($value->cost))?'<div class="price"><span class="total"> &#8377; '.$value->cost.'</span><br> </div>   ':''; ?>
                             <div class="content">
-                                <p class="sl-title">LUXARY VILLA IN LEGO PARK</p>
-                                <p class="map-loc"><i class="fas fa-map-marker-alt"></i> <span>Drive Street,Loss Angeles, Us</span></p> 
-                                <p class="rooms">Bedroom : 3 Bathroom : 2 Sq Ft : 350</p>
-                                <p class="rooms">Single Family Home</p>
+                                <p class="sl-title"><?php echo $this->ci->m_project->categoryName($value->projectid,$value->cat_type); ?></p>
+                                <p class="map-loc"><span><?php echo (!empty($value->city))?'<i class="fas fa-map-marker-alt"></i> '.$value->city:''; ?></span></p> 
+                                <p class="rooms">Project Type   : <?php echo (!empty($value->project_type))?$value->project_type:''; ?></p>
+                                <p class="rooms">Posession Date : <?php echo (!empty($value->poses_date))?$value->poses_date:''; ?></p>
                             </div>
                         </div>
-                        <div class="card-footer bg-white">
-                            <div class="cd-icon">
-                                <i class="far fa-user"></i><span>Will Earnest</span>
-                            </div>
-                            <div class="cd-icon">
-                                <i class="far fa-calendar-alt"></i><span>9 month ago</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div> 
-                    <div class="card">
-                        <a href="#">
-                        <div class="slide-card-container">
-                            <img src="<?php echo base_url() ?>assets/img/slider3.jpg" alt="" class="slimg">
-                            <div class="sale">
-                                    <ul class="f-sale">
-                                            <li > </li>
-                                            <li ><span class="sl">For sale</span> </li>
-                                    </ul>
-                                </div>
-                            <div class="price">
-                                    <span class="total">$555.568</span><br>
-                                    <span class="single">$5.348/sq.ft</span>
-                                </div>
-                            <div class="content">
-                                <p class="sl-title">LUXARY VILLA IN LEGO PARK</p>
-                                <p class="map-loc"><i class="fas fa-map-marker-alt"></i> <span>Drive Street,Loss Angeles, Us</span></p> 
-                                <p class="rooms">Bedroom : 3 Bathroom : 2 Sq Ft : 350</p>
-                                <p class="rooms">Single Family Home</p>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white">
-                            <div class="cd-icon">
-                                <i class="far fa-user"></i><span>Will Earnest</span>
-                            </div>
-                            <div class="cd-icon">
-                                <i class="far fa-calendar-alt"></i><span>9 month ago</span>
-                            </div>
-                        </div>
+                        
                         </a>
                     </div>
-                    <div class="card">
-                        <a href="#">
-                        <div class="slide-card-container">
-                            <img src="<?php echo base_url() ?>assets/img/slider2.jpg" alt=""  class="slimg">
-                            <div class="sale">
-                                    <ul class="f-sale">
-                                            <li ><span class="fl">Featured</span> </li>
-                                            <li ><span class="sl">For sale</span> </li>
-                                    </ul>
-                                </div>
-                            <div class="price">
-                                    <span class="total">$555.568</span><br>
-                                    <span class="single">$5.348/sq.ft</span>
-                                </div>
-                            <div class="content">
-                                <p class="sl-title">LUXARY VILLA IN LEGO PARK</p>
-                                <p class="map-loc"><i class="fas fa-map-marker-alt"></i> <span>Drive Street,Loss Angeles, Us</span></p> 
-                                <p class="rooms">Bedroom : 3 Bathroom : 2 Sq Ft : 350</p>
-                                <p class="rooms">Single Family Home</p>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white">
-                            <div class="cd-icon">
-                                <i class="far fa-user"></i><span>Will Earnest</span>
-                            </div>
-                            <div class="cd-icon">
-                                <i class="far fa-calendar-alt"></i><span>9 month ago</span>
-                            </div>
-                        </div>
-                        </a>
-                    </div>     
+                        
+                <?php   } }?>
+                           
+                     
+                    
+                        
                 </div>
             </div>
         </div>
@@ -194,10 +106,10 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="col-left">
                         <h1>About Raja Housing</h1>
-                        <p>ISO 9001:2015 certification is the quality management system certification </p>
-                        <p>Best ISO certification provides all the certifications of ISO ( ISO 9001:2015, ISO 14001:2015, OHSAS 18001:2007, ISO 13485:2016 etc.), Company Registration, MSME Registration, CE Certification, Trademark, VAPT testing & Website design and Development services. We help clients to maintain their system according to ISO standards so clients can improve their system and avail benefits.</p>
-                        <p>Best ISO certification provides all the certifications of ISO ( ISO 9001:2015, ISO 14001:2015, OHSAS 18001:2007, ISO 13485:2016 etc.), Company Registration, MSME Registration,.Best ISO certification provides all the certifications of ISO ( ISO 9001:2015, ISO 14001:2015, OHSAS 18001:2007, ISO 13485:2016 etc.), Company Registration, MSME Registration,.</p>
-                        <a href="#" class="custom-btn"> LEARN MORE</a>
+                        <p>The Raja Group has relished a enriching and ascending era in Bangalore. Started in 1890, when Bangalore was at a nascent stage and being actively involved in the exponential boom and development, we can confidently state the journey has been fulfilling and a wondrous learning experience. 
+                        <p>Initially Raja Group started trading Grains from which entered into a wide spectrum of other businesses like Silk, Jewellery, Automobiles, Hospitality and Software. Presiding a phenomenal success in these ventures, we identified the potential in the Real Estate market and decided to capitalize it. This marked the beginning of Raja Housing ltd.</p>
+                        
+                        <a href="<?php echo base_url('about-us') ?>" class="custom-btn"> LEARN MORE</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
