@@ -10,15 +10,15 @@
                 <div class="collapse navbar-collapse" id="navbarsExample05">
                     <ul class="navbar-nav ml-auto navbar-left custom-nav">
                             <li class="nav-item ">
-                                    <a class="nav-link  active" href="<?php echo ($this->uri->segment(1)=='' || $this->uri->segment(1) == 'home')?'active':' ';  ?>">HOME </a>
+                                    <a class="nav-link  <?php echo ($this->uri->segment(1)=='' || $this->uri->segment(1) == 'home')?'active':' ';  ?>" href="<?php echo base_url() ?>">HOME </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url('about-us') ?>">ABOUT US</a>
+                                    <a class="nav-link <?php echo ($this->uri->segment(1)=='about-us')?'active':' ';  ?>" href="<?php echo base_url('about-us') ?>">ABOUT US</a>
                                 </li>
 
                                 <?php $output = $this->ci->project->projects(); ?> 
                                 <li class="nav-item dropdown">
-                                <a id="dLabel" role="button" data-toggle="dropdown" class="btn dropdown-toggle"
+                                <a id="dLabel" role="button" data-toggle="dropdown" class="btn dropdown-toggle <?php echo ($this->uri->segment(1)=='project')?'active':' ';  ?>"
                                    href="">
                                    Projects
                                 </a>
@@ -49,10 +49,10 @@
                                 </ul>
                         </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url('career') ?>">CAREER</a>
+                                    <a class="nav-link <?php echo ($this->uri->segment(1)=='career')?'active':' ';  ?>" href="<?php echo base_url('career') ?>">CAREER</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact-us.php">CONTACT US</a>
+                                    <a class="nav-link <?php echo ($this->uri->segment(1)=='contact-us')?'active':' ';  ?>" href="<?php echo base_url('contact-us') ?>">CONTACT US</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">REAL ESTATE UPDATES</a>
