@@ -5,7 +5,7 @@
       <ul class="li-list ">
         <li class="<?php echo $this->uri->segment(1) == 'dashboard'?'active':''?>"> <a href="<?php echo base_url('dashboard') ?>"><i class="fab fa-delicious li-icon"></i>Dashboard</a></li>
         <li class="<?php echo $this->uri->segment(1) == 'banner'?'active':'' ?>"><a href="<?php echo base_url('banner/manage') ?>"><i class="far fa-image li-icon"></i>Banner</a></li>
-        <?php if ($this->session->userdata('ra_type') == '1') { ?>
+        <?php if ($this->session->userdata('ra_type') == '1' || $this->session->userdata('ra_type') == '3') {  ?>
             <li class="<?php echo $this->uri->segment(1) == 'adminuser'?'active':'' ?>"><a href="<?php echo base_url('adminuser/manage') ?>"><i class="fas fa-user-plus li-icon"></i>Admin User</a></li>
         <?php } ?>
         <li class="<?php echo $this->uri->segment(1) == 'category'?'active':'' ?>"><a href="<?php echo base_url('category/manage') ?>"><i class="fas fa-th-list li-icon"></i>Project Category</a></li>

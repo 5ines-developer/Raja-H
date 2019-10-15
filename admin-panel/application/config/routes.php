@@ -34,6 +34,12 @@ $route['adminuser/add']   			= 'Adminuser/add';
 $route['adminuser/edit/(:any)']  	= 'Adminuser/edit/$1'; 	
 $route['adminuser/delete/(:any)']  	= 'Adminuser/delete/$1';
 
+
+$route['adminuser/add-pass/(:any)/(:any)']  	= 'Adminuser/add_pass/$1/$2';
+
+
+
+
 //category
 $route['category/manage']   		= 'category/index'; 	
 $route['category/add']   			= 'category/add';

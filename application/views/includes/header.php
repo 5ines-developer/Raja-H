@@ -10,7 +10,7 @@
                 <div class="collapse navbar-collapse" id="navbarsExample05">
                     <ul class="navbar-nav ml-auto navbar-left custom-nav">
                             <li class="nav-item ">
-                                    <a class="nav-link active" href="<?php echo base_url() ?>">HOME </a>
+                                    <a class="nav-link  active" href="<?php echo ($this->uri->segment(1)=='' || $this->uri->segment(1) == 'home')?'active':' ';  ?>">HOME </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo base_url('about-us') ?>">ABOUT US</a>

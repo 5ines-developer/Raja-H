@@ -13,6 +13,7 @@ class Adminuser extends CI_Controller {
        //     redirect('dashboard','refresh');
        //  }
         $this->load->model('m_adminuser');
+        $this->load->library('bcrypt');
     }
 
     //manage sub admin
@@ -141,6 +142,61 @@ class Adminuser extends CI_Controller {
                 $this->session->set_flashdata('error', 'Some error occured please try again');
                 redirect('adminuser/edit/'.$id);
             }
+    }
+
+
+    // account activation
+    public function verify($var = null)
+    {
+       $regid = $this->input->get('regid');
+       $regmail = $this->input->get('regmail');
+       $newRegid = random_string('alnum', 50);
+       if($this->m_adminuser->activateAccount($regid, $newRegid,$regmail)){
+        $this->session->set_flashdata('success', 'Your account has been activated successfully. You can  login now. ');
+        redirect('adminuser/add-pass/'.$newRegid.'/'.$regmail,'refresh');
+       }else{
+        $this->session->set_flashdata('error', 'Activation link expired! <br> please request admin for activation link');
+        // redirect('login','refresh');
+        redirect('adminuser/add-pass/'.$newRegid.'/'.urlencode($regmail),'refresh');
+       }
+    }
+
+
+    public function add_pass($id='')
+    {
+        $data['id'] = $id;
+       $this->load->view('adminuser/add-pass', $data, FALSE);
+    }
+
+
+    public function update_pass()
+    {
+        $id     = $this->input->post('id');
+        $remail = $this->input->post('remail');
+        $this->form_validation->set_rules('remail', 'Email', 'required');
+        $this->form_validation->set_rules('password', 'New Password', 'required');
+        $this->form_validation->set_rules('cpassword', 'Confirm Password', 'required|matches[password]');
+        if ($this->form_validation->run() == false) {
+            $error = validation_errors();
+            $this->session->set_flashdata('error', $error);
+             redirect('adminuser/add-pass/'.$id.'/'.urlencode($remail),'refresh');
+        } else {
+            $newpass = $this->input->post('password');
+            $hash       = $this->bcrypt->hash_password($newpass);
+            $newid  =   random_string('alnum',20);
+            $datas = array(
+                    'reference_d' => $newid,
+                    'password' => $hash,
+                );
+
+            if ($this->m_adminuser->setPassword($datas, $remail,$id)) {
+                $this->session->set_flashdata('success', 'Password updated Successfully');
+                redirect('login', 'refresh');
+            } else {
+                $this->session->set_flashdata('error', 'Something went wrong, please try again later!.'); 
+                redirect('adminuser/add-pass/'.$id.'/'.urlencode($remail),'refresh');
+            }
+        }
     }
 
 }
