@@ -71,7 +71,7 @@
             
         
         </div>
-        <nav aria-label="...">
+        <!-- <nav aria-label="...">
                 <ul class="pagination custom-pagination">
                   <li class="page-item ">
                     <a class="page-link" href="#" tabindex="-1">PREV</a>
@@ -86,7 +86,7 @@
                     <a class="page-link" href="#">NEXT</a>
                   </li>
                 </ul>
-              </nav>
+              </nav> -->
     </div>
     
 </section>
