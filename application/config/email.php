@@ -11,7 +11,6 @@ $config['wordwrap'] = TRUE;
 
 // vendor registration 
 $config['to'] = 'shahirkm@5ine.in';
-$config['vr_cc'] = 'pargat.singh27@gmail.com';
 
 
 

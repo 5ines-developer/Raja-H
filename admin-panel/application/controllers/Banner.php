@@ -89,7 +89,7 @@ class Banner extends CI_Controller {
 
 
     // enquiry
-    public function enquiry($id)
+    public function enquiry($id='')
     {
         $data['title']  = 'Enquiry - Raja housing';
         if(!empty($id)){

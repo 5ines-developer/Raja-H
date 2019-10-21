@@ -76,11 +76,11 @@ class Authentication extends CI_Controller {
     {
         if ($this->session->userdata('ra_id') != '') {
             $data['title'] = 'Dashboard - Raja Housing';
-            // $data['enquiry'] = $this->m_authentication->getEnquiry();
-            // $data['vcount'] = $this->m_authentication->vendorCount();
-            // $data['uscount'] = $this->m_authentication->userCount();
-            // $data['vnenquirycount'] = $this->m_authentication->vnenquiryCount();
-            // $data['catcount'] = $this->m_authentication->categoryCount();
+            $data['enquiry'] = $this->m_authentication->getEnquiry();
+            $data['feature'] = $this->m_authentication->featureCount();
+            $data['enquirycount'] = $this->m_authentication->enquiryCount();
+            $data['adminuser'] = $this->m_authentication->adminUser();
+            $data['project'] = $this->m_authentication->projectcount();
             $this->load->view('pages/dashboard.php', $data);
         } else {
             $this->session->set_flashdata('error', 'Please login and try again');

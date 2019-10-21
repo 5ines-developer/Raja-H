@@ -26,6 +26,7 @@
               <li class="<?php echo $this->uri->segment(2) == 'applications'?'active':'' ?>"><a href="<?php echo base_url('career/applications') ?>">Applications</a></li>
             </ul>
       </li>
+      <li class="<?php echo $this->uri->segment(1) == 'offer'?'active':'' ?>"><a href="<?php echo base_url('offer/manage') ?>"><i class="far fa-image li-icon"></i>Special offer</a></li>
 
       </ul>
    </div>

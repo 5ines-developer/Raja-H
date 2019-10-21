@@ -81,31 +81,31 @@ class M_authentication extends CI_Model {
           //get enquiries
   public function getEnquiry($value='')
   {
-    return $this->db->order_by('id', 'desc')->get('contact')->result();
+    return $this->db->order_by('id', 'desc')->get('enquiry')->result();
   }
 
-  public function vendorCount($value='')
+  public function projectcount($value='')
   {
-    $result =  $this->db->get('vendor')->result();
+    $result =  $this->db->get('projectdetail')->result();
     return count($result);
   }
 
-  public function userCount($value='')
+  public function featureCount($value='')
   {
-    $this->db->where('su_is_active', '1');
-    $result =  $this->db->get('user')->result();
+    $this->db->where('featured_project', '1');
+    $result =  $this->db->get('projectdetail')->result();
     return count($result);
   }
 
-  public function vnenquiryCount($value='')
+  public function enquiryCount($value='')
   {
-    $result =  $this->db->get('vendor_enquiry')->result();
+    $result =  $this->db->get('enquiry')->result();
     return count($result);
   }
 
-  public function categoryCount($value='')
+  public function adminUser($value='')
   {
-    $result =  $this->db->get('category')->result();
+    $result =  $this->db->where('is_active','1')->get('admin')->result();
     return count($result);
   }
 

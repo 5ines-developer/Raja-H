@@ -69,7 +69,7 @@ class Project extends CI_Controller {
                     $filesCount = count($_FILES['bimage']['name']);
                     if (file_exists($_FILES['bimage']['tmp_name'])) {
                         $config['upload_path'] = '../banner-image/';
-                        $config['allowed_types'] = 'jpg|png|jpeg|PNG|JPEG|JPG';
+                        $config['allowed_types'] = 'jpg|png|jpeg|PNG|JPEG|JPG|gif';
                         $config['max_width'] = 0;
                         $config['encrypt_name'] = true;
                         $this->load->library('upload');
@@ -199,7 +199,7 @@ class Project extends CI_Controller {
                     $filesCount = count($_FILES['mimage']['name']);
                     if (file_exists($_FILES['mimage']['tmp_name'])) {
                         $config['upload_path'] = '../master-plan/';
-                        $config['allowed_types'] = 'jpg|png|jpeg';
+                        $config['allowed_types'] = 'jpg|png|jpeg|gif';
                         $config['max_width'] = 0;
                         $config['encrypt_name'] = true;
                         $this->load->library('upload');
@@ -268,7 +268,7 @@ class Project extends CI_Controller {
                     $_FILES['images']['error']    = $files['images']['error'][$i];
                     $_FILES['images']['size']     = $files['images']['size'][$i];                    
                     $config['upload_path']   = '../floor-plan/';
-                    $config['allowed_types'] = 'jpg|png|jpeg';
+                    $config['allowed_types'] = 'jpg|png|jpeg|gif';
                     $config['max_width']     = 0;
                     $config['encrypt_name']  = TRUE;
                     $this->load->library('upload');
@@ -378,7 +378,7 @@ class Project extends CI_Controller {
                    $_FILES['images']['error']    = $files['images']['error'][$i];
                    $_FILES['images']['size']     = $files['images']['size'][$i];                    
                    $config['upload_path']   = '../gallery/';
-                   $config['allowed_types'] = 'jpg|png|jpeg';
+                   $config['allowed_types'] = 'jpg|png|jpeg|gif';
                    $config['max_width']     = 0;
                    $config['encrypt_name']  = TRUE;
                    $this->load->library('upload');

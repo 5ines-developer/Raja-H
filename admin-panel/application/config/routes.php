@@ -72,6 +72,9 @@ $route['career/delete/(:any)']	    =	'career/delete/$1';
 $route['career/status/(:any)']	    =	'career/status/$1'; 
 $route['career/applications']	    =	'career/applications'; 
 
+//offer image
+$route['offer/manage']	                =	'offer/index';
+
 
 
  

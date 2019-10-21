@@ -43,7 +43,6 @@ class M_banner extends CI_Model {
         }else{
             return false;
         }
-
     }
 
     public function edit($id = null)
@@ -52,7 +51,7 @@ class M_banner extends CI_Model {
     }
 
     //enquiry
-    public function enquiry($id)
+    public function enquiry($id='')
     {
         if(!empty($id)){
             $this->db->where('id', $id);

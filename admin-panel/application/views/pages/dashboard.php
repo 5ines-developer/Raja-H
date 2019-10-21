@@ -42,6 +42,21 @@
                      <div class="dash-list">
 
                         <div class="row ">
+                            <div class="col l3 m6 s12">
+                              <a href="<?php echo base_url('category/manage') ?>">
+                                 <div class="list-dashboard white z-depth-0">
+                                    <div class="row m0">
+                                       <div class="col l3 m3 s3">
+                                          <div class="round light-green accent-4"><i class="fas fa-th-list   white-text"></i></div>
+                                       </div>
+                                       <div class="col l9 m9 s9">
+                                          <p class="h5-para1 black-text m0"><?php echo (!empty($project))?$project:'0'; ?> <i class="fas fa-chevron-circle-up green-text down-aro"></i></p>
+                                          <p class="para-p1 grey-text m0">Total Project</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </a>
+                           </div>
                            <div class="col l3 m6 s12">
                               <a href="<?php echo base_url('vendors/manage') ?>">
                                  <div class="list-dashboard white z-depth-0">
@@ -50,8 +65,8 @@
                                           <div class="round amber accent-4"><i class="fas fa-handshake  white-text"></i></div>
                                        </div>
                                        <div class="col l9 m9 s9">
-                                          <p class="h5-para1 black-text m0"><?php echo (!empty($vcount))?$vcount:'0'; ?>  <i class="fas fa-chevron-circle-up green-text down-aro"></i></p>
-                                          <p class="para-p1 grey-text m0">Total Vendors</p>
+                                          <p class="h5-para1 black-text m0"><?php echo (!empty($feature))?$feature:'0'; ?>  <i class="fas fa-chevron-circle-up green-text down-aro"></i></p>
+                                          <p class="para-p1 grey-text m0">Featured Projects</p>
                                        </div>
                                     </div>
                                  </div>
@@ -65,28 +80,14 @@
                                           <div class="round deep-purple lighten-1"><i class="fas fa-users  white-text"></i></div>
                                        </div>
                                        <div class="col l9 m9 s9">
-                                          <p class="h5-para1 black-text m0"><?php echo (!empty($uscount))?$uscount:'0'; ?>  <i class="fas fa-chevron-circle-up green-text down-aro"></i></p>
-                                          <p class="para-p1 grey-text m0">Registered Users</p>
+                                          <p class="h5-para1 black-text m0"><?php echo (!empty($adminuser))?$adminuser:'0'; ?>  <i class="fas fa-chevron-circle-up green-text down-aro"></i></p>
+                                          <p class="para-p1 grey-text m0">Admin Users</p>
                                        </div>
                                     </div>
                                  </div>
                               </a>
                            </div>
-                           <div class="col l3 m6 s12">
-                              <a href="<?php echo base_url('category/manage') ?>">
-                                 <div class="list-dashboard white z-depth-0">
-                                    <div class="row m0">
-                                       <div class="col l3 m3 s3">
-                                          <div class="round light-green accent-4"><i class="fas fa-th-list   white-text"></i></div>
-                                       </div>
-                                       <div class="col l9 m9 s9">
-                                          <p class="h5-para1 black-text m0"><?php echo (!empty($catcount))?$catcount:'0'; ?> <i class="fas fa-chevron-circle-up green-text down-aro"></i></p>
-                                          <p class="para-p1 grey-text m0">Total Categories</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
+                          
                            <div class="col l3 m6 s12">
                               <a href="<?php echo base_url('vendors/manage') ?>">
                                  <div class="list-dashboard white z-depth-0">
@@ -95,8 +96,8 @@
                                           <div class="round brown"><i class="fas white-text fa-handshake"></i></div>
                                        </div>
                                        <div class="col l9 m9 s9">
-                                          <p class="h5-para1 black-text m0"><?php echo (!empty($vnenquirycount))?$vnenquirycount:'0'; ?> <i class="fas fa-chevron-circle-up green-text down-aro"></i></p>
-                                          <p class="para-p1 grey-text m0">Vendor enquiry</p>
+                                          <p class="h5-para1 black-text m0"><?php echo (!empty($enquirycount))?$enquirycount:'0'; ?> <i class="fas fa-chevron-circle-up green-text down-aro"></i></p>
+                                          <p class="para-p1 grey-text m0">Enquiries</p>
                                        </div>
                                     </div>
                                  </div>
@@ -123,104 +124,9 @@
                                  <!-- <canvas id="myChart" width="100%" height="60"></canvas> -->
                               </div>
                            </div>
-                           <!-- <div class="col m4 s12 l4">
                            
-                              <div class="bar-line white">
-                                 <p class="h5-para-p1 ">Pending Employeer Approval</p>
-                                 <div class="row m0">
-                                    <div class="col s12">
-                                       <div class="list-height">
-                                          <div class="progress-bar-set">
-                                             <div class="title-bar">
-                                                <span>Active</span>
-                                             </div>
-                                             <div class="progress progress-app ">
-                                                <span class="determinate deter1" style="width: 30%"></span>
-                                             </div>
-                                             <div class="">
-                                                <span>30</span>
-                                             </div>
-                                          </div>
-
-                                          <div class="progress-bar-set">
-                                             <div class="title-bar">
-                                                <span>Pending</span>
-                                             </div>
-                                             <div class="progress progress-app ">
-                                                <span class="determinate deter2" style="width: 100%"></span>
-                                             </div>
-                                             <div class="">
-                                                <span>40</span>
-                                             </div>
-                                          </div>
-
-                                          <div class="progress-bar-set">
-                                             <div class="title-bar">
-                                                <span>Total</span>
-                                             </div>
-                                             <div class="progress progress-app ">
-                                                <span class="determinate deter3" style="width: 100%"></span>
-                                             </div>
-                                             <div class="">
-                                                <span>70</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <br>
                               
-                              <div class="bar-line white">
-                                 <p class="h5-para-p1 ">Candidate </p>
-                                 <div class="row m0" >
-                                    <div class="col s12">
-                                      
-                                       <div class="list-height">
-                                          <div class="progress-bar-set">
-                                             <div class="title-bar">
-                                                <span>Active</span>
-                                             </div>
-                                             <div class="progress progress-app ">
-                                                <span class="determinate deter1" style="width:10%"></span>
-                                             </div>
-                                             <div class="">
-                                                <span>10</span>
-                                             </div>
-                                          </div>
 
-                                          <div class="progress-bar-set">
-                                             <div class="title-bar">
-                                                <span>Pending</span>
-                                             </div>
-                                             <div class="progress progress-app ">
-                                                <span class="determinate deter2" style="width: 60%"></span>
-                                             </div>
-                                             <div class="">
-                                                <span>60</span>
-                                             </div>
-                                          </div>
-
-                                          <div class="progress-bar-set">
-                                             <div class="title-bar">
-                                                <span>Total</span>
-                                             </div>
-                                             <div class="progress progress-app ">
-                                                <span class="determinate deter3" style="width: 100%"></span>
-                                             </div>
-                                             <div class="">
-                                                <span>100</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div> -->
-                        <!-- </div>
-                     </div> -->
-
-                     <!-- chart-table -->
                      <!-- shorting -->
                      <div class="shorting-table">
                         <div class="row">
@@ -248,15 +154,15 @@
                                       foreach ($enquiry as $key => $value) { $count += 1;
                                       ?>
                                        <tr>
-                                            <td ><a href="<?php echo base_url('enquiries/view/'.$value->id.'') ?>"><?php echo (!empty($enquiry))?$count:'---'  ?></a></td>
-                                            <td ><a href="<?php echo base_url('enquiries/view/'.$value->id.'') ?>"><?php echo (!empty($value->name))?$value->name:'---'  ?></a></td>
-                                            <td ><a href="<?php echo base_url('enquiries/view/'.$value->id.'') ?>"><?php echo (!empty($value->email))?$value->email:'---'  ?></a></td>
-                                            <td ><a href="<?php echo base_url('enquiries/view/'.$value->id.'') ?>"><?php echo (!empty($value->phone))?$value->phone:'---'  ?></a></td>
-                                            <td ><a href="<?php echo base_url('enquiries/view/'.$value->id.'') ?>"><?php echo (!empty($value->subject))?$value->subject:'---'  ?></a></td>
-                                            <td><a href="<?php echo base_url('enquiries/view/'.$value->id.'') ?>"><?php echo (!empty($value->date))?date("M d, Y ", strtotime($value->date)):'---'; ?></a></td>
+                                            <td ><a href="<?php echo base_url('enquiry/'.$value->id.'') ?>"><?php echo (!empty($enquiry))?$count:'---'  ?></a></td>
+                                            <td ><a href="<?php echo base_url('enquiry/'.$value->id.'') ?>"><?php echo (!empty($value->name))?$value->name:'---'  ?></a></td>
+                                            <td ><a href="<?php echo base_url('enquiry/'.$value->id.'') ?>"><?php echo (!empty($value->email))?$value->email:'---'  ?></a></td>
+                                            <td ><a href="<?php echo base_url('enquiry/'.$value->id.'') ?>"><?php echo (!empty($value->phone))?$value->phone:'---'  ?></a></td>
+                                            <td ><a href="<?php echo base_url('enquiry/'.$value->id.'') ?>"><?php echo (!empty($value->subj))?$value->subj:'---'  ?></a></td>
+                                            <td><a href="<?php echo base_url('enquiry/'.$value->id.'') ?>"><?php echo (!empty($value->update_on))?date("M d, Y ", strtotime($value->update_on)):'---'; ?></a></td>
                                             <td class="action-btn  center-align">
                                               <!-- view user -->
-                                                <a href="<?php echo base_url('enquiries/view/'.$value->id.'') ?>"  class="blue hoverable"><i class="fas fa-eye "></i></i></a>
+                                                <a href="<?php echo base_url('enquiry/'.$value->id.'') ?>"  class="blue hoverable"><i class="fas fa-eye "></i></i></a>
                                               <!-- view user -->
                                             </td>
                                           

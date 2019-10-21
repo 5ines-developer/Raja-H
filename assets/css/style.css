@@ -1,11 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Bangers|Varela+Round&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Bangers|Varela+Round&display=swap'); */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css');
 
+
+/* @font-face {
+       font-family: noveRgular;
+    src: url(../font/ProximaNova-Regular.otf);
+} */
+/* @font-face {
+    font-family: noveLight;
+    src: url(../font/ProximaNovaAltLight.otf);
+}
+ */
 *,
 body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0px;
     margin: 0px;
+}
+h4,h2,h3,h5,h1{
+    font-family: font-family: Arial, Helvetica, sans-serif;
 }
 
 .project-title p,
@@ -123,8 +136,9 @@ body {
 
 .banner-title h1 {
     font-weight: bold;
-    font-size: 50px;
+    /* font-size: 50px; */
     letter-spacing: 3px;
+    font-size: 34px;
 }
 
 .banner-title p {
@@ -276,6 +290,7 @@ background: #1aace1;
 
 .content {
     padding: 20px 20px 3px;
+    min-height: 128px;
 }
 
 .sl-title {
@@ -316,6 +331,7 @@ background: #1aace1;
 
 .slimg {
     position: relative;
+    min-height: 200px;
 }
 
 .sale {
@@ -1508,6 +1524,16 @@ height: 200px;
 }
 
 @media (min-width:0px) and (max-width:575px) {
+
+    .carousel-caption h2{
+    font-size: 14px;
+    text-align: center;
+}
+.carousel-caption h1{
+    font-size: 15px;
+    text-align: center;
+}
+
     .mj-sitemap li::after {
         left: 0.9em;
     }
@@ -2281,3 +2307,15 @@ height: 200px;
 .dropdown-submenu:hover>.dropdown-menu {
     display: block;
 }
+
+     .img-banner::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: #0000007d;
+            position: absolute;
+        }
+.img-banner{position: relative}
+

@@ -116,7 +116,7 @@
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12">
                     <div class="git-contact">
-                        <a href="<?php echo base_url('contact-us')?>"> contact us</a>
+                        <a href="#"> contact us</a>
                     </div>
                 </div>
             </div>
