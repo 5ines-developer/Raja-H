@@ -2319,3 +2319,153 @@ height: 200px;
         }
 .img-banner{position: relative}
 
+/* home page popup and contact */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+    z-index: 112;
+    display: none;
+}
+
+.cnt a {
+    text-decoration: none;
+}
+
+.popup {
+    width: 100%;
+    margin: 0 auto;
+    display: none;
+    position: fixed;
+    z-index: 120;
+    top: 20px;
+}
+
+.cnt {
+
+    width: 70%;
+    margin: 0px auto;
+    background: #f3f3f3;
+    position: relative;
+    z-index: 130;
+    padding: 31px 44px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px #000;
+}
+
+.cnt p {
+    clear: both;
+    color: #555555;
+    /* text-align: justify; */
+    font-size: 14px;
+    font-family: sans-serif;
+    
+}
+.cnt h4{
+    padding-bottom: 10px inherit;
+
+padding-bottom: 10px;
+
+margin-bottom: 10px;
+
+border-bottom: 1px solid blue;
+
+text-align: center;
+
+font-size: 23px;
+
+font-weight: bold;
+}
+
+.cnt a {
+    text-decoration: none;
+    background: #2078d2;
+    padding: 9px 26px;
+    color: white !important;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.custom-modal .modal-content {
+    padding: 0px 0px;
+}
+
+.referal-form .form-control {
+    font-size: 12px;
+border-radius: 0px;
+height: 37px;
+border: 1px solid #ced4da85;
+}
+.referal-form h6{
+    border-bottom: 1px solid #8080807a;
+padding-bottom: 8px;
+margin-bottom: 14px;
+}
+.referal-form label{
+    margin-bottom: 4px;
+font-size: 12px;
+}
+.refer-btn{
+    color: white;
+background: #1aace1;
+font-size: 14px;
+padding: 13px 28px;
+border-radius: 3px;
+}
+@media (max-width:767px){
+    .cnt div{
+        overflow-x:scroll;
+    }
+    .cnt {
+    width: 90%;
+    padding: 31px 12px;
+}
+.refer-btn{
+    font-size: 12px;
+padding: 10px 15px;
+}
+}
+
+
+.text  .address span{
+    font-size: 16px;
+    font-weight: bold;
+    color: #373131;
+}
+.contact-secondary-title.address {
+    padding-bottom: 13px;
+}
+.contact-secondary-title a{
+    color: #272626;
+}
+.contact-secondary-title a:hover{
+    text-decoration: none;
+    color: #1aace1;
+}
+
+@media  (min-width:1199px) {
+ /* 21-10-18 */
+ .card.custom-card.contact {
+    min-height: 125px;
+}
+/* 21-10-18 */
+}
+
+@media (min-width: 992px) and (max-width:1199px) {
+
+    /* 21-10-18 */
+    .card.custom-card.contact {
+        min-height: 124px;
+        margin-bottom: 10px;
+    }
+    /* 21-10-18 */
+
+    }
+

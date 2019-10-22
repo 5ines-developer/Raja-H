@@ -23,62 +23,80 @@
  <section class="bottom-sec">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-lg-4 col-sm-12  col-12">
-                <h4 class="opt-title">Book By Phone</h4>
-                <div class="card custom-card contact">
-                    <div class="row">
-                        <div class="col-3 col-sm-3 col-md-12 col-lg-3">
-                            <div class="icon ct">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                        </div>
-                        <div class="col-9 col-sm-9 col-md-12 col-lg-9">
-                            <div class="text">
-                                <p class="opt-title-in">Phone</p>
-                                <p class="contact-secondary-title">9590 779 922<br>9090 989 897</p>
-                                
-                            </div>
-                        </div>
+                <div class="col-md-12  mb-2">
+                    <div class="text">
+                        <p class="contact-secondary-title address"> <span>ADDRESS : </span> Raja Housing Ltd , Raja Mahalakshmi
+                            Building ,
+                            F-2, # 12, Basappa Road, Shanthi Nagar,Bangalore-560 027.</p>
                     </div>
+
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-sm-12  col-12">
-                    <h4 class="opt-title">Location Address</h4>
+
+                <div class="col-md-4 col-lg-4 col-sm-12  col-12 mb-2">
+                    <!-- <h4 class="opt-title">Book By Phone</h4> -->
                     <div class="card custom-card contact">
                         <div class="row">
                             <div class="col-3 col-sm-3 col-md-12 col-lg-3">
                                 <div class="icon ct">
-                                    <i class="fas fa-map-marker-alt"></i>
+                                    <i class="fas fa-cash-register"></i>
                                 </div>
                             </div>
                             <div class="col-9 col-sm-9 col-md-12 col-lg-9">
                                 <div class="text">
-                                    <p class="opt-title-in">Address</p>
-                                    <p class="contact-secondary-title">Raja Mahalakshami, F-2, # 12, Basappa Road, Shantinagar,Banglore-560 027</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-sm-12  col-12">
-                    <h4 class="opt-title">Give Your Feedback</h4>
-                    <div class="card custom-card contact">
-                        <div class="row">
-                            <div class="col-3 col-sm-3 col-md-12 col-lg-3">
-                                <div class="icon ct">
-                                    <i class="far fa-envelope"></i>
-                                </div>
-                            </div>
-                            <div class="col-9 col-sm-9 col-md-12 col-lg-9">
-                                <div class="text">
-                                    <p class="opt-title-in">Email</p>
-                                    <p class="contact-secondary-title">Sales@rajahousingltd.com,<br>Crm@rajahousingltd.com</p>
+                                    <p class="opt-title-in">SALES</p>
+                                    <p class="contact-secondary-title">9590779922 <br> 080-49409970 <br>Email: <a
+                                            href="mailto:sales@rajahousingltd.com">sales@rajahousingltd.com</a> </p>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        </div>
+
+                <div class="col-md-4 col-lg-4 col-sm-12  col-12 mb-2">
+                    <!-- <h4 class="opt-title">Give Your Feedback</h4> -->
+                    <div class="card custom-card contact">
+                        <div class="row">
+                            <div class="col-3 col-sm-3 col-md-12 col-lg-3">
+                                <div class="icon ct">
+                                    <i class="far fa-handshake"></i>
+                                </div>
+                            </div>
+                            <div class="col-9 col-sm-9 col-md-12 col-lg-9">
+                                <div class="text">
+                                    <p class="opt-title-in">CRM </p>
+                                    <p class="contact-secondary-title">
+                                        9902025582<br>Email: <a
+                                            href="mailto:hr@rajahousingltd.com">hr@rajahousingltd.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-sm-12  col-12 mb-2">
+                    <!-- <h4 class="opt-title">Give Your Feedback</h4> -->
+                    <div class="card custom-card contact">
+                        <div class="row">
+                            <div class="col-3 col-sm-3 col-md-12 col-lg-3">
+                                <div class="icon ct">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                            </div>
+                            <div class="col-9 col-sm-9 col-md-12 col-lg-9">
+                                <div class="text">
+                                    <p class="opt-title-in">CAREER </p>
+                                    <p class="contact-secondary-title">
+                                        09902025582<br>Email: <a
+                                            href="mailto: crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
         <div class="contact">
             <div class="row">
                 <div class="col-md-12">

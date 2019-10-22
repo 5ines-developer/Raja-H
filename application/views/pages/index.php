@@ -255,93 +255,96 @@
 
         <div class="container">
 
-            <div class="row">
-
-                <div class="col-md-12 col-lg-8">
-
-                    <div class="project-title">
-
-                        <div class="row">
-
-                            <div class="col-md-12 col-lg-8">
-
-                                <h4>AWESOME FEATURES</h4>
-
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-
+             <div class="row">
+                    <div class="col-md-12 col-lg-8">
+                        <div class="project-title">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-8">
+                                    <h4>RHl - REFERRAL BONUS</h4>
+                                    <p>Choose Your Neighbors, and Get Rewards Bonus.</p>
+                                </div>
                             </div>
-
                         </div>
-
+                        <form action="" class="referal-form">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <h6>REGISTRATION FORM</h6>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label>YOUR NAME :</label>
+                                        <input type="text" class="form-control" placeholder="Your Name">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label>YOU ARE :</label>
+                                        <select type="text" class="form-control" placeholder="YOUR NAME">
+                                                <option value="">Select</option>
+                                            <option value="">MALE</option>
+                                            <option value="">FEMALE</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label>MOBILE NO :</label>
+                                            <input type="text" class="form-control" placeholder="Mobile Number">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label>EMAIL ID :</label>
+                                            <input type="text" class="form-control" placeholder="Email ID" />
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="row ">
+                                    <div class="col-md-12">
+                                        <h6>FRIEND DETAIL</h6>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label>FRIEND NAME :</label>
+                                            <input type="text" class="form-control" placeholder="Friend Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label>YOUR FRIEND'S PREFERRED CITY :</label>
+                                            <select type="text" class="form-control" placeholder="YOUR NAME">
+                                                    <option value="">Select</option>
+                                                <option value="">BANGLORE</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <label>MOBILE NO :</label>
+                                                <input type="text" class="form-control" placeholder="Mobile Number">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <label>EMAIL ID :</label>
+                                                <input type="text" class="form-control" placeholder="Email ID" />
+                                            </div>
+                                        </div>
+                                        <div class=" col-md-12">
+                                                <div class="form-group">
+                                                    <button type="button" class="btn refer-btn">REFER A FRIEND</button>
+                                                </div>
+                                            </div>
+                                </div>
+                        </form>
                         
-
                     </div>
-
-                    <div class="row ">
-
-                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-
-                            <p><span><i class="fas fa-chair f-icon"></i></span><span class="f-title">Full Furnished</span></p>
-
-                            <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
-
-                        </div>
-
-                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-
-                            <p><span><i class="fas fa-paint-roller f-icon"></i></span><span class="f-title">Royal Touch Paint</span></p>
-
-                            <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
-
-                        </div>
-
-                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-
-                            <p><span><i class="fas fa-tape f-icon"></i></span><span class="f-title">Latest Interior Design</span></p>
-
-                            <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
-
-                        </div>
-
-                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-
-                                <p><span><i class="fas fa-user-secret f-icon"></i></span><span class="f-title">Non Stop Security</span></p>
-
-                                <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
-
-                            </div>
-
-                            <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-
-                                <p><span><i class="fas fa-tree f-icon"></i></span><span class="f-title">Living Inside a nature</span></p>
-
-                                <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
-
-                            </div>
-
-                            <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-
-                                <p><span><i class="fas fa-hammer f-icon"></i></span><span class="f-title">Luxurious Fitting </span></p>
-
-                                <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
-
-                        </div>
-
+                    <div class="col-md-12 col-lg-4 text-center mtimg">
+                        <!-- <div class="f-img">
+                            <img src="assets/img/Referral-Program.png" alt="" class="img-fluid"> 
+                        </div> -->
                     </div>
-
                 </div>
-
-                <div class="col-md-12 col-lg-4 text-center mtimg">
-
-                    <div class="f-img">
-
-                        <img src="<?php echo base_url() ?>assets/img/f-img.jpg" alt="" class="img-fluid">
-
-                    </div>
-
-                </div>
-
-            </div>
 
         </div>
 
@@ -546,116 +549,80 @@
     <div class="container">
 
         <div class="row">
-
-            <div class="col-md-4 col-lg-4 col-sm-12  col-12">
-
-                <h4 class="opt-title">Book By Phone</h4>
-
-                <div class="card custom-card">
-
-                    <div class="row">
-
-                        <div class="col-3 col-sm-3 col-md-12 col-lg-3">
-
-                            <div class="icon">
-
-                                <i class="fas fa-phone-alt"></i>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-9 col-sm-9 col-md-12 col-lg-9">
-
+                        <div class="col-md-12  mb-2">
                             <div class="text">
-
-                                <p class="opt-title-in">+91-23232-2345-234</p>
-
-                                <p class="secondary-title">Booking time: 09:00 - 20:00 hrs</p>
-
+                                <p class="contact-secondary-title address"> <span>ADDRESS : </span> Raja Housing Ltd , Raja Mahalakshmi
+                                    Building ,
+                                    F-2, # 12, Basappa Road, Shanthi Nagar,Bangalore-560 027.</p>
                             </div>
-
+        
                         </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4 col-lg-4 col-sm-12  col-12">
-
-                    <h4 class="opt-title">Location Address</h4>
-
-                    <div class="card custom-card">
-
-                        <div class="row">
-
-                            <div class="col-3 col-sm-3 col-md-12 col-lg-3">
-
-                                <div class="icon">
-
-                                    <i class="fas fa-map-marker-alt"></i>
-
+        
+                        <div class="col-md-4 col-lg-4 col-sm-12  col-12 mb-2">
+                            <!-- <h4 class="opt-title">Book By Phone</h4> -->
+                            <div class="card custom-card contact">
+                                <div class="row">
+                                    <div class="col-3 col-sm-3 col-md-12 col-lg-3">
+                                        <div class="icon ct">
+                                            <i class="fas fa-cash-register"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-9 col-sm-9 col-md-12 col-lg-9">
+                                        <div class="text">
+                                            <p class="opt-title-in">SALES</p>
+                                            <p class="contact-secondary-title">9590779922 <br> 080-49409970 <br>Email: <a
+                                                    href="mailto:sales@rajahousingltd.com">sales@rajahousingltd.com</a> </p>
+        
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
-
-                            <div class="col-9 col-sm-9 col-md-12 col-lg-9">
-
-                                <div class="text">
-
-                                    <p class="opt-title-in">Address</p>
-
-                                    <p class="secondary-title">Booking time: 09:00 - 20:00 hrs</p>
-
-                                </div>
-
-                            </div>
-
                         </div>
-
-                    </div>
-
-            </div>
-
-            <div class="col-md-4 col-lg-4 col-sm-12  col-12">
-
-                    <h4 class="opt-title">Give Your Feedback</h4>
-
-                    <div class="card custom-card">
-
-                        <div class="row">
-
-                            <div class="col-3 col-sm-3 col-md-12 col-lg-3">
-
-                                <div class="icon">
-
-                                    <i class="far fa-envelope"></i>
-
+        
+                        <div class="col-md-4 col-lg-4 col-sm-12  col-12 mb-2">
+                            <!-- <h4 class="opt-title">Give Your Feedback</h4> -->
+                            <div class="card custom-card contact">
+                                <div class="row">
+                                    <div class="col-3 col-sm-3 col-md-12 col-lg-3">
+                                        <div class="icon ct">
+                                            <i class="far fa-handshake"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-9 col-sm-9 col-md-12 col-lg-9">
+                                        <div class="text">
+                                            <p class="opt-title-in">CRM </p>
+                                            <p class="contact-secondary-title">
+                                                9902025582<br>Email: <a
+                                                    href="mailto:hr@rajahousingltd.com">hr@rajahousingltd.com</a></p>
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
-
-                            <div class="col-9 col-sm-9 col-md-12 col-lg-9">
-
-                                <div class="text">
-
-                                    <p class="opt-title-in">feedback@propeety.com</p>
-
-                                    <p class="secondary-title">Help us improve</p>
-
-                                </div>
-
-                            </div>
-
                         </div>
-
+        
+                        <div class="col-md-4 col-lg-4 col-sm-12  col-12 mb-2">
+                            <!-- <h4 class="opt-title">Give Your Feedback</h4> -->
+                            <div class="card custom-card contact">
+                                <div class="row">
+                                    <div class="col-3 col-sm-3 col-md-12 col-lg-3">
+                                        <div class="icon ct">
+                                            <i class="fas fa-running"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-9 col-sm-9 col-md-12 col-lg-9">
+                                        <div class="text">
+                                            <p class="opt-title-in">CAREER </p>
+                                            <p class="contact-secondary-title">
+                                                09902025582<br>Email: <a
+                                                    href="mailto: crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+        
                     </div>
-
-                </div>
-
-        </div>
 
         <div class="contact">
 
@@ -732,20 +699,84 @@
 <?php  $this->load->view('includes/footer'); ?>
 
 
+ <!-- popup -->
+    <div class='popup'>
+        <div class='cnt'>
+            <div >
+            <h4>Thank you for visiting Raja Housing Ltd Website</h4>
+            <p>We wish to inform you that our website is being revised and updated in line with RERA requirements.
+                Hence, the images, stock photos, architect’s perspective of the rendered elevation etc., should be
+                deemed to be or constitute, solicitations & marketing offer including within the rules and
+                regulations set
+                under the purview of the RERA. You are therefore requested to verify directly, all details and aspects
+                of
+                any proposed plans to book with RHL staff. Since this process of updating our website will be on for
+                some time, we request your continued co-operation till we complete the updating process. Please note,
+                that we will not be accepting any bookings or allotments based on the images, material, stock
+                photography, projections, details, descriptions that are currently available and/or displayed on the
+                website.
+            </p>
+            <p>
+                You are therefore requested to directly verify all details and aspects of any proposed
+                booking/acquisition of units/premises, directly with our authorized representatives or please call 9590
+                779 922.
+            </p>
+            <p>
+                We thank you for your patience and understanding.”
+            </p>
+            <a class="agree">I agree</a>
+            </div>
+        </div>
+    </div>
+    <!-- offer  -->
+    <div class="modal fade custom-modal" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+               
+                <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <a href="">
+                    <img src="https://rukminim1.flixcart.com/flap/480/480/image/97487bbbf8bd7737.jpg" alt="" width="100%" height="auto">
+                    </a>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+ <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
  <script src="<?php echo base_url() ?>assets/js/slick.js"></script>
 
  <script src="<?php echo base_url() ?>assets/js/numscroller-1.0.js"></script>
 
  <script src="<?php echo base_url() ?>assets/js/script.js"></script>
+     <script type='text/javascript'>
+    $(function() {
+        var overlay = $('<div id="overlay"></div>');
+        overlay.show();
+        overlay.appendTo(document.body);
+        $('.popup').show();
+        $('.agree').click(function() {
+            $('.popup ').hide();
+            $('#overlay ').hide();
+            setTimeout(() => {
+                $('#exampleModalCenter').modal('show')
+            }, 1500);
+        });
+    });
+    </script>
 
 </body>
 
