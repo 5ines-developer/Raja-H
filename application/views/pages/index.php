@@ -729,7 +729,10 @@
         </div>
     </div>
     <!-- offer  -->
-    <div class="modal fade custom-modal" id="exampleModalCenter" tabindex="-1" role="dialog"
+    <?php 
+    if (!empty($offer)) { ?>
+
+        <div class="modal fade custom-modal" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -739,14 +742,15 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <a href="">
-                    <img src="https://rukminim1.flixcart.com/flap/480/480/image/97487bbbf8bd7737.jpg" alt="" width="100%" height="auto">
+                    <img src="<?php echo (!empty($offer))?base_url().$offer->image:''; ?>" alt="" width="100%" height="auto">
                     </a>
                   
                 </div>
             </div>
         </div>
     </div>
-
+        
+    <?php } ?>
 
 
  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->

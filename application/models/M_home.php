@@ -74,6 +74,12 @@ class M_home extends CI_Model {
 		return $this->db->where('featured_project', '1')->get('projectdetail')->result();
 	}
 
+
+	public function offerGet($value='')
+	{
+		return $this->db->where('status', '1')->get('offer')->row();
+	}
+
 }
 
 /* End of file M_home.php */

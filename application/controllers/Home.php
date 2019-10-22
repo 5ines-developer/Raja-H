@@ -12,9 +12,10 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = 'Home | Raja Housing';
-		$data['result'] = $this->m_home->bannerGet();
-		$data['feature'] = $this->m_home->featureGet();
+		$data['title'] 		= 'Home | Raja Housing';
+		$data['result'] 	= $this->m_home->bannerGet();
+		$data['feature'] 	= $this->m_home->featureGet();
+		$data['offer'] 		= $this->m_home->offerGet();
 		$this->load->view('pages/index', $data);
 		
 	}
