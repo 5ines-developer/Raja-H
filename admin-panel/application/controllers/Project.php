@@ -26,11 +26,11 @@ class Project extends CI_Controller {
     }
     
     //load view page to update project
-    public function update($id = '',$type='')
+    public function update($id = '',$type='',$name="")
     {
         $data['title']      = 'Project | Raja Housing';   
-        $data['result']     = $this->m_project->projectGet($id,str_replace("-"," ",$type)); 
-
+        $data['result']     = $this->m_project->projectGet($id,str_replace("-"," ",$type));
+        $data['name']       = $name;
         if (!empty( $data['result'])) {
             $data['floor']      = $this->m_project->floorimage($data['result']->id); 
             $data['amenity']    = $this->m_project->amenityGet($data['result']->id); 
@@ -62,6 +62,7 @@ class Project extends CI_Controller {
             $c_type     = $this->input->post('c_type');
             $f_project  = $this->input->post('f_project');
             $city       = $this->input->post('city');
+            $name       = $this->input->post('name');
 
                     $this->load->library('upload');
                     $this->load->library('image_lib');
@@ -143,13 +144,13 @@ class Project extends CI_Controller {
             }
 
 
-            $output = $this->m_project->insert_detail($insert);
+            $output = $this->m_project->insert_detail($insert,$name);
             if (!empty($output)) {
                 $this->session->set_flashdata('success', 'Project detail added successfully');            
-                redirect('project/update/'.$id.'/'.$cattype,'refresh');       
+                redirect('project/update/'.$id.'/'.$cattype.'/'.$name,'refresh');       
             }else{
                 $this->session->set_flashdata('error', 'Something went wrong please try again later!');           
-                redirect('project/update/'.$id.'/'.$cattype,'refresh');    
+                redirect('project/update/'.$id.'/'.$cattype.'/'.$name,'refresh');       
             }
         }
         

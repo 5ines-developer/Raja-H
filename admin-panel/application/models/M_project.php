@@ -61,15 +61,34 @@ class M_project extends CI_Model {
 	}
 
 
-	public function insert_detail($insert = null)
+	public function insert_detail($insert = null,$name='')
 	{
+		
 		$this->db->where('projectid', $insert['projectid']);
-		$query = $this->db->get('projectdetail');
-		if ($query->num_rows() > 0) {
+		$query = $this->db->get('projectdetail')->row();
+		if (!empty($query)) {
 			$this->db->where('projectid', $insert['projectid']);
-			return $this->db->update('projectdetail', $insert);
+			$this->db->update('projectdetail', $insert);
+			$insert_id = $query->id;
 		}else{
-			return $this->db->insert('projectdetail', $insert);	
+			$this->db->insert('projectdetail', $insert);
+			$insert_id = $this->db->insert_id();	
+		}	
+		$name = array('page' => $name);
+
+		$this->inser_seo($name,$insert_id);
+		return true;
+	}
+
+	public function inser_seo($name='',$insert_id='')
+	{
+		$this->db->where('project_id', $insert_id);
+		$query = $this->db->get('seo');
+		if ($query->num_rows() > 0) {
+			$this->db->where('project_id', $insert_id);
+			return $this->db->update('seo', $name);
+		}else{
+			return $this->db->insert('seo', $name);	
 		}	
 	}
 

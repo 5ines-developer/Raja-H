@@ -91,7 +91,7 @@
 
                                       <td class="action-btn  center-align">
                                               <!-- view user -->
-                                                <a href="<?php echo base_url('project/update/'.$value->cid.'/parent-category') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
+                                                <a href="<?php echo base_url('project/update/'.$value->cid.'/parent-category/'.str_replace(" ","-",$value->cname).'') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
                                               <!-- view user -->
                                               <!-- delete user -->
                                                 <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('project/delete/'.$value->cid.'/parent-category') ?>" class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
@@ -116,7 +116,7 @@
 
                                       <td class="action-btn  center-align">
                                               <!-- view user -->
-                                                <a href="<?php echo base_url('project/update/'.$value1->subid.'/sub-category') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
+                                                <a href="<?php echo base_url('project/update/'.$value1->subid.'/sub-category/'.str_replace(" ","-",$value1->sname).'') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
                                               <!-- view user -->
                                               <!-- delete user -->
                                                 <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('project/delete/'.$value1->subid.'/sub-category') ?>" class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
@@ -140,7 +140,7 @@
 
                                        <td class="action-btn  center-align">
                                                 <!-- view user -->
-                                                <a href="<?php echo base_url('project/update/'.$value2->supid.'/super-category') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
+                                                <a href="<?php echo base_url('project/update/'.$value2->supid.'/super-category/'.str_replace(" ","-",$value2->supName).'') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
                                                 <!-- view user -->
                                                 <!-- delete user -->
                                                 <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('project/delete/'.$value2->supid.'/super-category') ?>" class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>

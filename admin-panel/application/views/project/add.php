@@ -193,6 +193,7 @@ padding: 3px 10px 3px 10px;
                                         <div class="row m0">
                                             <p class="bold  black-text  mb10 h6">Project Detail</p>
                                         </div>
+                                        <input type="hidden" name="name" value="<?php echo str_replace("-"," ",$name) ?>">
                                         <div class="row m0">
                                                 <div class="input-field col s12 l6">
                                                     <select name="t_type" id="t_type">

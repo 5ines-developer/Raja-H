@@ -61,7 +61,7 @@ $route['category/sup-delete/(:any)/(:any)/(:any)/(:any)']  	= 'category/deleteSu
 
 //project 
 $route['project/manage']   		        = 'project/index';
-$route['project/update/(:any)/(:any)']  = 'project/update/$1/$2'; 	
+$route['project/update/(:any)/(:any)/(:any)']  = 'project/update/$1/$2/$3'; 	
 $route['project/delete/(:any)/(:any)']  = 'project/delete/$1/$2'; 	
 
 $route['career']	                =	'career'; 
@@ -73,7 +73,10 @@ $route['career/status/(:any)']	    =	'career/status/$1';
 $route['career/applications']	    =	'career/applications'; 
 
 //offer image
-$route['offer/manage']	                =	'offer/index';
+$route['offer/manage']				=	'offer/index';
+
+//seo
+$route['seo/manage']				=	'seo/index';
 
 
 

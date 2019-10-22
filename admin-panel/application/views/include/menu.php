@@ -27,6 +27,7 @@
             </ul>
       </li>
       <li class="<?php echo $this->uri->segment(1) == 'offer'?'active':'' ?>"><a href="<?php echo base_url('offer/manage') ?>"><i class="far fa-image li-icon"></i>Special offer</a></li>
+      <li class="<?php echo $this->uri->segment(1) == 'seo'?'active':'' ?>"><a href="<?php echo base_url('seo/manage') ?>"><i class="fab fa-digital-ocean li-icon"></i>SEO</a></li>
 
       </ul>
    </div>

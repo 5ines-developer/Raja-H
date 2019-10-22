@@ -40,7 +40,7 @@
                             
 
                             <div class="row m0">
-                                <div class="col 12 m6"><p class="h5-para black-text m0">Edit Offer</p>
+                                <div class="col 12 m6"><p class="h5-para black-text m0">Edit SEO</p>
                                 </div>
 
                                   <div class="col 12 m6 right-align">

@@ -41,17 +41,8 @@
 
                     <div class="row">
                                 <div class="col 12 m6">
-                                    <p class="h5-para black-text m0">Special Offer</p>
+                                    <p class="h5-para black-text m0">SEO</p>
                                 </div>
-
-                                <?php 
-                                if (empty($result)) { ?>
-                                  <div class="col 12 m6 right-align">
-                                    <a href="<?php echo base_url('offer/add')  ?>" class="waves-effect waves-light btn green darken-4 white-text hoverable "><i class="fas fa-plus left"></i> ADD offer</a>
-                                </div>
-                                <?php }
-                                 ?>
-                                
                             </div>
 
                      
@@ -64,46 +55,34 @@
                         <div>
                            <div class="col l12 m12 s12">
                               <div class="">
-                                 <p class="h5-para-p2">Manage offer</p>
+                                 <p class="h5-para-p2">Manage SEO</p>
                                 <table id="dynamic" class="striped">
                                     <thead>
                                        <tr class="tt">
-                                          <th id="b" class="h5-para-p2" width="100px">Image</th>
-                                          <th id="c" class="h5-para-p2" width="120px">link</th>
-                                          <th id="c" class="h5-para-p2" width="120px">Date</th>
+                                          <th id="a" class="h5-para-p2" width="130px">Sl No.</th>
+                                          <th id="b" class="h5-para-p2" width="100px">Page</th>
+                                          <th id="b" class="h5-para-p2" width="100px">Date</th>
                                           <th id="g" class="h5-para-p2" width="62px">Action</th>
                                        </tr>
                                     </thead>
                                     <tbody>
 
-                                      <?php
-                                        if (!empty($result)) {
-                                        $img = (!empty($result->image))?$result->image:''; 
-                                         $id = (!empty($result->id))?$result->id:''; 
-                                         $date = (!empty($result->date))?$result->date:''; 
-
-                                        ?>
-
+                                    <?php if (!empty($result)) { $count = 0; foreach ($result as $key => $value) { $count = $count+1; ?>
                                       <tr>
+                                        <td ><?php echo (!empty($result))?$count:'---'  ?></td>
+                                        <td ><?php echo (!empty($value->page))?ucfirst($value->page):'---'  ?></td>
+                                        <td ><?php echo date('d M, y', strtotime($value->page))  ?></td>
 
-                                            <td ><img class="table-image" src="<?php echo $this->config->item('web_url').$img ?>" alt="image"></td>
-                                            <td ><?php echo (!empty($result->link))?$result->link:'---'  ?></td>
-                                            <td ><?php echo date('d M, Y' , strtotime($date))  ?></td>
-                                            
-                                            <td class="action-btn  center-align">
-                                              <!-- view user -->
-                                                <a target="_blank" href="<?php echo base_url('offer/edit/'.$id.'') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
-                                              <!-- view user -->
-                                              <!-- delete user -->
-                                            <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('offer/delete/'.$id.'') ?> " class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a> 
-                                                <!-- delete user -->
-
-                                                
-                                            </td>
-                                          
+                                        <td class="action-btn  center-align">
+                                          <!-- view user -->
+                                          <a href="<?php echo base_url('seo/edit/'.$value->id.'') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
+                                          <!-- view user -->
+                                          <!-- delete user -->
+                                          <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('seo/delete/'.$value->id.'') ?> " class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
+                                          <!-- delete user -->
+                                        </td>
                                         </tr>
-                                      <?php } ?>
-                                      
+                                    <?php } } ?>
                                     </tbody>
                                  </table>
                               </div>
