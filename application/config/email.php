@@ -10,7 +10,7 @@ $config['charset'] = 'iso-8859-1';
 $config['wordwrap'] = TRUE;
 
 // vendor registration 
-$config['to'] = 'shahirkm@5ine.in';
+$config['to'] = 'hr@rajahousingltd.com';
 
 
 

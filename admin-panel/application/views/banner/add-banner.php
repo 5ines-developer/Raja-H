@@ -74,9 +74,7 @@
                                                     </div>
                                                     <h6 class=" m0"><small> <i><b>Note</b>: Please select only image file (eg: .jpg, .png, .jpeg etc.) <br> <span class="bold">Max file size:</span> 512kb  </i> <span class="red-text">*</span></small></h6>
                                                 </div>
-                                                <div id="upload-demo" style="padding: 0;"></div>
                                             </div>
-                                            <input name="fimagecheck" class="fimagecheck" type="hidden" value="">
 
                                             
 
@@ -133,63 +131,6 @@
                 city: "Please enter a city",
             }
         });
-
-
-        $uploadCrop = $('#upload-demo').croppie({
-            enableExif: true,
-            viewport: {
-                width: 700,
-                height: 300,
-                type: 'box'
-            },
-            boundary: {
-                width: 750,
-                height: 350
-            }
-        });
-
-
-        $('#upload').on('change', function() {
-            $('.fimagecheck').val($('.fimagecheck').val() + '1');
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $uploadCrop.croppie('bind', {
-                    url: e.target.result
-                }).then(function() {
-                    console.log('jQuery bind complete');
-                });
-            }
-            reader.readAsDataURL(this.files[0]);
-        });
-
-        $('.upload-result').on('click', function(ev) {
-          ev.preventDefault();
-          ;
-
-          $(".loder-box").css("display", "flex");
-
-            $uploadCrop.croppie('result', {
-                type: 'canvas',
-                size: 'viewport',
-                format : 'jpeg',
-                quality: 1
-
-
-            }).then(function(resp) {
-              var alt = $("#alt").val()
-              if (alt == '') {
-                    alert('Image title is required');
-
-                } else {
-                  $('.ipimg').val(resp);
-                  $('#city-form').submit();
-                }
-            });
-            
-
-
-        });
-
     });
     </script>
         

@@ -30,22 +30,34 @@ class Banner extends CI_Controller {
 
     public function insert($var = null)
     {
-         $data       = $this->input->post('image');
         $banner_id  = $this->input->post('banner_id');
         $alt      = $this->input->post('alt');
         $subtitle      = $this->input->post('subtitle');
-        $fimagecheck      = $this->input->post('fimagecheck');
-        
 
-        if (!empty($data)) {
-            list($type, $data) = explode(';', $data);
-            list(, $data)      = explode(',', $data);
-            $data = base64_decode($data);
-            $imageName = time().'.png';
-
-            file_put_contents('../banner/'.$imageName, $data);
-            
+        $this->load->library('upload');
+        $this->load->library('image_lib');
+        $files = $_FILES;
+        if (file_exists($_FILES['banner']['tmp_name'])) {
+        $config['upload_path'] = '../banner/';
+        $config['allowed_types'] = 'jpg|png|jpeg|PNG|JPEG|JPG|gif';
+        $config['max_width'] = 0;
+        $config['encrypt_name'] = true;
+        $this->load->library('upload');
+        $this->upload->initialize($config);
+        if (!is_dir($config['upload_path'])) {
+        mkdir($config['upload_path'], 0777, true);
         }
+        if (!$this->upload->do_upload('banner')) {
+        $error = array('error' => $this->upload->display_errors());
+        $this->session->set_flashdata('error', $this->upload->display_errors());
+        redirect('banner/manage','refresh');
+        } else {
+        $upload_data = $this->upload->data();
+        $file_name  = $upload_data['file_name'];
+        $banner    = 'banner/'.$file_name;
+        }
+        }
+        
 
         $insert = array(
 			'uniq' 		=>	$banner_id,
@@ -54,8 +66,8 @@ class Banner extends CI_Controller {
 			'subtitle'    =>  $subtitle,
             );
 
-        if (!empty($fimagecheck)) {
-            $insert['image'] = 'banner/'.$imageName;
+        if (file_exists($_FILES['banner']['tmp_name'])) {
+            $insert['image'] = $banner;
         }
        
         $result = $this->m_banner->insert($insert);

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><?php echo $title ?></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php  $this->load->view('includes/meta'); ?>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/slick.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
 </head>
 <body>
+ <?php  $this->load->view('includes/gscript'); ?>
  <?php  $this->load->view('includes/header'); ?>
 
  <section class="main-about main-about-img">
@@ -40,7 +39,7 @@
         </div>
     </div>
    
-    <div class="numcount">
+   <!--  <div class="numcount">
         <div class="container">
             <din class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-6">
@@ -77,7 +76,7 @@
                 </div>
             </din>
         </div>
-    </div>
+    </div> -->
  </section>
  <section class="about-detail">
     <div class="container">
@@ -116,7 +115,7 @@
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12">
                     <div class="git-contact">
-                        <a href="#"> contact us</a>
+                        <a href="#"> Download Brochure</a>
                     </div>
                 </div>
             </div>

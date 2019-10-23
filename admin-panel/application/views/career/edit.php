@@ -10,6 +10,12 @@
       <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/materialize.min.css">
       <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/style.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <style>
+        .city-edit-image {
+    width: 150px !important;
+    height: auto;
+}
+      </style>
       
    </head>
    <body>

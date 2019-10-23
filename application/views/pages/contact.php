@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Raja Housing</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php  $this->load->view('includes/meta'); ?>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
 </head>
 <body>
+<?php  $this->load->view('includes/gscript'); ?>
 <?php  $this->load->view('includes/header'); ?>
 
  <section class="main-about main-contact-img">
@@ -66,8 +65,7 @@
                                 <div class="text">
                                     <p class="opt-title-in">CRM </p>
                                     <p class="contact-secondary-title">
-                                        9902025582<br>Email: <a
-                                            href="mailto:hr@rajahousingltd.com">hr@rajahousingltd.com</a></p>
+                                        9902025582<br>Email: <a href="mailto:crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
                                 </div>
                             </div>
                         </div>
@@ -87,8 +85,7 @@
                                 <div class="text">
                                     <p class="opt-title-in">CAREER </p>
                                     <p class="contact-secondary-title">
-                                        09902025582<br>Email: <a
-                                            href="mailto: crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
+                                        09902025582<br>Email: <a href="mailto: hr@rajahousingltd.com">hr@rajahousingltd.com</a></p>
                                 </div>
                             </div>
                         </div>

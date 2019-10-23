@@ -8,11 +8,7 @@
 
 <head>
 
-  <title><?php echo $title ?></title>
-
-  <meta charset="utf-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php  $this->load->view('includes/meta'); ?>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -24,12 +20,16 @@
 
     .slick-slide img {width: 100%; min-height: 270px; } 
 
+
+
   </style>
 
 
 </head>
 
 <body>
+     <?php  $this->load->view('includes/gscript'); ?>
+    
 
 <header>
 
@@ -58,12 +58,13 @@
 
                 <div class="carousel-item <?php echo $key=='0'?'active':'' ?>">
                 <div class="img-banner">
-                <img class="d-block w-100" src="<?php echo (!empty($value->image))?base_url().$value->image:''; ?>" alt="First slide"></div>
+                <img class="d-block w-100" src="<?php echo (!empty($value->image))?base_url().$value->image:''; ?>" alt="<?php echo (!empty($value->alt))?$value->alt:'';?>">
+            </div>
                     <div class="carousel-caption d-none d-md-block d-flex h-50 align-items-center justify-content-center">
                         <div>
+                        <h1><?php echo (!empty($value->subtitle))?strtoupper($value->subtitle):'';?></h1>
                         <h2><?php echo (!empty($value->alt))?ucfirst($value->alt):'';?></h2>
                             
-                        <h1><?php echo (!empty($value->subtitle))?strtoupper($value->subtitle):'';?></h1>
                         </div>
                     </div>
                 </div>
@@ -131,13 +132,17 @@
 
                         <div class="slide-card-container">
 
-                            <img src="<?php echo (!empty($value->banner))?base_url().$value->banner:'https://via.placeholder.com/510x390' ?>" alt="" class="slimg">
+                            <div class="fet-image">
+                                <img src="<?php echo (!empty($value->banner))?base_url().$value->banner:'https://via.placeholder.com/510x390' ?>" alt="<?php echo $this->ci->m_project->categoryName($value->projectid,$value->cat_type); ?>" class="slimg">
+                            </div>
+
+                            
 
                             <div class="sale">
 
                                 <ul class="f-sale">
 
-                                    <?php echo (!empty($value->featured_project))?'<li ><span class="fl">Featured</span> </li>':''; ?>
+                                    <?php echo (!empty($value->f_tag))?'<li ><span class="fl">'.$value->f_tag.'</span> </li>':'<li ><span class="fl">Featured</span> </li>'; ?>
 
                                     <li ><span class="sl"><?php echo (!empty($value->transaction_type))?$value->transaction_type:''; ?></span> </li>
 
@@ -250,8 +255,56 @@
         </div>
 
     </div>
-
     <div class="feature-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="project-title">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-8">
+                                <h4>AWESOME FEATURES</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row ">
+                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
+                            <p><span><i class="fas fa-chair f-icon"></i></span><span class="f-title">Full Furnished</span></p>
+                            <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
+                            <p><span><i class="fas fa-paint-roller f-icon"></i></span><span class="f-title">Royal Touch Paint</span></p>
+                            <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
+                            <p><span><i class="fas fa-tape f-icon"></i></span><span class="f-title">Latest Interior Design</span></p>
+                            <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
+                                <p><span><i class="fas fa-user-secret f-icon"></i></span><span class="f-title">Non Stop Security</span></p>
+                                <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-4 mtf">
+                                <p><span><i class="fas fa-tree f-icon"></i></span><span class="f-title">Living Inside a nature</span></p>
+                                <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-4 mtf">
+                                <p><span><i class="fas fa-hammer f-icon"></i></span><span class="f-title">Luxurious Fitting </span></p>
+                                <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4 text-center mtimg">
+                    <div class="f-img">
+                        <img src="<?php echo base_url() ?>assets/img/f-img.jpg" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="feature-sec">
 
         <div class="container">
 
@@ -340,17 +393,17 @@
                         
                     </div>
                     <div class="col-md-12 col-lg-4 text-center mtimg">
-                        <!-- <div class="f-img">
+                         <div class="f-img">
                             <img src="assets/img/Referral-Program.png" alt="" class="img-fluid"> 
-                        </div> -->
+                        </div> 
                     </div>
                 </div>
 
         </div>
 
-    </div>
+    </div> -->
 
-    <div class="numcount">
+   <!--  <div class="numcount">
 
         <div class="container">
 
@@ -424,7 +477,7 @@
 
         </div>
 
-    </div>
+    </div> -->
 
  </section>
 
@@ -440,7 +493,7 @@
 
                     <h4>TESTIMONIALS</h4>
 
-                    <p>Why Raja Housing! <a href="#">View</a></p>
+                    <p>Why Raja Housing!</p>
 
                 </div>
 
@@ -456,19 +509,15 @@
 
                                 <div class="card-container">
 
-                                    <img src="<?php echo base_url() ?>assets/img/test1.jpg" alt="">
+                                    <img src="<?php echo base_url() ?>assets/images/images.jpg" alt="">
 
-                                    <p class="test-name">Lucas</p>
+                                    <p class="test-name">Mr.Ramesh Babu</p>
 
                                     <i class="quotes">
 
-                                       <q id="q"> Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply dummy text of the printing</q>
+                                       <q id="q"> I sincerely thank and apreciate all the staff including the owners & developers of Raja Housing Ltd for making me a proud & satisfied owner of a beatiful home.</q>
 
                                     </i>
-
-                                    <p class="author">-Ramasy</p>
-
-                                    <p class="test-l">Business 2 People 1 Places Miles</p>
 
                                 </div>
 
@@ -482,19 +531,15 @@
 
                                 <div class="card-container">
 
-                                    <img src="<?php echo base_url() ?>assets/img/test2.jpg" alt="">
+                                    <img src="<?php echo base_url() ?>assets/images/images.jpg" alt="">
 
-                                    <p class="test-name">Lucas</p>
+                                    <p class="test-name">MS.Janaki</p>
 
                                     <i class="quotes">
 
-                                            <q id="q"> Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply dummy text of the printing</q>
+                                            <q id="q"> Raja Housing have built us a beautiful flat which is our dream home. Everything in our flat was perfectly structured. It has been a pleasure working with Raja Housing and we hope to remain this relationship.</q>
 
                                     </i>
-
-                                    <p class="author">-Ramasy</p>
-
-                                    <p class="test-l">Business 2 People 1 Places Miles</p>
 
                                 </div>
 
@@ -508,20 +553,15 @@
 
                             <div class="card-container">
 
-                                <img src="<?php echo base_url() ?>assets/img/test3.jpg" alt="">
+                                <img src="<?php echo base_url() ?>assets/images/images.jpg" alt="">
 
-                                <p class="test-name">Lucas</p>
+                                <p class="test-name">Mr.Gopal Varma</p>
 
                                 <i class="quotes">
 
-                                        <q id="q"> Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply dummy text of the printing</q>
+                                        <q id="q"> Raja Housing was extremely supportive during my home buying process. Being a first time buyer I was tense and had a lot of questions. Raja Housing team were extremely supportive and constantly patient with me. I will suggest Raja Housing to everyone I know.</q>
 
                                 </i>
-
-                                <p class="author">-Ramasy</p>
-
-                                <p class="test-l">Business 2 People 1 Places Miles</p>
-
                                 </div>
 
                             </div>
@@ -592,8 +632,7 @@
                                         <div class="text">
                                             <p class="opt-title-in">CRM </p>
                                             <p class="contact-secondary-title">
-                                                9902025582<br>Email: <a
-                                                    href="mailto:hr@rajahousingltd.com">hr@rajahousingltd.com</a></p>
+                                                9902025582<br>Email: <a href="mailto:crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -613,8 +652,7 @@
                                         <div class="text">
                                             <p class="opt-title-in">CAREER </p>
                                             <p class="contact-secondary-title">
-                                                09902025582<br>Email: <a
-                                                    href="mailto: crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
+                                                09902025582<br>Email: <a href="mailto: hr@rajahousingltd.com">hr@rajahousingltd.com</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -735,14 +773,14 @@
         <div class="modal fade custom-modal" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: #f2f2f2;">
                
                 <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <a href="">
-                    <img src="<?php echo (!empty($offer))?base_url().$offer->image:''; ?>" alt="" width="100%" height="auto">
+                    <img class="offre-image" src="<?php echo (!empty($offer))?base_url().$offer->image:''; ?>" alt="" width="100%" height="auto">
                     </a>
                   
                 </div>

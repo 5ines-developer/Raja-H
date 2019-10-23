@@ -154,18 +154,18 @@
                                     <div class="form-container">
                                           <div class="row m0">
                                              <h6 class="seo-title">Scripts</h6>
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="gmanager" name="gmanager" class="validate"  value="<?php echo (!empty($result->g_tag))?$result->g_tag:''; ?>">
+                                                <div class="input-field col s12 l12">
+                                                  <textarea id="gmanager" name="gmanager" class="materialize-textarea"><?php echo (!empty($result->g_tag))?$result->g_tag:''; ?></textarea>
                                                   <label for="gmanager">Google Tag manager <span class="red-text">*</span></label>
                                                 </div>
 
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="ganalytics" name="ganalytics" class="validate"  value="<?php echo (!empty($result->g_analytics))?$result->g_analytics:''; ?>">
+                                                <div class="input-field col s12 l12">
+                                                  <textarea id="ganalytics" name="ganalytics" class="materialize-textarea"><?php echo (!empty($result->g_analytics))?$result->g_analytics:''; ?></textarea>
                                                   <label for="ganalytics">Google Analytics <span class="red-text">*</span></label>
                                                 </div>
 
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="schema" name="schema" class="validate"  value="<?php echo (!empty($result->schema))?$result->schema:''; ?>">
+                                                <div class="input-field col s12 l12">
+                                                  <textarea id="schema" name="schema" class="materialize-textarea"><?php echo (!empty($result->schema))?$result->schema:''; ?></textarea>
                                                   <label for="schema">Schema Script   <span class="red-text">*</span></label>
                                                 </div>
 

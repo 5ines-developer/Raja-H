@@ -222,9 +222,8 @@ padding: 3px 10px 3px 10px;
                                                   <input type="text" id="city" name="city" class="validate" value="<?php echo (!empty($result->city))?$result->city:''; ?>">
                                                   <label for="city">City<span class="red-text">*</span></label>
                                             </div>
-                                        </div>
-                                        <div class="row m0">
-                                                <div class="input-field col s12 l6">
+
+                                            <div class="input-field col s12 l6">
                                                     <select name="c_type" id="c_type" required>
                                                     <option value="">Choose content type </option>
                                                     <option value="1" <?php echo (!empty($result->content_type) && $result->content_type =='1')?'selected':''; ?>>Content</option>
@@ -233,6 +232,10 @@ padding: 3px 10px 3px 10px;
                                                     </select>
                                                     <label for="c_type">Content Type <span class="red-text">*</span></label>
                                                 </div>
+
+                                        </div>
+                                        <div class="row m0">
+                                                
                                                 <div class="input-field col s12 l6">
                                                     <select name="f_project" id="f_project" required>
                                                     <option value="">Choose Featured Project type </option>
@@ -240,6 +243,11 @@ padding: 3px 10px 3px 10px;
                                                     <option value="2" <?php echo (!empty($result->featured_project) && $result->featured_project =='2')?'selected':''; ?>>No</option>
                                                     </select>
                                                     <label for="f_project">Featured Project<span class="red-text">*</span></label>
+                                                </div>
+
+                                                <div class="input-field col s12 l6">
+                                                  <input type="text" id="tagname" name="tagname" class="validate" value="<?php echo (!empty($result->f_tag))?$result->f_tag:''; ?>">
+                                                  <label for="tagname">Featured Tag Name</label>
                                                 </div>
                                                 
                                                 

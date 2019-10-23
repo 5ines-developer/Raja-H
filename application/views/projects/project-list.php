@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Raja Housing</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <?php  $this->load->view('includes/meta'); ?>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
   <style>
@@ -13,6 +11,7 @@
   </style>
 </head>
 <body>
+   <?php  $this->load->view('includes/gscript'); ?>
  <?php $this->load->view('includes/header.php'); ?>
 
  <section class="main-about main-project-img">

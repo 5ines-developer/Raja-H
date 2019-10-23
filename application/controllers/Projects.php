@@ -20,6 +20,8 @@ class Projects extends CI_Controller {
         $category = str_replace("-"," ",$category);
         $output = $this->m_project->projectGet($id,$category,$name);
 
+        $data['seo']        = $this->m_home->seoGet($name);
+
         if (!empty($output)) {
            foreach ($output as $key => $value) {
                 $value->floor   = $this->m_project->floorGet($value->id);
@@ -40,6 +42,7 @@ class Projects extends CI_Controller {
         $sub    = $this->input->get('c'); 
         $sub    = str_replace("-"," ",$sub);
         $name   = str_replace("-"," ",$name);
+        $data['seo']        = $this->m_home->seoGet($name);
         $output = $this->db->where('subcategory',$id)->get('supercategory')->result();
         $category = 'super category';
         if (!empty($output)) {

@@ -24,6 +24,7 @@
             <ul class="droupmenu">
               <li class="<?php echo $this->uri->segment(1) == 'career'?'active':'' ?>"><a href="<?php echo base_url('career') ?>">Jobs</a></li>
               <li class="<?php echo $this->uri->segment(2) == 'applications'?'active':'' ?>"><a href="<?php echo base_url('career/applications') ?>">Applications</a></li>
+              <li class="<?php echo $this->uri->segment(2) == 'image'?'active':'' ?>"><a href="<?php echo base_url('career/image') ?>">Career Image</a></li>
             </ul>
       </li>
       <li class="<?php echo $this->uri->segment(1) == 'offer'?'active':'' ?>"><a href="<?php echo base_url('offer/manage') ?>"><i class="far fa-image li-icon"></i>Special offer</a></li>

@@ -80,6 +80,12 @@ class M_home extends CI_Model {
 		return $this->db->where('status', '1')->get('offer')->row();
 	}
 
+
+	public function seoGet($page='')
+	{
+		return $this->db->where('page', $page)->get('seo')->row();
+	}
+
 }
 
 /* End of file M_home.php */

@@ -3,13 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Raja Housing</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+     <?php  $this->load->view('includes/meta'); ?>
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/lightbox.min.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/slick.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css" />
@@ -18,6 +13,7 @@
     </style>
   </head>
   <body>
+     <?php  $this->load->view('includes/gscript'); ?>
     <?php $this->load->view('includes/header.php'); ?>
 
     <?php if (!empty($result)) { foreach ($result as $key => $value) { ?>
@@ -76,7 +72,7 @@
 
             
                 <div class="prop-img">
-                    <img src="<?php echo base_url()?>assets/img/prlist.jpg" alt="" class="img-fluid" />
+                    <img src="<?php echo base_url().$value->banner ?>" alt="" class="img-fluid" />
                 </div>
                 <div class="prop-detail box-shadow">
                     <div class="prop-detail-title">

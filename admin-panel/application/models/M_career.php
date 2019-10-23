@@ -58,6 +58,30 @@ class M_career extends CI_Model {
         return $this->db->order_by('status', 'desc')->get('application')->result();
     }
 
+
+    public function imageAdd($insert='')
+    {
+        $query = $this->db->get('career_image')->row();
+        if (!empty($query)) {
+           return $this->db->update('career_image', $insert);
+        }else{
+            return $this->db->insert('career_image', $insert);
+        }
+
+    }
+
+    public function imageGet()
+    {
+        return $this->db->get('career_image')->row();
+    }
+
+    public function activate($id,$status)
+    {
+        return $this->db->where('id', $id)->update('career_image',array('status' => $status));
+    }
+
+    
+
     
 
 

@@ -19,6 +19,7 @@
     width: 90px !important;
     height: auto;
 }
+
      </style>
    </head>
    <body>
@@ -43,7 +44,7 @@
                                 <div class="col 12 m6"><p class="h5-para black-text m0">Edit SEO</p>
                                 </div>
 
-                                  <div class="col 12 m6 right-align">
+                                  <div class="col 12 m6 right-align m0">
                                     <?php 
                                     if ($result->status == '1') { ?>
                                         <a href="<?php echo base_url('offer/activate?id='.$result->id.'&s=""')  ?>" class="waves-effect waves-light btn red  white-text hoverable ">Disable</a>

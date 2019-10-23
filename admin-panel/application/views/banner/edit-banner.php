@@ -63,7 +63,7 @@
 
                                             
 
-                                                  <div class="file-field input-field col s12 l4">
+                                                  <div class="file-field input-field col s12 l6">
                                                     <div class="btn btn-small black-text grey lighten-3">
                                                     <i class="far fa-image left  "></i>
                                                         <span class="">Add Image</span>
@@ -90,7 +90,6 @@
                                             </div>
                                             <?php }?>
 
-                                            <div id="upload-demo" style="padding: 0;"></div>
                                             </div>
 
                                             
@@ -104,7 +103,6 @@
 
                                               <input type="hidden" name="banner_id" value="<?php echo (!empty($result->uniq))?$result->uniq:random_string('alnum',10) ?>">
                                               <input name="image" class="ipimg" type="hidden" value="">
-                                              <input name="fimagecheck" class="fimagecheck" type="hidden" value="">
 
                                             
                                             <div class="col s12 mtb20">
@@ -151,61 +149,6 @@
         });
 
 
-        $uploadCrop = $('#upload-demo').croppie({
-            enableExif: true,
-            viewport: {
-                width: 700,
-                height: 300,
-                type: 'box'
-            },
-            boundary: {
-                width: 750,
-                height: 350
-            }
-        });
-
-
-        $('#upload').on('change', function() {
-            $('.fimagecheck').val($('.fimagecheck').val() + '1');
-            
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $uploadCrop.croppie('bind', {
-                    url: e.target.result
-                }).then(function() {
-                    console.log('jQuery bind complete');
-                });
-            }
-            reader.readAsDataURL(this.files[0]);
-        });
-
-        $('.upload-result').on('click', function(ev) {
-          ev.preventDefault();
-          ;
-
-          $(".loder-box").css("display", "flex");
-
-            $uploadCrop.croppie('result', {
-                type: 'canvas',
-                size: 'viewport',
-                format : 'jpeg',
-                quality: 1
-
-
-            }).then(function(resp) {
-              var alt = $("#alt").val()
-              if (alt == '') {
-                alert('Image title is required');
-
-                } else {
-                  $('.ipimg').val(resp);
-                  $('#city-form').submit();
-                }
-            });
-            
-
-
-        });
 
     });
     </script>

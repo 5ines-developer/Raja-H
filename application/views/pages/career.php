@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Raja Housing</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php  $this->load->view('includes/meta'); ?>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
 </head>
 <body>
+<?php  $this->load->view('includes/gscript'); ?>
 <?php  $this->load->view('includes/header'); ?>
  <section class="main-about main-project-img">
         <div class="main-contact-banner">
@@ -29,8 +28,8 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-12">
                     <div class="box-j text-center">
-                        <img src="<?php echo base_url() ?>assets/img/home-icon.png" alt="" class="img-fluid job-hicon">
-                        <p class="job-no">Jobs - 10</p>
+                        <img src="<?php echo (!empty($cimage->image))?base_url().$cimage->image:'assets/img/home-icon.png' ?>" alt="" class="img-fluid job-hicon">
+                        <!-- <p class="job-no">Jobs - 10</p> -->
                     </div>
                 </div>
             </div>
@@ -138,7 +137,7 @@
                                     </div>
                                     <div class="form-group">
                                         <!-- <input type="file" size="60" class="form-control custom-form-control-career" accept=".doc,.docx,.pdf" > -->
-                                        <label  for="Upload" /> 
+                                        <label  for="Upload" > 
                                             <input id="Upload" type="file" required name="file" accept=".doc,.docx,.pdf"  class="form-control custom-form-control-career">
                                         </label>
                                     </div>
@@ -150,7 +149,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-md-6 col-lg-5 col-sm-12 col-12 ">
+                            <!-- <div class="col-md-6 col-lg-5 col-sm-12 col-12 ">
                                 <div class="career-right">
                                     <div class="shad">
                                         <div class="row">
@@ -192,7 +191,7 @@
                                         </div>      
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                 </div>
             </div>

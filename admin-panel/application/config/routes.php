@@ -18,7 +18,6 @@ $route['update-password']   	= 'authentication/update_pass'; 		//forgot password
 $route['change-password']   	= 'account/index'; 						//forgot password email click
 $route['password/change']   	= 'account/password_validation'; 		//forgot password email click
 //account settings
-$route['profile']   			= 'account/accntsttngs'; 	
 $route['profile/update']   		= 'account/updateacnt'; 
 
 //banner
@@ -70,7 +69,8 @@ $route['career/edit/(:any)']	    =	'career/edit/$1';
 $route['career/detail/(:any)']	    =	'career/detail/$1'; 
 $route['career/delete/(:any)']	    =	'career/delete/$1'; 
 $route['career/status/(:any)']	    =	'career/status/$1'; 
-$route['career/applications']	    =	'career/applications'; 
+$route['career/applications']	    =	'career/applications';
+
 
 //offer image
 $route['offer/manage']				=	'offer/index';

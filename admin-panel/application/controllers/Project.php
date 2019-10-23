@@ -63,11 +63,11 @@ class Project extends CI_Controller {
             $f_project  = $this->input->post('f_project');
             $city       = $this->input->post('city');
             $name       = $this->input->post('name');
+            $tagname    = $this->input->post('tagname');
 
                     $this->load->library('upload');
                     $this->load->library('image_lib');
                     $files = $_FILES;
-                    $filesCount = count($_FILES['bimage']['name']);
                     if (file_exists($_FILES['bimage']['tmp_name'])) {
                         $config['upload_path'] = '../banner-image/';
                         $config['allowed_types'] = 'jpg|png|jpeg|PNG|JPEG|JPG|gif';
@@ -93,7 +93,6 @@ class Project extends CI_Controller {
 
 
                     $files = $_FILES;
-                    $filesCount = count($_FILES['brochure']['name']);
                     if (file_exists($_FILES['brochure']['tmp_name'])) {
                         $config['upload_path'] = '../brochure/';
                         $config['allowed_types'] = 'PDF|pdf';
@@ -131,9 +130,12 @@ class Project extends CI_Controller {
                 'cost' => $cost,
                 'content_type'=>$c_type,
                 'featured_project' => $f_project,
-                'city' =>  $city
+                'city' =>  $city,
+                'f_tag'=>$tagname
 
             );
+
+         
 
 
             if (!empty($banner)) {

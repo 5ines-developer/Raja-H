@@ -12,22 +12,25 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] 		= 'Home | Raja Housing';
+		$page = 'home';
 		$data['result'] 	= $this->m_home->bannerGet();
 		$data['feature'] 	= $this->m_home->featureGet();
 		$data['offer'] 		= $this->m_home->offerGet();
+		$data['seo'] 		= $this->m_home->seoGet($page);
 		$this->load->view('pages/index', $data);
 		
 	}
 
 	public function about($value='')
 	{
-		$data['title'] = 'About us | Raja Housing';
+		$page = 'page';
+		$data['seo'] 		= $this->m_home->seoGet($page);
 		$this->load->view('pages/about-us', $data, FALSE);
 	}
 
 	public function contact()
 	{
+		$page = 'contact us';
 		if($this->input->post()){
 			$data = array(
 				'name' 	=> $this->input->post('name', true), 
@@ -44,7 +47,7 @@ class Home extends CI_Controller {
 				redirect('contact-us','refresh');
 			}
 		}else{
-			$data['title'] = 'Contact us | Raja Housing';
+			$data['seo'] 		= $this->m_home->seoGet($page);
 			$this->load->view('pages/contact', $data);
 		}
 		
@@ -90,6 +93,7 @@ class Home extends CI_Controller {
 	// career
 	public function career()
 	{
+		$page = 'career';
 		if($this->input->post()){
 			
 			
@@ -123,7 +127,7 @@ class Home extends CI_Controller {
 			}
 		}else{
 			$data['jobs'] = $this->m_home->jobs();
-			$data['title'] = 'Career | Raja Housing';
+			$data['seo'] 		= $this->m_home->seoGet($page);
 			$this->load->view('pages/career', $data);
 		}
 	}
