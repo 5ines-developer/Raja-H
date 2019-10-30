@@ -1,5 +1,7 @@
 <!-- tag manager -->
-<?php echo (!empty($seo->g_tag))?$seo->g_tag:'' ?>
+<?php 
 
-<!-- google analytics -->
-<?php echo (!empty($seo->g_analytics))?$seo->g_analytics:'' ?>
+$seod = $this->ci->project->seo_default();
+echo (!empty($seod->g_analytics))?$seod->g_analytics:'';
+echo (!empty($seod->g_tag))?$seod->g_tag:'';
+ ?>

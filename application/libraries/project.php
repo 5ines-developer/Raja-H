@@ -46,6 +46,12 @@ class project
     }
 
 
+    public function seo_default()
+    {
+        return  $this->ci->m_project->seo_default();
+    }
+
+
 
    
 

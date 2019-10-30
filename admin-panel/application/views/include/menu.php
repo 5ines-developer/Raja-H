@@ -31,7 +31,13 @@
             </ul>
       </li>
       <li class="<?php echo $this->uri->segment(1) == 'offer'?'active':'' ?>"><a href="<?php echo base_url('offer/manage') ?>"><i class="far fa-image li-icon"></i>Special offer</a></li>
-      <li class="<?php echo $this->uri->segment(1) == 'seo'?'active':'' ?>"><a href="<?php echo base_url('seo/manage') ?>"><i class="fab fa-digital-ocean li-icon"></i>SEO</a></li>
+
+      <li class="droup-link <?php echo $this->uri->segment(1) == 'seo'?'active':'' ?>"><a class="droup-link-item"><i class="fab fa-digital-ocean li-icon"></i>SEO</a>
+            <ul class="droupmenu">
+              <li class="<?php echo $this->uri->segment(1) == 'seo'?'active':'' ?>"><a href="<?php echo base_url('seo/manage') ?>">All </a></li>
+              <li class="<?php echo $this->uri->segment(2) == 'seoDefault'?'active':'' ?>"><a href="<?php echo base_url('seo/seoDefault') ?>">Default</a></li>
+            </ul>
+      </li>
 
       <li class="<?php echo $this->uri->segment(1) == 'real-estate-updates'?'active':'' ?>"><a href="<?php echo base_url('real-estate-updates') ?>"><i class="fas fa-th-list li-icon"></i>Real Estate Updates</a></li>
 

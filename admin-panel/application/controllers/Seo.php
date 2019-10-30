@@ -46,10 +46,7 @@ class Seo extends CI_Controller {
        	'page' 		=> $this->input->post('page') , 
        	'title' 	=> $this->input->post('title') , 
        	'keywords' 	=> $this->input->post('keywords') , 
-       	'm_desc' 	=> $this->input->post('description') ,
-       	'g_tag' 		=> $this->input->post('gmanager') , 
-       	'g_analytics' 	=> $this->input->post('ganalytics') , 
-       	'schema' 		=> $this->input->post('schema') , 
+       	'm_desc' 	=> $this->input->post('description') ,       	 
        	'id' 		=> $this->input->post('id') , 
        );
 
@@ -73,6 +70,30 @@ class Seo extends CI_Controller {
 			$this->session->set_flashdata('error', 'Some error occured please try again');
 			redirect('seo/manage','refresh');
        }
+    }
+
+
+    public function seoDefault($var = null)
+    {
+        $data['title'] = 'SEO | rajahousing';
+        if (!empty($this->input->post())) {
+            $insert = array(
+                'g_tag' 		=> $this->input->post('gmanager') , 
+                'g_analytics' 	=> $this->input->post('ganalytics') , 
+                'schema' 		=> $this->input->post('schema') , 
+            );
+            if($this->m_seo->defaultUpdate($insert)){
+                $this->session->set_flashdata('success', 'Seo Details updated Successfully');
+                redirect('seo/seoDefault','refresh');
+               }else{
+                $this->session->set_flashdata('error', 'Some error occured please try again');
+                redirect('seo/seoDefault','refresh');
+               }
+        }else{
+            $data['result'] = $this->m_seo->getDseo();            
+            $this->load->view('seo/default', $data, FALSE);      
+        }
+        
     }
 
 }

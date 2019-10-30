@@ -50,7 +50,23 @@ class M_seo extends CI_Model {
         }else{
             return false;
         }
-    }
+	}
+	
+	public function getDseo($var = null)
+	{
+		return $this->db->get('default_seo')->row();
+		
+	}
+
+	public function defaultUpdate($insert = null)
+	{
+		$query = $this->db->get('default_seo');
+		if ($query->num_rows() > 0) {
+			return $this->db->update('default_seo', $insert);					
+		}else{			
+			return $this->db->insert('default_seo', $insert);			
+		}
+	}
 
 }
 

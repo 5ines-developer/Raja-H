@@ -136,6 +136,12 @@ class M_project extends CI_Model {
         return $this->db->where('cat_type', $cat_type)->where('projectid', $projectid)->get('projectdetail')->row('slug');
     }
 
+    public function seo_default($var = null)
+    {
+        return $this->db->get('default_seo')->row();
+       
+    }
+
 
 
     
