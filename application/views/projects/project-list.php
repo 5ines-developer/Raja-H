@@ -34,7 +34,7 @@
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-12 prmb">
                 <div class="card">
-                    <a target="_blank" href="<?php echo base_url('projects/').str_replace(" ","-",strtolower($value->supercategory)).'?q='.$value->id.'&c=super-category' ?>" class="tdn"> 
+                    <a target="_blank" href="<?php echo base_url('projects/').str_replace(" ","-",strtolower($value->slug)).'?q='.$value->id.'&c=super-category' ?>" class="tdn"> 
                         <div class="project-img">
                             
                             <img src="<?php echo (!empty($detail2->banner))?base_url().$detail2->banner:'https://via.placeholder.com/510x390' ?>" alt="" class="img-fluid">

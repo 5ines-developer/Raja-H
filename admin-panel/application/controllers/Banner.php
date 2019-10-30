@@ -113,6 +113,18 @@ class Banner extends CI_Controller {
         }
     }
 
+    public function referral($id='')
+    {
+        $data['title']  = 'Referrals - Raja housing';
+        if(!empty($id)){
+            $data['result'] = $this->m_banner->referral($id);
+            $this->load->view('other/referral-detail', $data); 
+        }else{
+            $data['result'] = $this->m_banner->referral();
+            $this->load->view('other/referral-list', $data); 
+        }
+    }
+
 
 
 

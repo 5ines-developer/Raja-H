@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="col-right-about text-center">
-                            <img src="<?php echo base_url()?>assets/img/f-img-Copy.jpg" alt="" class="img-fluid">
+                            <img src="<?php echo base_url()?>assets/img/sbout2.jpg" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                         <p class="abt-para">Raja Housing Limited came into being in 1992 with a vision of creating dream homes in reality, Raja Housing Limited is headed by 2 brothers, Mr. Raja Suchindra and Mr. Raja Datta who convoy combined experience, knowledge and zeal to shape the Raja Housing Limited in Bangalore. We were the first in the Housing industry to offer modern innovative interiors like Italian Modular kitchens, Vitrified Tiles and Italian Marbles as standard specifications for all their projects.</p>
                     </div>
                     <div class="abt-img">
-                        <img src="<?php echo base_url() ?>assets/img/abt-img.jpg" alt="" class="img-fluid">
+                        <img src="<?php echo base_url() ?>assets/img/mision.jpg" alt="" class="img-fluid">
                     </div>
                     <div class="abt-text desktop-view">
                         <h4 class="mht">Corporate <span class="text-blue">Value</span> </h4>
@@ -102,7 +102,7 @@
                         <p class="abt-para ">To develop quality properties based on realistic values for its owners, investment affiliates, as well as its joint venture partners.</p>                        
                     </div>
                     <div class="abt-img">
-                        <img src="<?php echo base_url() ?>assets/img/abt-img.jpg" alt="" class="img-fluid">
+                        <img src="<?php echo base_url() ?>assets/img/corporate-Value.jpg" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -110,12 +110,12 @@
         <div class="git">
             <div class="row">
                 <div class="col-lg-7 col-md-7 col-sm-12 ">
-                    <h6>get in touch</h6>
-                    <p>Please click the button for register, we will become your best agent and help you for both</p>
+                    <h6>RAJA GROUP</h6>
+                    <p>To Know more about Raja Group of Companies , please download the Corporate Brochure.</p>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12">
                     <div class="git-contact">
-                        <a href="#"> Download Brochure</a>
+                        <a target="_blank" href="<?php echo base_url() ?>assets/docs/Raja-Group-Corporate-Brochure_V3.pdf"> Download Brochure</a>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
         <div class="choose">
             <div class="row">
                 <div class="col-md-12 col-lg-5 col-sm-12 col-12 img-center">
-                    <img src="<?php echo base_url()?>assets/img/choose.jpg" alt="" class="img-fluid">
+                    <img src="<?php echo base_url()?>assets/img/corporate-presentation.jpg" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-12 col-lg-7 col-sm-12 col-12">
                     <div class="abt-text">

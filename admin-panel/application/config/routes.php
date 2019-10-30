@@ -27,6 +27,12 @@ $route['banner/insert']   		= 'banner/insert';
 $route['enquiry']               = 'banner/enquiry';
 $route['enquiry/(:any)']        = 'banner/enquiry/$1';
 
+
+$route['referral']               = 'banner/referral';
+$route['referral/(:any)']        = 'banner/referral/$1';
+
+
+
 //adminuser	
 $route['adminuser/manage']   		= 'Adminuser/index'; 	
 $route['adminuser/add']   			= 'Adminuser/add'; 	
@@ -77,6 +83,10 @@ $route['offer/manage']				=	'offer/index';
 
 //seo
 $route['seo/manage']				=	'seo/index';
+
+//real estate updates
+
+$route['real-estate-updates']				=	'real_estate/index';
 
 
 

@@ -1420,21 +1420,7 @@ background: #1aace1;
     padding: 16px 10px;
     margin-top: 20px;
 }
-.prop-detail-list{
-    list-style-type: none;
-}
-.prop-detail-list li{
-    font-size: 14px;
-    line-height: 40px;
-}
-.prop-detail-list li i{
-    background: #1aace1;
-    color: white;
-    padding: 5px;
-    border-radius: 50%;
-    margin-right: 5px;
-    font-size: 10px;
-}
+
 .fac{
     font-weight: bold;
 }
@@ -1492,9 +1478,7 @@ font-size: 16px;
     .location-map{
 height: 200px;    
     }
-    .cc{
-        column-count: 2;
-    }
+
     .wt{
         font-size: 16px;
     }
@@ -2314,7 +2298,7 @@ height: 200px;
             height: 100%;
             left: 0;
             top: 0;
-            background: #00000021;
+            background: #00000070;
             position: absolute;
         }
 .img-banner{position: relative}
@@ -2488,6 +2472,43 @@ padding: 10px 15px;
   10%,30%,50%,70%,90%{
     transform: scale(1)
   }
+}
+
+.social-icons {
+    display: flex;
+    overflow: hidden;
+    text-align: right;
+    line-height: 48px;
+    margin-bottom: 0;
+}
+.soc-title{
+    color: #fff; 
+    line-height: 28px;
+    margin-right: 11px;
+}
+.social-icons li {
+    list-style-type: none !important;
+}
+.social-icons a{
+    background-color: white;
+    padding: 7px 7px 7px 7px;
+    margin-right: 6px;
+    border-radius: 50%;
+    line-height: 8px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    text-align: center; 
+     cursor: pointer; 
+}
+
+
+.facebook:hover{ cursor: pointer; background: #3b5998  }
+.twitter:hover{  cursor: pointer; background: #1da1f2 }
+.youtube:hover{  cursor: pointer; background: #ff0000 }
+.instagram:hover{  cursor: pointer; background: #e84057 }
+.social-icons a:hover i{
+    color: #fff;
 }
 
 

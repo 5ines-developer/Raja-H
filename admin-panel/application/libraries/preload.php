@@ -19,6 +19,11 @@ class preload
         return  $this->ci->m_banner->enquiryStatus();
     }
 
+    public function referrals($value='')
+    {
+        return  $this->ci->m_banner->referalcount();
+    }
+
    
 
 

@@ -28,8 +28,8 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-12">
                     <div class="box-j text-center">
-                        <img src="<?php echo (!empty($cimage->image))?base_url().$cimage->image:'assets/img/home-icon.png' ?>" alt="" class="img-fluid job-hicon">
-                        <!-- <p class="job-no">Jobs - 10</p> -->
+                        <img src="<?php echo base_url() ?>assets/img/home-icon.png" alt="" class="img-fluid job-hicon">
+                        <p class="job-no">Jobs - 10</p>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                 <div class="col-md-12 col-lg-12 col-sm-12 col-12">
                         <div class="row">
                             <div class="col-md-6 col-lg-7 col-sm-12 col-12 pad-r">
-                                <form action="<?php echo base_url() ?>career" method="post" enctype="multipart/form-data">
+                                <form action="<?php echo base_url() ?>career" method="post" enctype="multipart/form-data" id="contactform">
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -144,6 +144,12 @@
                                     <div class="form-group">
                                         <textarea type="text" name="msg" rows="4" class="form-control custom-form-control-career" placeholder="Message"></textarea>
                                     </div>
+
+                                    <div class="d-input">
+                                        <div class="g-recaptcha" data-sitekey="6LeUFL8UAAAAAF5KwBXQXuw08TudWNNiUlt-nZLk"></div>
+                                </div>
+                                <div class="error text-danger" style="margin-bottom:10px;"></div>
+
                                     <div class="form-group">
                                         <button class="btn btn-send">Submit</button>
                                     </div>
@@ -200,7 +206,27 @@
  </section>
  <?php  $this->load->view('includes/footer'); ?>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     <script type="text/javascript">
+
+             $(function(){
+
+                 $('#contactform').on('submit', function(e) {
+
+                  if(grecaptcha.getResponse() == "") {
+
+                     e.preventDefault();
+
+                    $('.error').text('Captcha is required');
+
+                }
+
+                });
+
+             });
+
+</script>
 </body>
 </html>

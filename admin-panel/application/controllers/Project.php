@@ -35,7 +35,6 @@ class Project extends CI_Controller {
             $data['floor']      = $this->m_project->floorimage($data['result']->id); 
             $data['amenity']    = $this->m_project->amenityGet($data['result']->id); 
             $data['gallery']    = $this->m_project->galleryGet($data['result']->id); 
-            $data['location']   = $this->m_project->locationGet($data['result']->id); 
         }
         
         $this->load->view('project/add', $data, FALSE);    
@@ -64,6 +63,7 @@ class Project extends CI_Controller {
             $city       = $this->input->post('city');
             $name       = $this->input->post('name');
             $tagname    = $this->input->post('tagname');
+            $url        = $this->input->post('url');
 
                     $this->load->library('upload');
                     $this->load->library('image_lib');
@@ -131,7 +131,8 @@ class Project extends CI_Controller {
                 'content_type'=>$c_type,
                 'featured_project' => $f_project,
                 'city' =>  $city,
-                'f_tag'=>$tagname
+                'f_tag'=>$tagname,
+                'slug'=> $url
 
             );
 
@@ -425,27 +426,16 @@ class Project extends CI_Controller {
             $id     = $this->input->post('id');
             $cattype = $this->input->post('cattype');                   
             $location   = $this->input->post('location');
+            $video   = $this->input->post('video');
 
             $insert = array(
-                'location'     => $location,
+                'location'      => $location,
                 'cat_type'      => str_replace("-"," ",$cattype),
                 'projectid'     => $id,
+                'walkthrogh'    => $video,
                 'added_by'      => $this->session->userdata('ra_id')
             );            
             $output = $this->m_project->insert_location($insert);
-
-            $nearby = $this->input->post('i_title1');
-            $pid     = $this->input->post('pid');
-
- 
-           $delete =  $this->m_project->delete_nearby($pid);
- 
-            for ($i=0; $i < count($nearby) ; $i++) { 
-                 if (!empty($nearby[$i])) {
-                     $insert = array('projectid' => $pid, 'nearby' => $nearby[$i]);
-                     $output = $this->m_project->insert_nearby($insert);
-                 } 
-            }
 
             if (!empty($output)) {
                 $this->session->set_flashdata('success', 'Gallery added successfully');            

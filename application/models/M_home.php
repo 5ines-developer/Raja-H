@@ -86,6 +86,17 @@ class M_home extends CI_Model {
 		return $this->db->where('page', $page)->get('seo')->row();
 	}
 
+
+	public function real_estate($value='')
+	{
+		return $this->db->get('realestate')->row();
+	}
+
+	public function insertRefer($data='')
+	{
+		return $this->db->insert('referal_bonus', $data);
+	}
+
 }
 
 /* End of file M_home.php */

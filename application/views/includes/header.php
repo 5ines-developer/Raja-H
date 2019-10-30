@@ -1,4 +1,6 @@
-<?php   $this->ci =& get_instance(); ?>
+<?php   $this->ci =& get_instance();
+$this->load->model('m_project');
+ ?>
 <nav class="navbar paddind-navbar navbar-expand-lg  custom-navbar" id="navbar">
             <div class="container-fluid ">
                 <a class="navbar-brand navbar-brand-logo" href="#">
@@ -29,19 +31,19 @@
                                         <ul class="dropdown-menu">';
                                         foreach ($value->child as $ckey => $cvalue) {
                                             if(!empty($cvalue->child)){
-                                                echo '<li class="dropdown-submenu"><a class="dropdown-item con" href="'.base_url('project/').str_replace(" ","-",strtolower($cvalue->subcategory)).'?q='.$cvalue->id.'&c=sub-category'.'">'.$cvalue->subcategory.'</a> 
+                                                echo '<li class="dropdown-submenu"><a class="dropdown-item con" href="'.base_url('project/').str_replace(" ","-",strtolower($this->ci->m_project->geturl('sub category',$cvalue->id))).'?q='.$cvalue->id.'&c=sub-category'.'">'.$cvalue->subcategory.'</a> 
                                                 <ul class="dropdown-menu">';
                                                 foreach ($cvalue->child as $cckey => $ccvalue) {
-                                                    echo ' <li><a class="dropdown-item" href="'.base_url('projects/').str_replace(" ","-",strtolower($ccvalue->supercategory)).'?q='.$ccvalue->id.'&c=super-category'.'">'.$ccvalue->supercategory.'</a></li>';
+                                                    echo ' <li><a class="dropdown-item" href="'.base_url('projects/').str_replace(" ","-",strtolower($this->ci->m_project->geturl('super category',$ccvalue->id))).'?q='.$ccvalue->id.'&c=super-category'.'">'.$ccvalue->supercategory.'</a></li>';
                                                 }
                                                 echo '</ul> </li>';						
                                             }else{
-                                                echo ' <li><a class="dropdown-item" href="'.base_url('project/').str_replace(" ","-",strtolower($cvalue->subcategory)).'?q='.$cvalue->id.'&c=sub-category'.'">'.$cvalue->subcategory.'</a></li>';
+                                                echo ' <li><a class="dropdown-item" href="'.base_url('project/').str_replace(" ","-",strtolower($this->ci->m_project->geturl('sub category',$cvalue->id))).'?q='.$cvalue->id.'&c=sub-category'.'">'.$cvalue->subcategory.'</a></li>';
                                             }
                                         }				
                                         echo '</ul> </li>';
                                     }else{
-                                        echo '<li><a class="dropdown-item" href="'.base_url('projects/').str_replace(" ","-",strtolower($value->category)).'?q='.$value->id.'&c=parent-category'.'">'.$value->category.'</a></li>';
+                                        echo '<li><a class="dropdown-item" href="'.base_url('projects/').str_replace(" ","-",strtolower($this->ci->m_project->geturl('parent category',$value->id))).'?q='.$value->id.'&c=parent-category'.'">'.$value->category.'</a></li>';
                                     }
                                 }?>
                                     

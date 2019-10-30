@@ -103,21 +103,6 @@ class M_project extends CI_Model {
     }
 
 
-
-        public function nearbyGet($id='')
-
-    {
-
-        return $this->db->where('projectid', $id)->get('nearby')->result();
-
-    }
-
-
-
-
-
-
-
     public function categoryName($id = null,$cat='')
 
     {
@@ -144,6 +129,11 @@ class M_project extends CI_Model {
 
         return $this->db->where('featured_project', '1')->get('projectdetail')->result();
 
+    }
+
+    public function geturl($cat_type='',$projectid='')
+    {
+        return $this->db->where('cat_type', $cat_type)->where('projectid', $projectid)->get('projectdetail')->row('slug');
     }
 
 

@@ -175,7 +175,7 @@ padding: 3px 10px 3px 10px;
                         <div class="tab-buttons show-on-large hide-on-med-and-down stcky-nav z-depth-1">
                             <ul class="tabs1 transparent">
                                 <li class="tab1 col s1"><a href="#detail" class="active">Detail</a></li>
-                                <li class="tab1 col s2"><a href="#areastatement" class="">Area Statement</a></li>
+                                <li class="tab1 col s2"><a href="#areastatement" class="">Specifications</a></li>
                                 <li class="tab1 col s2"><a href="#masterplan" class="">Masterplan</a></li>
                                 <li class="tab1 col s2"><a href="#floorplan" class="">Floorplan</a></li>
                                 <li class="tab1 col s2"><a href="#Amenities" class="">Amenities</a></li>
@@ -248,6 +248,11 @@ padding: 3px 10px 3px 10px;
                                                 <div class="input-field col s12 l6">
                                                   <input type="text" id="tagname" name="tagname" class="validate" value="<?php echo (!empty($result->f_tag))?$result->f_tag:''; ?>">
                                                   <label for="tagname">Featured Tag Name</label>
+                                                </div>
+
+                                                <div class="input-field col s12 l6">
+                                                  <input type="text" id="url" name="url" required="" class="validate" value="<?php echo (!empty($result->slug))?$result->slug:''; ?>">
+                                                  <label for="tagname">URL <span class="red-text">*</span></label>
                                                 </div>
                                                 
                                                 
@@ -339,7 +344,7 @@ padding: 3px 10px 3px 10px;
                                     <form action="<?php echo base_url() ?>project/insert_area" method="post"
                                         id="area-statement" enctype="multipart/form-data">
                                         <div class="row m0">
-                                            <p class="bold  black-text  mb10 h6">Area Statement</p>
+                                            <p class="bold  black-text  mb10 h6">Specifications</p>
                                         </div>
                                         <div class="row m0">
                                             <div class="col s12 l12">
@@ -621,36 +626,18 @@ padding: 3px 10px 3px 10px;
 
                                     </div><br>
 
-                                    <?php if (!empty($location)) {
-                                               foreach ($location as $location1 => $location2) { ?>
-
-                                        <div class="row m0 marqaddnext">
-                                            <div class="input-field col s12 l6">                                                
-                                                <input type="text" id="i_title1" name="i_title1[]" class="validate"
-                                                    value="<?php echo (!empty($location2->nearby)?$location2->nearby:'') ?>" >
-                                                <label for="i_title1">Title <span class="red-text">*</span></label>
-                                                <p><span class="error"><?php echo form_error('category'); ?></span></p>
-                                            </div>
-                                            <div class="col l2">
-                                            <a id="brandplus" class="marqueeplus1 remov" value="<?php echo (!empty($location2->id)?$location2->id:'') ?>"><i class="fa fa-times" aria-hidden="true"></i></a>
-                                            </div>
+                                    <div class="row m0">
+                                        <div class="col s12 l12">
+                                            <label for="location">Video link</label>
+                                            <textarea id="video" name="video" class="materialize-textarea"><?php echo (!empty($result->walkthrogh)?$result->walkthrogh:'') ?></textarea>
                                         </div>
 
-                                        
+                                    </div><br>
 
-                                        <?php  } } ?>
+                                    
 
 
-                                    <div class="row m0 marqaddnext" id="marqaddnext1">
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="i_title1" name="i_title1[]" class="validate" <?php echo (!empty($location2->nearby)?'':'Required') ?> >
-                                                  <label for="i_title1">Title <span class="red-text">*</span></label>
-                                                  <p><span class="error"><?php echo form_error('category'); ?></span></p>
-                                                </div>
-                                                <div class="col l2">
-                                                    <a id="marqueeplus1" class="marqueeplus1 "><i class="fa fa-plus" aria-hidden="true"></i> </a>
-                                                </div>
-                                            </div><br><br>
+                                   
                                         <div id="faq-form-box"></div> 
                                         <input type="hidden" value="<?php echo (!empty($result->id)?$result->id:'') ?>" name="pid">   
                                         

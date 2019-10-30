@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/slick.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css" />
     <style>
-    
+        .brchure{margin: 24px 0 0 0; width: 100%; color: #fff; background-color: #ee7b0f; border-color: #ee7b0f; padding: 9px 0 9px 0; } 
     </style>
   </head>
   <body>
@@ -81,7 +81,7 @@
                             <a href="#propertyDetail" class="list-link js-scroll-trigger active" id="list1">Property Detail</a>
                         </li>
                         <li class="list-menu">
-                            <a href="#areaStatement" class="list-link js-scroll-trigger" >Area Statement</a>
+                            <a href="#areaStatement" class="list-link js-scroll-trigger" >Specifications</a>
                         </li>
                         <li class="list-menu">
                             <a href="#masterPlan" class="list-link js-scroll-trigger" >Master Plan</a>
@@ -94,6 +94,9 @@
                         </li>
                         <li class="list-menu">
                             <a href="#walkThrough" class="list-link js-scroll-trigger">Walk Through</a>
+                        </li>
+                        <li class="list-menu">
+                            <a href="#location" class="list-link js-scroll-trigger">Location</a>
                         </li>
                         <li class="list-menu">
                             <a href="#gallery" class="list-link js-scroll-trigger">Gallery</a>
@@ -111,7 +114,7 @@
                     </div>
                 </div>
                 <div class="prop-st box-shadow"  id="areaStatement">
-                    <h4>AREA STATEMENT</h4>
+                    <h4>SPECIFICATIONS</h4>
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                         <div class="bb"></div>
@@ -198,22 +201,27 @@
                 <div  class="post-sidebar">
                     <div class="prop-form">
                     <h5>BOOK NOW</h5>
-                    <form action="<?php echo base_url() ?>project-enquiry" method="post">
+                    <form action="<?php echo base_url() ?>project-enquiry" method="post" id="contactform">
                         <div class="form-group">
-                        <input type="text"class="form-control custom-form-control-prop " name="name" placeholder="Name"/> </div>
+                        <input type="text"class="form-control custom-form-control-prop " name="name" required="" placeholder="Name"/> </div>
                         <div class="form-group">
-                        <input type="text"class="form-control custom-form-control-prop " name="email" placeholder="Email"/> </div>
+                        <input type="text"class="form-control custom-form-control-prop " name="email" required="" placeholder="Email"/> </div>
                         <div class="form-group">
-                        <input type="text"class="form-control custom-form-control-prop " name="phone" placeholder="Phone"/> </div>
+                        <input type="text"class="form-control custom-form-control-prop " name="phone" required="" placeholder="Phone"/> </div>
                         <div class="form-group">
                         <textarea type="text" rows="8"class="form-control custom-form-control-prop " name="msg" placeholder="Message"></textarea> </div>
                         <input type="hidden" value="<?php echo $_SERVER['QUERY_STRING']; ?>" name="query">
                         <input type="hidden" value="<?php echo $this->uri->segment(2) ?>" name="url">
+                        <div class="d-input">
+                            <div class="g-recaptcha" data-sitekey="6LeUFL8UAAAAAF5KwBXQXuw08TudWNNiUlt-nZLk"></div>
+                        </div>
+                        <div class="error text-danger" style="margin-bottom:10px;"></div>
                         <div class="">
                         <button class="btn prop-btn-send">Submit</button>
                         </div>
                     </form>
                     </div>
+                        <a class="btn btn-dark brchure" type="button" href="<?php echo (!empty($value->pdf))?base_url().$value->pdf:''; ?>"><i class="far fa-file-pdf"></i>&nbsp; Get Brochure</a>
                 </div>
             </div>
         </div>
@@ -226,20 +234,31 @@
                 </div>
             </div>  
             <div class="row">
+                <div class="col-lg-4 offset-lg-2 col-md-6 ">
+                    <div class="prop-detail-list  cc">
+                        <?php if (!empty($value->walkthrogh)) {
+                            echo $value->walkthrogh;
+                        }  ?>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+        <div class="prop-st box-shadow" id="location">
+            <h4>Location</h4>
+            <div class="row">
                 <div class="col-lg-4 col-md-6">
+                    <div class="bb"></div>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-6">
                     <?php  $preAddres = $value->location;
                                             $newAddress = str_replace(' ', '%20', $preAddres);
                                             ?>
 
                     <iframe  width="100%" height="230px" src="https://maps.google.com/maps?width=100%&height=600&hl=en&coord=12°11'03.7,75°55'34.5&q=<?php echo $newAddress ?>+(bangalore)&ie=UTF8&t=&z=14&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Map a route</a></iframe>
 
-                </div>
-                <div class="col-lg-8 col-md-6 ">
-                    <ul class="prop-detail-list  cc">
-                        <?php if (!empty($value->nearby)) {foreach ($value->nearby as $nearby1 => $nearby2) {
-                                   echo '<li><i class="fas fa-map-signs"></i> <span class="wt">'.$nearby2->nearby.'</span></li>';
-                        } } ?>
-                    </ul>
                 </div>
             </div>    
         </div>
@@ -270,14 +289,14 @@
                                     <img src="<?php echo (!empty($value->banner))?base_url().$value->banner:'https://via.placeholder.com/510x390' ?>" alt="" class="img-fluid">
                                     <div class="sale">
                                     <ul class="f-sale">
-                                            <li><span class="fl">Featured</span> </li>
+                                            <li><span class="fl"><?php ($value->featured_project == '1')?'Featured':''; ?></span> </li>
                                             <li><span class="sl"><?php echo (!empty($value->transaction_type))?$value->transaction_type:''; ?></span> </li>
                                     </ul>
                                 </div>
                                 
                                 </div>                          
                                 <div class="project-text">
-                                    <p class="pr-name">Raja Sanidhi</p>
+                                    <p class="pr-name"><?php echo $this->ci->m_project->categoryName($value->projectid,$value->cat_type); ?></p>
                                     <p class="pr-address"><?php echo (!empty($value->poses_date))?'<i class="fas fa-map-marker-alt"></i> '.$value->poses_date:''; ?></p>
                                     <p class="pr-area"><?php echo (!empty($value->project_type))?$value->project_type:''; ?></p>
                                 </div>
@@ -301,6 +320,7 @@
     <?php $this->load->view('includes/footer.php'); ?>
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="<?php echo  base_url() ?>assets/js/lightbox-plus-jquery.min.js"></script>
@@ -332,6 +352,26 @@
         }); 
         })(jQuery); 
     </script>
+
+    <script type="text/javascript">
+
+             $(function(){
+
+                 $('#contactform').on('submit', function(e) {
+
+                  if(grecaptcha.getResponse() == "") {
+
+                     e.preventDefault();
+
+                    $('.error').text('Captcha is required');
+
+                }
+
+                });
+
+             });
+
+            </script>
 
   </body>
 </html>

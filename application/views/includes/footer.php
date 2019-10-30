@@ -1,4 +1,4 @@
-<script>
+ <script>
 (function (i, s, o, g, r, a, m) {
 i['GoogleAnalyticsObject'] = r;
 i[r] = i[r] || function () {
@@ -42,7 +42,7 @@ g.defer=true; g.async=true; g.src=u+'lsquare.js'; s.parentNode.insertBefore(g,s)
 
 function(e){ LiveAgent.createButton('090cbf78', e); });
 </script>
-<noscript><p><img src="http://lswebanalytics.com/analytics/lsquare.php?idsite=138" style="border:0;" alt="" /></p></noscript>
+<noscript><p><img src="http://lswebanalytics.com/analytics/lsquare.php?idsite=138" style="border:0;" alt="" /></p></noscript> 
 
 <!-- End lsquare Code -->
 
@@ -123,7 +123,34 @@ var google_remarketing_only = true;
  </section>
 
  <section class="copyright ">
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-2 col-md-6 col-sm-12">
+            <p>&copy; <?php echo date('Y') ?> All right reserved Raja Housing  - Developed by <a href="https://www.5ines.com/" target="_blank">5ine</a></p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+                    <ul class="social-icons">
+                        <li class="soc-title">Follow Us</li>
+                        <li><a class="btn-floating facebook btn-small waves-effect waves-light "><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                        <li><a class="btn-floating twitter btn-small waves-effect waves-light "><i
+                                    class="fab fa-twitter"></i></a></li>
 
-    <p>&copy; <?php echo date('Y') ?> All right reserved Raja Housing  - Developed by <a href="https://www.5ines.com/" target="_blank">5ine</a></p>
+                        <li><a class="btn-floating youtube btn-small waves-effect waves-light "><i
+                                    class="fab fa-youtube "></i></a></li>
+
+                        <li><a class="btn-floating instagram btn-small waves-effect waves-light "><i class="fab fa-linkedin-in"></i>
+                            </a></li>
+                    </ul>
+        </div>
+        
+    </div>
+    </div>
+
+    
+
+
+    
+
 
  </section>

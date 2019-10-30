@@ -15,15 +15,30 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/slick.css">
 
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+  <style>
+      .refer-bonus .card-body{
+        box-shadow: 0px 0px 7px -1px #888;
+      }
+      .refer-bonus .card-body p{
+        text-align: center;
+font-size: 18px;
+margin-top: 15px;
+      }
+      .refer-bonus .card{
+        border: none;
+      }
 
-  <style>{
+     .refer-bonus .read-more{margin: auto; margin-top: 37px; } 
+    .refer-bonus img{
+     width: auto;
+height: 88px;
+/* filter: invert(20%) sepia(4) hue-rotate(146deg) saturate(7) brightness(2); */
 
-    .slick-slide img {width: 100%; min-height: 270px; } 
+    }
 
 
 
-  </style>
-
+ </style>
 
 </head>
 
@@ -228,21 +243,29 @@
 
                             <div>
 
-                                <img data-lazy="" src="<?php echo base_url() ?>assets/img/slider1.jpg" >
+                                <img data-lazy="" src="<?php echo base_url() ?>assets/img/ab1.jpg" >
 
                             </div>
 
                             <div>
 
-                                <img data-lazy="" src="<?php echo base_url() ?>assets/img/slider2.jpg" >
+                                <img data-lazy="" src="<?php echo base_url() ?>assets/img/ab2.jpg" >
 
                             </div> 
 
                             <div>
 
-                                <img data-lazy="" src="<?php echo base_url() ?>assets/img/slider3.jpg" >
+                                <img data-lazy="" src="<?php echo base_url() ?>assets/img/ab3.jpg" >
 
-                            </div>     
+                            </div>  
+
+                            <div>
+
+                                <img data-lazy="" src="<?php echo base_url() ?>assets/img/ab4.jpg" >
+
+                            </div>  
+
+                               
 
                         </div>
 
@@ -255,51 +278,55 @@
         </div>
 
     </div>
-    <div class="feature-sec">
+    <div class="feature-sec refer-bonus">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-lg-8">
+                <div class="col-md-12 col-lg-12">
                     <div class="project-title">
                         <div class="row">
-                            <div class="col-md-12 col-lg-8">
-                                <h4>AWESOME FEATURES</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                            <div class="col-md-12 col-lg-12">
+                                <h4 class="text-center">REFERRAL BONUS</h4>
+                                <p class="text-center">Choose Your Neighbors, and Get Rewards Bonus.</p>
                             </div>
                         </div>
                         
                     </div>
+                        <div class="col-lg-9" style="margin: auto;">
                     <div class="row ">
-                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-                            <p><span><i class="fas fa-chair f-icon"></i></span><span class="f-title">Full Furnished</span></p>
-                            <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-                            <p><span><i class="fas fa-paint-roller f-icon"></i></span><span class="f-title">Royal Touch Paint</span></p>
-                            <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-                            <p><span><i class="fas fa-tape f-icon"></i></span><span class="f-title">Latest Interior Design</span></p>
-                            <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-                                <p><span><i class="fas fa-user-secret f-icon"></i></span><span class="f-title">Non Stop Security</span></p>
-                                <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
+                        <div class="col-lg-4  col-sm-6 col-md-6  mtf">
+                            <div class="card">
+                                <div class="card-body">
+                                    <center><img src="<?php echo base_url()?>assets/img/images.svg" alt=""></center>
+                                    <p class="f-details">Login</p>
+                                </div>
                             </div>
-                            <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-                                <p><span><i class="fas fa-tree f-icon"></i></span><span class="f-title">Living Inside a nature</span></p>
-                                <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
+                        </div>
+                        <div class="col-lg-4  col-sm-6 col-md-6  mtf">
+                            <div class="card">
+                                <div class="card-body">
+                                    <center><img src="<?php echo base_url()?>assets/img/images1.svg" alt=""></center>
+                                    <p class="f-details">Refer Your Friend</p>
+                                </div>
                             </div>
-                            <div class="col-sm-6 col-md-6 col-lg-4 mtf">
-                                <p><span><i class="fas fa-hammer f-icon"></i></span><span class="f-title">Luxurious Fitting </span></p>
-                                <p class="f-details">Lorem Ipsum is simply dummy text of the printing </p>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-md-6  mtf">
+                            <div class="card">
+                                <div class="card-body">
+                                    <center><img src="<?php echo base_url()?>assets/img/images3.svg" alt=""></center>
+                                    <p class="f-details">Earn Money</p>
+                                </div>
+                            </div>
+                        </div>
+                        
                         </div>
                     </div>
+                    <div class="col-sm-6 col-md-6 col-lg-2  mtf read-more" >
+                        <center>
+                            <a href="<?php echo base_url()?>referral-bonus" class="custom-btn">Read More</a>
+                            </center>
+                        </div>
                 </div>
-                <div class="col-md-12 col-lg-4 text-center mtimg">
-                    <div class="f-img">
-                        <img src="<?php echo base_url() ?>assets/img/f-img.jpg" alt="" class="img-fluid">
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -632,7 +659,7 @@
                                         <div class="text">
                                             <p class="opt-title-in">CRM </p>
                                             <p class="contact-secondary-title">
-                                                9902025582<br>Email: <a href="mailto:crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
+                                                080 - 22104222<br>Email: <a href="mailto:crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -678,7 +705,7 @@
 
                 <div class="col-md-12 col-lg-12 col-sm-12 col-12">
 
-                    <form action="">
+                     <form action="<?php echo base_url() ?>contact-us" method="post" id="contactform">
 
                         <div class="row">
 
@@ -686,21 +713,32 @@
 
                                 <div class="form-group">
 
-                                    <input type="text" class="form-control custom-form-control" placeholder="Full Name">
+                                    <input type="text" class="form-control custom-form-control" name="name" placeholder="Full Name" required="">
+
+                                </div>
+                                <div class="form-group">
+
+                                    <input type="text" name="phone" class="form-control custom-form-control" placeholder="Phone">
 
                                 </div>
 
                                 <div class="form-group">
 
-                                    <input type="text" class="form-control custom-form-control" placeholder="mail@sitename.com">
+                                    <input type="text" name="email" class="form-control custom-form-control" placeholder="Email">
 
                                 </div>
 
                                 <div class="form-group">
 
-                                    <input type="text" class="form-control custom-form-control" placeholder="Subject">
+                                    <input type="text" name="sub" class="form-control custom-form-control" placeholder="Subject">
 
                                 </div>
+
+
+                                <div class="d-input">
+                                        <div class="g-recaptcha" data-sitekey="6LeUFL8UAAAAAF5KwBXQXuw08TudWNNiUlt-nZLk"></div>
+                                </div>
+                                <div class="error text-danger" style="margin-bottom:10px;"></div>
 
                             </div>
 
@@ -708,7 +746,7 @@
 
                                 <div class="form-group">
 
-                                    <textarea type="text" rows="8" class="form-control custom-form-control" placeholder="Message"></textarea>
+                                    <textarea type="text" rows="8" class="form-control custom-form-control" name="msg" placeholder="Message"></textarea>
 
                                 </div>
 
@@ -779,8 +817,8 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <a href="">
-                    <img class="offre-image" src="<?php echo (!empty($offer))?base_url().$offer->image:''; ?>" alt="" width="100%" height="auto">
+                    <a href="<?php echo (!empty($offer->link))?$offer->link:'' ?>">
+                    <img class="offre-image" src="<?php echo (!empty($offer->image))?base_url().$offer->image:''; ?>" alt="" width="100%" height="auto">
                     </a>
                   
                 </div>
@@ -795,6 +833,8 @@
 
  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
+ <script src='https://www.google.com/recaptcha/api.js'></script>
+
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -804,6 +844,27 @@
  <script src="<?php echo base_url() ?>assets/js/numscroller-1.0.js"></script>
 
  <script src="<?php echo base_url() ?>assets/js/script.js"></script>
+
+   <script type="text/javascript">
+
+             $(function(){
+
+                 $('#contactform').on('submit', function(e) {
+
+                  if(grecaptcha.getResponse() == "") {
+
+                     e.preventDefault();
+
+                    $('.error').text('Captcha is required');
+
+                }
+
+                });
+
+             });
+
+</script>
+
      <script type='text/javascript'>
     $(function() {
         var overlay = $('<div id="overlay"></div>');

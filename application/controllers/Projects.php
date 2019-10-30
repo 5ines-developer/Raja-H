@@ -27,7 +27,6 @@ class Projects extends CI_Controller {
                 $value->floor   = $this->m_project->floorGet($value->id);
                 $value->gallery = $this->m_project->galleryGet($value->id);
                 $value->amenity = $this->m_project->amenityGet($value->id);
-                $value->nearby  = $this->m_project->nearbyGet($value->id);
 
             }
         }        
@@ -58,23 +57,35 @@ class Projects extends CI_Controller {
     public function contact()
     {
 
-        if($this->input->post()){
-            $data = array(
-                'name'  => $this->input->post('name', true), 
-                'email' => $this->input->post('email', true), 
-                'phone' => $this->input->post('phone', true), 
-                'subj'  => $this->input->post('sub', true), 
-                'msg'   => $this->input->post('msg', true), 
-                'subj'  => 'Project enquiry - '.str_replace('-', ' ', $this->input->post('url'))
-            );  
-            if($this->m_home->contact($data)){
-                $this->sendMail($data);
-                redirect('thank-you','refresh');
-            }else{
-                $this->session->set_flashdata('error', 'Server error occured. Please try agin or <br> contact this number <a href="tel:9590779922">9590 779 922</a>');
-                redirect($this->input->post('url').'?'.$this->input->post('query'),'refresh');
+
+            $this->form_validation->set_rules('name', 'Name', 'trim|required');
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+            $this->form_validation->set_rules('phone', 'Phone', 'trim|required|numeric');
+
+            if ($this->form_validation->run() == TRUE) {
+                    $data = array(
+                    'name'  => $this->input->post('name', true), 
+                    'email' => $this->input->post('email', true), 
+                    'phone' => $this->input->post('phone', true), 
+                    'subj'  => $this->input->post('sub', true), 
+                    'msg'   => $this->input->post('msg', true), 
+                    'subj'  => 'Project enquiry - '.str_replace('-', ' ', $this->input->post('url'))
+                ); 
+
+                if($this->m_home->contact($data)){
+                    $this->sendMail($data);
+                    $this->sendpara($data);
+                    redirect('thank-you','refresh');
+                }else{
+                    $this->session->set_flashdata('error', 'Server error occured. Please try agin or <br> contact this number <a href="tel:9590779922">9590 779 922</a>');
+                    redirect($this->input->post('url').'?'.$this->input->post('query'),'refresh');
+                }
+
+            } else {
+                $error = validation_errors();
+                $this->session->set_flashdata('error', $error);
+                redirect('contact-us','refresh');
             }
-        }
         
     }
 
@@ -105,6 +116,41 @@ class Projects extends CI_Controller {
         {
             return false;
         }
+    }
+
+
+    public function sendpara($data='')
+    {
+        $input = array (
+        'rep_id' => 'rhvidhya',
+        'subject' => $data['subj'],
+        'notes' => $data['msg'],
+        'proje_1' => '',
+        'f_name' => $data['name'],
+        'l_name' => ' ',
+        'email' => $data['email'],
+        'phonefax' => $data['phone'],
+        'channel_id' => 'Website Contact Us',
+        'alert_client' => 0,
+        'alert_rep' => 0);
+
+
+        $url = 'https://cloud.paramantra.com/paramantra/api/data/new/format/json';
+        $api_key='rAhouJaPaI';
+        $app_name='rajahousingltd';
+
+        $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-API-KEY: $api_key ","ACTION-ON: $app_name"));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $input);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 300);
+            curl_setopt($ch, CURLOPT_USERPWD, $api_key );
+            $data_resp = curl_exec($ch);
+            curl_close($ch);
+
+        $data_resp;
+        return true;
     }
 
 }

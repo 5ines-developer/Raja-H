@@ -69,84 +69,9 @@
                                 </div>
                             
 
-                             <div class="card">
-                                <div class="card-content">
-                                    <div class="form-container">
-                                          <div class="row m0">
-                                            <h6 class="seo-title">Facebook Open Graph</h6>
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="og_id" name="og_id" class="validate"  value="<?php echo (!empty($result->og_id))?$result->og_id:''; ?>">
-                                                  <label for="og_id">OG ID   <span class="red-text">*</span></label>
-                                                </div>
-
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="og_image" name="og_image" class="validate"  value="<?php echo (!empty($result->og_image))?$result->og_image:''; ?>">
-                                                  <label for="og_image">OG Image   <span class="red-text">*</span></label>
-                                                </div>
-
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="og_title" name="og_title" class="validate"  value="<?php echo (!empty($result->og_title))?$result->og_title:''; ?>">
-                                                  <label for="og_title">OG Title   <span class="red-text">*</span></label>
-                                                </div>
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="og_site" name="og_site" class="validate"  value="<?php echo (!empty($result->og_site))?$result->og_site:''; ?>">
-                                                  <label for="og_site">OG Site   <span class="red-text">*</span></label>
-                                                </div>
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="og_url" name="og_url" class="validate"  value="<?php echo (!empty($result->og_url))?$result->og_url:''; ?>">
-                                                  <label for="og_url">OG Url   <span class="red-text">*</span></label>
-                                                </div>
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="og_type" name="og_type" class="validate"  value="<?php echo (!empty($result->og_type))?$result->og_type:''; ?>">
-                                                  <label for="og_type">OG Type   <span class="red-text">*</span></label>
-                                                </div>
-
-                                                <div class="input-field col s12">
-                                                    <textarea id="og_desc" name="og_desc" class="materialize-textarea"><?php echo (!empty($result->og_desc))?$result->og_desc:''; ?></textarea>
-                                                    <label for="og_desc">OG Description</label>
-                                                </div>
-                                            </div>
-                                          </div>
-                                    </div>
-                                </div>
+                             
 
 
-                                 <div class="card">
-                                <div class="card-content">
-                                    <div class="form-container">
-                                          <div class="row m0">
-                                            <h6 class="seo-title">Twitter Card</h6>
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="t_card" name="t_card" class="validate"  value="<?php echo (!empty($result->t_card))?$result->t_card:''; ?>">
-                                                  <label for="t_card">Twitter Card   <span class="red-text">*</span></label>
-                                                </div>
-
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="t_site" name="t_site" class="validate"  value="<?php echo (!empty($result->t_site))?$result->t_site:''; ?>">
-                                                  <label for="t_site">Site   <span class="red-text">*</span></label>
-                                                </div>
-
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="t_image" name="t_image" class="validate"  value="<?php echo (!empty($result->t_image))?$result->t_image:''; ?>">
-                                                  <label for="t_image">Card Image   <span class="red-text">*</span></label>
-                                                </div>
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="t_url" name="t_url" class="validate"  value="<?php echo (!empty($result->t_url))?$result->t_url:''; ?>">
-                                                  <label for="t_url">Url   <span class="red-text">*</span></label>
-                                                </div>
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="t_title" name="t_title" class="validate"  value="<?php echo (!empty($result->t_title))?$result->t_title:''; ?>">
-                                                  <label for="t_title">card Title   <span class="red-text">*</span></label>
-                                                </div>
-
-                                                <div class="input-field col s12">
-                                                    <textarea id="t_desc" name="t_desc" class="materialize-textarea"><?php echo (!empty($result->t_desc))?$result->t_desc:''; ?></textarea>
-                                                    <label for="t_desc">Card Description</label>
-                                                </div>
-                                            </div>
-                                          </div>
-                                    </div>
-                                </div>
 
 
                                 <div class="card">

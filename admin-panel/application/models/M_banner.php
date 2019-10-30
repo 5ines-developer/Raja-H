@@ -72,6 +72,30 @@ class M_banner extends CI_Model {
        return $query->num_rows();
     }
 
+
+        //enquiry
+    public function referral($id='')
+    {
+        if(!empty($id)){
+            $this->db->where('id', $id);
+            $this->referralstatus($id);
+        }
+        return $this->db->order_by('id', 'desc')->get('referal_bonus')->result();
+    }
+
+    public function referralstatus($id='')
+    {
+       return $this->db->where('id', $id)->update('referal_bonus',array('status' => '1'));
+    }
+
+    public function referalcount($value='')
+    {
+        $query = $this->db->where('status', '0')->get('referal_bonus');
+       return $query->num_rows();
+    }
+
+    
+
 }
 
 /* End of file ModelName.php */

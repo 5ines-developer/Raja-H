@@ -105,22 +105,28 @@
                     
                         <div class="row">
                             <div class="col-md-6 col-lg-6 col-sm-12 col-12 pad-r">
-                                <form action="<?php echo base_url() ?>contact-us" method="post">
+                                <form action="<?php echo base_url() ?>contact-us" method="post" id="contactform">
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control custom-form-control" placeholder="Full Name *">
+                                        <input type="text" name="name" class="form-control custom-form-control" placeholder="Full Name *" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control custom-form-control" placeholder="Email id">
+                                        <input type="email" name="email" class="form-control custom-form-control" placeholder="Email id" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="phone" class="form-control custom-form-control" placeholder="Phone Number *">
+                                        <input type="text" name="phone" class="form-control custom-form-control" placeholder="Phone Number *" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="sub" class="form-control custom-form-control" placeholder="Subject">
+                                        <input type="text" name="sub" class="form-control custom-form-control" placeholder="Subject" required="">
                                     </div>
                                     <div class="form-group">
                                         <textarea type="text" name="msg" rows="7" class="form-control custom-form-control" placeholder="Message"></textarea>
                                     </div>
+
+                                    <div class="d-input">
+                                        <div class="g-recaptcha" data-sitekey="6LeUFL8UAAAAAF5KwBXQXuw08TudWNNiUlt-nZLk"></div>
+                                    </div>
+                                    <div class="error text-danger" style="margin-bottom:10px;"></div>
+
                                     <div class="form-group">
                                         <button class="btn btn-send" type="submit" name="submit">SEND MESSAGE</button>
                                     </div>
@@ -139,7 +145,27 @@
  </section>
  <?php  $this->load->view('includes/footer'); ?>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src='https://www.google.com/recaptcha/api.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+
+             $(function(){
+
+                 $('#contactform').on('submit', function(e) {
+
+                  if(grecaptcha.getResponse() == "") {
+
+                     e.preventDefault();
+
+                    $('.error').text('Captcha is required');
+
+                }
+
+                });
+
+             });
+
+            </script>
 </body>
 </html>
