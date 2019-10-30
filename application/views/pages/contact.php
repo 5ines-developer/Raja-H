@@ -43,7 +43,7 @@
                             <div class="col-9 col-sm-9 col-md-12 col-lg-9">
                                 <div class="text">
                                     <p class="opt-title-in">SALES</p>
-                                    <p class="contact-secondary-title">9590779922 <br> 080-49409970 <br>Email: <a
+                                    <p class="contact-secondary-title"><a href="tel:9590779922">9590779922</a> <br> <a href="tel:080 49409970">080-49409970</a> <br>Email: <a
                                             href="mailto:sales@rajahousingltd.com">sales@rajahousingltd.com</a> </p>
 
                                 </div>
@@ -65,7 +65,7 @@
                                 <div class="text">
                                     <p class="opt-title-in">CRM </p>
                                     <p class="contact-secondary-title">
-                                        9902025582<br>Email: <a href="mailto:crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
+                                        <a href="tel:080 22104222">080 - 22104222</a><br>Email: <a href="mailto:crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                                 <div class="text">
                                     <p class="opt-title-in">CAREER </p>
                                     <p class="contact-secondary-title">
-                                        09902025582<br>Email: <a href="mailto: hr@rajahousingltd.com">hr@rajahousingltd.com</a></p>
+                                        <a href="tel:09902025582">09902025582</a><br>Email: <a href="mailto: hr@rajahousingltd.com">hr@rajahousingltd.com</a></p>
                                 </div>
                             </div>
                         </div>

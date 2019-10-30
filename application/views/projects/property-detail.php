@@ -113,15 +113,21 @@
                         <p><?php echo (!empty($value->detail))?$value->detail:''; ?></p>
                     </div>
                 </div>
-                <div class="prop-st box-shadow"  id="areaStatement">
+
+                <?php if (!empty($value->areastatement)) { ?>
+                    <div class="prop-st box-shadow"  id="areaStatement">
                     <h4>SPECIFICATIONS</h4>
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                         <div class="bb"></div>
                         </div>
                     </div>
-                    <p><?php echo (!empty($value->areastatement))?$value->areastatement:''; ?> </p>
+                    <p><?php echo $value->areastatement ?> </p>
                 </div>
+                <?php } ?>
+                
+
+                <?php if (!empty($value->materplan)) { ?>
                 <div class="prop-st box-shadow" id="masterPlan">
                 <h4>MASTER PLAN</h4>
                 <div class="row">
@@ -129,7 +135,7 @@
                     <div class="bb"></div>
                     </div>
                 </div>
-                <p><?php echo (!empty($value->materplan))?$value->materplan:''; ?></p>
+                <p><?php echo $value->materplan; ?></p>
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                     <div class="prop-map">
@@ -138,7 +144,11 @@
                     </div>
                 </div>
                 </div>
-                <div class="prop-st box-shadow" id="floorPlan">
+            <?php } ?>
+
+
+                <?php if (!empty($value->floor)) { ?>
+                    <div class="prop-st box-shadow" id="floorPlan">
                 <h4>FLOOR PLAN</h4>
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
@@ -170,6 +180,9 @@
                     </div>
                 </div>
                 </div>
+                 <?php } ?>
+
+                 <?php if (!empty($value->amenity)) { ?>
                 <div class="prop-st box-shadow" id="amenities">
                 <h4>AMENITIES</h4>
                 <div class="row">
@@ -193,6 +206,7 @@
                     </div>
                     </div>
                 </div>
+            <?php } ?>
             </div>
             </div>
 
@@ -226,6 +240,7 @@
             </div>
         </div>
 
+         <?php if (!empty($value->walkthrogh)) { ?>
         <div class="prop-st box-shadow" id="walkThrough">
             <h4>WALK THROUGH</h4>
             <div class="row">
@@ -243,7 +258,9 @@
                 </div>
             </div>    
         </div>
-
+    <?php } ?>
+    
+    <?php if (!empty($value->location)) { ?>
         <div class="prop-st box-shadow" id="location">
             <h4>Location</h4>
             <div class="row">
@@ -262,8 +279,9 @@
                 </div>
             </div>    
         </div>
+    <?php } ?>
 
-
+        <?php if (!empty($value->gallery)) { ?>
         <div class="prop-st box-shadow" id="gallery">
             <h4>GALLERY</h4>
             <div class="row">
@@ -279,8 +297,7 @@
                  } }?>
             </div>    
         </div>
-
-             <?php }elseif ($value->content_type == '3') {?>
+    <?php }  }elseif ($value->content_type == '3') {?>
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-12 prmb">
                         <div class="card">

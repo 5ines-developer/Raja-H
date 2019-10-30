@@ -3,7 +3,7 @@ $this->load->model('m_project');
  ?>
 <nav class="navbar paddind-navbar navbar-expand-lg  custom-navbar" id="navbar">
             <div class="container-fluid ">
-                <a class="navbar-brand navbar-brand-logo" href="#">
+                <a class="navbar-brand navbar-brand-logo" href="<?php echo base_url() ?>">
                     <img src="<?php echo base_url() ?>assets/img/logo.png" alt="logo"  > 
                 </a>
                 <a href="javascript:void(0)" class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">

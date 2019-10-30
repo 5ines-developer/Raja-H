@@ -108,7 +108,7 @@ var google_remarketing_only = true;
                         <?php $featured = $this->ci->project->featured();                        
                     if (!empty($featured)) {
                     foreach ($featured as $key => $value) {?>
-                        <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url('projects/').str_replace(" ","-",strtolower($this->ci->m_project->categoryName($value->projectid,$value->cat_type))).'?q='.$value->projectid.'&c='.$value->cat_type.'' ?>" class="link"><?php echo $this->ci->m_project->categoryName($value->projectid,$value->cat_type); ?></a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="<?php echo base_url('projects/').str_replace(" ","-",strtolower($value->slug.'')).'?q='.$value->projectid.'&c='.$value->cat_type.'' ?>" class="link"><?php echo $this->ci->m_project->categoryName($value->projectid,$value->cat_type); ?></a></li>
                         
                     <?php  }}?>
                     </ul>
@@ -131,15 +131,15 @@ var google_remarketing_only = true;
         <div class="col-lg-4 col-md-4 col-sm-12">
                     <ul class="social-icons">
                         <li class="soc-title">Follow Us</li>
-                        <li><a class="btn-floating facebook btn-small waves-effect waves-light "><i
+                        <li><a target="_blank" href="https://www.facebook.com/rajahousinglimited/" class="btn-floating facebook btn-small waves-effect waves-light "><i
                                     class="fab fa-facebook-f"></i></a></li>
-                        <li><a class="btn-floating twitter btn-small waves-effect waves-light "><i
+                        <li><a target="_blank" href="https://twitter.com/rajahousingblr" class="btn-floating twitter btn-small waves-effect waves-light "><i
                                     class="fab fa-twitter"></i></a></li>
 
-                        <li><a class="btn-floating youtube btn-small waves-effect waves-light "><i
+                        <li><a target="_blank" href="https://www.youtube.com/channel/UCeKVrLO0-grW_dpF2YEaLRA" class="btn-floating youtube btn-small waves-effect waves-light "><i
                                     class="fab fa-youtube "></i></a></li>
 
-                        <li><a class="btn-floating instagram btn-small waves-effect waves-light "><i class="fab fa-linkedin-in"></i>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/raja-housing-ltd-bangalore-396220b2/" class="btn-floating instagram btn-small waves-effect waves-light "><i class="fab fa-linkedin-in"></i>
                             </a></li>
                     </ul>
         </div>

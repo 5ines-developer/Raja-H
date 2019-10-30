@@ -1073,7 +1073,7 @@ background: #1aace1;
 
 /* ==========================================career=================================== */
 .career {
-    padding-bottom: 0px;
+    padding: 60px 0;
 }
 
 .job-h {
@@ -1446,7 +1446,7 @@ font-size: 16px;
 
 }
 .am-cc{
-    column-count: 3;
+    column-count: 2;
 }
 .pd-cc{
     column-count: 3;

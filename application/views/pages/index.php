@@ -73,7 +73,7 @@ height: 88px;
 
                 <div class="carousel-item <?php echo $key=='0'?'active':'' ?>">
                 <div class="img-banner">
-                <img class="d-block w-100" src="<?php echo (!empty($value->image))?base_url().$value->image:''; ?>" alt="<?php echo (!empty($value->alt))?$value->alt:'';?>">
+                <img class="d-block w-100" src="<?php echo (!empty($value->image))?base_url().$value->image:''; ?>" alt="<?php echo (!empty($value->alt))?$value->alt:'';?>" alt="<?php echo (!empty($value->alt))?$value->alt:'';?>">
             </div>
                     <div class="carousel-caption d-none d-md-block d-flex h-50 align-items-center justify-content-center">
                         <div>
@@ -143,7 +143,7 @@ height: 88px;
 
                         <div class="card">
 
-                        <a target="_blank" href="<?php echo base_url('projects/').str_replace(" ","-",strtolower($this->ci->m_project->categoryName($value->projectid,$value->cat_type))).'?q='.$value->projectid.'&c='.$value->cat_type.'' ?>">
+                        <a target="_blank" href="<?php echo base_url('projects/').str_replace(" ","-",strtolower($value->slug)).'?q='.$value->projectid.'&c='.$value->cat_type.'' ?>">
 
                         <div class="slide-card-container">
 
@@ -331,104 +331,6 @@ height: 88px;
         </div>
     </div>
 
-    <!-- <div class="feature-sec">
-
-        <div class="container">
-
-             <div class="row">
-                    <div class="col-md-12 col-lg-8">
-                        <div class="project-title">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-8">
-                                    <h4>RHl - REFERRAL BONUS</h4>
-                                    <p>Choose Your Neighbors, and Get Rewards Bonus.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <form action="" class="referal-form">
-                            <div class="row ">
-                                <div class="col-md-12">
-                                    <h6>REGISTRATION FORM</h6>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label>YOUR NAME :</label>
-                                        <input type="text" class="form-control" placeholder="Your Name">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label>YOU ARE :</label>
-                                        <select type="text" class="form-control" placeholder="YOUR NAME">
-                                                <option value="">Select</option>
-                                            <option value="">MALE</option>
-                                            <option value="">FEMALE</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                        <div class="form-group">
-                                            <label>MOBILE NO :</label>
-                                            <input type="text" class="form-control" placeholder="Mobile Number">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group">
-                                            <label>EMAIL ID :</label>
-                                            <input type="text" class="form-control" placeholder="Email ID" />
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="row ">
-                                    <div class="col-md-12">
-                                        <h6>FRIEND DETAIL</h6>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group">
-                                            <label>FRIEND NAME :</label>
-                                            <input type="text" class="form-control" placeholder="Friend Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group">
-                                            <label>YOUR FRIEND'S PREFERRED CITY :</label>
-                                            <select type="text" class="form-control" placeholder="YOUR NAME">
-                                                    <option value="">Select</option>
-                                                <option value="">BANGLORE</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                            <div class="form-group">
-                                                <label>MOBILE NO :</label>
-                                                <input type="text" class="form-control" placeholder="Mobile Number">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-6">
-                                            <div class="form-group">
-                                                <label>EMAIL ID :</label>
-                                                <input type="text" class="form-control" placeholder="Email ID" />
-                                            </div>
-                                        </div>
-                                        <div class=" col-md-12">
-                                                <div class="form-group">
-                                                    <button type="button" class="btn refer-btn">REFER A FRIEND</button>
-                                                </div>
-                                            </div>
-                                </div>
-                        </form>
-                        
-                    </div>
-                    <div class="col-md-12 col-lg-4 text-center mtimg">
-                         <div class="f-img">
-                            <img src="assets/img/Referral-Program.png" alt="" class="img-fluid"> 
-                        </div> 
-                    </div>
-                </div>
-
-        </div>
-
-    </div> -->
 
    <!--  <div class="numcount">
 
@@ -637,7 +539,7 @@ height: 88px;
                                     <div class="col-9 col-sm-9 col-md-12 col-lg-9">
                                         <div class="text">
                                             <p class="opt-title-in">SALES</p>
-                                            <p class="contact-secondary-title">9590779922 <br> 080-49409970 <br>Email: <a
+                                            <p class="contact-secondary-title"><a href="tel:9590779922">9590779922</a> <br> <a href="tel:080 49409970">080-49409970</a> <br>Email: <a
                                                     href="mailto:sales@rajahousingltd.com">sales@rajahousingltd.com</a> </p>
         
                                         </div>
@@ -658,8 +560,8 @@ height: 88px;
                                     <div class="col-9 col-sm-9 col-md-12 col-lg-9">
                                         <div class="text">
                                             <p class="opt-title-in">CRM </p>
-                                            <p class="contact-secondary-title">
-                                                080 - 22104222<br>Email: <a href="mailto:crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
+                                            <p class="contact-secondary-title"><a href="tel:080 22104222">080 - 22104222</a>
+                                                <br>Email: <a href="mailto:crm@rajahousingltd.com">crm@rajahousingltd.com</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -678,8 +580,8 @@ height: 88px;
                                     <div class="col-9 col-sm-9 col-md-12 col-lg-9">
                                         <div class="text">
                                             <p class="opt-title-in">CAREER </p>
-                                            <p class="contact-secondary-title">
-                                                09902025582<br>Email: <a href="mailto: hr@rajahousingltd.com">hr@rajahousingltd.com</a></p>
+                                            <p class="contact-secondary-title"><a href="tel:09902025582">09902025582</a>
+                                                <br>Email: <a href="mailto: hr@rajahousingltd.com">hr@rajahousingltd.com</a></p>
                                         </div>
                                     </div>
                                 </div>

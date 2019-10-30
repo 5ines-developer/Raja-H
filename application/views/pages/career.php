@@ -20,7 +20,7 @@
  </section>
  <section class="career">
     <div class="container">
-        <div class="jobs-op">
+        <!-- <div class="jobs-op">
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-sm-12 col-12">
                     <h4 class="job-h">Current Job Openings</h4>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="exp">
             <div class="row">
                 <div class="col-md-12 text-center">
