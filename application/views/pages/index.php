@@ -411,6 +411,7 @@ height: 88px;
  </section>
 
  <section class="testimonial">
+ <div class="about-sec">
 
     <div class="container ml10">
 
@@ -509,6 +510,7 @@ height: 88px;
 
         </div>
 
+    </div>
     </div>
 
  </section>

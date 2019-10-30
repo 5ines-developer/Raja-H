@@ -533,9 +533,31 @@ background: #1aace1;
 }
 
 .testimonial {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background: #f9f9f9;
+
+background: #2c2c2b;
+
+background: url('../img/home-banner.jpg');
+
+    background-color: rgba(0, 0, 0, 0);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-size: auto;
+
+background-size: cover;
+
+background-position: center;
+
+background-repeat: no-repeat;
+
+background-attachment: fixed;
+}
+.project-title h4{
+    color: #fff;
+}
+.project-title p{
+    color: #fff;
 }
 
 .card-container {
